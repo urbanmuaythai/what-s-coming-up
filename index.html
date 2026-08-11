@@ -91,6 +91,9 @@
   .event-media::after{content:''; position:absolute; inset:0; background:linear-gradient(90deg,transparent 60%,rgba(27,31,59,.5)); pointer-events:none;}
   .event-media img{width:100%; height:100%; position:absolute; inset:0; object-fit:cover; transition:transform .45s ease;}
   .event:hover .event-media img{transform:scale(1.025);}
+  .event-media.poster{min-height:520px; background:#070707;}
+  .event-media.poster::after{display:none;}
+  .event-media.poster img{object-fit:contain; object-position:center; padding:10px; background:#070707;}
   .event-body{padding:30px 30px 28px; align-self:center;}
   @media(min-width:860px){
     .event:nth-child(even){grid-template-columns:minmax(0,1.22fr) minmax(260px,0.78fr);}
@@ -100,9 +103,10 @@
   @media(max-width:859px){
     .event{grid-template-columns:1fr;}
     .event-media{min-height:300px;}
+    .event-media.poster{min-height:480px;}
     .event-media::after{background:linear-gradient(0deg,rgba(27,31,59,.48),transparent 55%);}
   }
-  @media(max-width:520px){.event-media{min-height:235px;} .event-body{padding:26px 22px 24px;}}
+  @media(max-width:520px){.event-media{min-height:235px;} .event-media.poster{min-height:430px;} .event-body{padding:26px 22px 24px;}}
   .event-list-label{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-dim); margin:22px 0 12px;}
   .event-list{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
   @media(min-width:720px){.event-list{grid-template-columns:1fr 1fr; gap:10px 32px;}}
@@ -154,8 +158,26 @@
   .recap-media{display:grid; grid-template-columns:1fr 1fr; gap:4px; min-height:310px; background:var(--navy-900);}
   .recap-media.single{grid-template-columns:1fr;}
   .recap-media img{width:100%; height:310px; object-fit:cover; display:block;}
+  .trivia-gallery{grid-template-columns:repeat(4,1fr); grid-template-rows:280px 280px;}
+  .trivia-gallery img{height:100%;}
+  .trivia-gallery img:nth-child(1){grid-column:1 / span 2; grid-row:1;}
+  .trivia-gallery img:nth-child(2){grid-column:3; grid-row:1 / span 2;}
+  .trivia-gallery img:nth-child(3){grid-column:4; grid-row:1;}
+  .trivia-gallery img:nth-child(4){grid-column:1 / span 2; grid-row:2;}
+  .trivia-gallery img:nth-child(5){grid-column:4; grid-row:2;}
   .recap-content{padding:30px 30px 28px;}
-  @media(max-width:620px){.recap-media{grid-template-columns:1fr; min-height:0;} .recap-media img{height:260px;} .recap-content{padding:26px 22px 24px;}}
+  @media(max-width:620px){
+    .recap-media{grid-template-columns:1fr; min-height:0;}
+    .recap-media img{height:260px;}
+    .trivia-gallery{grid-template-columns:1fr 1fr; grid-template-rows:210px 280px 240px;}
+    .trivia-gallery img{height:100%;}
+    .trivia-gallery img:nth-child(1){grid-column:1 / span 2; grid-row:1;}
+    .trivia-gallery img:nth-child(2){grid-column:1; grid-row:2;}
+    .trivia-gallery img:nth-child(3){grid-column:2; grid-row:2;}
+    .trivia-gallery img:nth-child(4){grid-column:1; grid-row:3;}
+    .trivia-gallery img:nth-child(5){grid-column:2; grid-row:3;}
+    .recap-content{padding:26px 22px 24px;}
+  }
   .recap-stat{display:flex; align-items:center; gap:22px; flex-wrap:wrap; margin:6px 0 16px;}
   .recap-stat .num{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:clamp(42px,8vw,64px); color:var(--red-600); line-height:1;}
   .recap-stat .num-label{color:var(--ink-dim); font-size:14px; max-width:280px;}
@@ -284,7 +306,7 @@
         </article>
 
         <article class="event fight" id="destiny">
-          <figure class="event-media"><img src="urbanmuaythaigym_1784008802_3940842044320112682_2042458529.jpg" alt="The Urban Muaythai fight team gathered around the ring" width="3024" height="2023" loading="lazy"></figure>
+          <figure class="event-media poster"><img src="destiny-fight-ritter.jpg" alt="Destiny Muaythai XXXII poster for Ritter versus Crittenden on 29 August 2026" width="3000" height="3720" loading="lazy"></figure>
           <div class="event-body">
             <div class="event-top">
               <span class="event-when">Saturday · 29 August</span>
@@ -399,8 +421,12 @@
 
         <!-- ===== Trivia Night ===== -->
         <article class="recap">
-          <div class="recap-media single">
-            <img src="urbanmuaythaigym_1781222368_3917498941350266574_2042458529.jpg" alt="Young Urban Muaythai members posing with their coach" width="1080" height="933" loading="lazy">
+          <div class="recap-media trivia-gallery">
+            <img src="trivia-night-table.jpg" alt="Friends gathered around a table at Urban Muaythai Trivia Night" width="1600" height="1200" loading="lazy">
+            <img src="trivia-night-buffet.jpg" alt="Trivia Night guests helping themselves to the buffet" width="1200" height="1600" loading="lazy">
+            <img src="trivia-night-crowd.jpg" alt="Trivia Night teams seated around the Urban Muaythai gym" width="1200" height="1600" loading="lazy">
+            <img src="trivia-night-team-one.jpg" alt="A Trivia Night team smiling together by the ring" width="1200" height="1600" loading="lazy">
+            <img src="trivia-night-team-two.jpg" alt="Another Trivia Night team posing together in the gym" width="1200" height="1600" loading="lazy">
           </div>
           <div class="recap-content">
             <div class="recap-top">
