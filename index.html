@@ -48,17 +48,26 @@
   }
 
   /* ---------- hero ---------- */
-  .hero{position:relative; display:flex; align-items:flex-end; overflow:hidden;
-    background:radial-gradient(120% 80% at 85% 0%, rgba(200,16,46,0.28), transparent 55%), linear-gradient(180deg, var(--navy-900) 0%, var(--navy-950) 96%);
+  .hero{position:relative; overflow:hidden;
+    background:radial-gradient(100% 100% at 88% 0%, rgba(200,16,46,0.25), transparent 55%), linear-gradient(180deg, var(--navy-900) 0%, var(--navy-950) 96%);
     border-bottom:1px solid rgba(255,255,255,0.06);}
   .hero::after{content:''; position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size:100% 38px; mask-image:linear-gradient(180deg, transparent, #000 45%, transparent);}
-  .hero-inner{position:relative; z-index:2; width:100%; padding:58px 24px 40px; max-width:1080px; margin:0 auto;}
+  .hero-inner{position:relative; z-index:2; width:100%; min-height:610px; padding:64px 24px 54px; max-width:1180px; margin:0 auto; display:grid; grid-template-columns:minmax(0,0.9fr) minmax(420px,1.1fr); align-items:center; gap:52px;}
+  .hero-copy{position:relative; z-index:2;}
   .hero-eyebrow{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:var(--red-600); margin-bottom:14px; display:flex; align-items:center; gap:10px;}
   .hero-eyebrow::before{content:''; width:26px; height:2px; background:var(--red-600); display:inline-block;}
   .hero h1{font-size:clamp(46px, 9vw, 96px); color:var(--cream);}
   .hero h1 em{font-style:normal; color:var(--red-600);}
   .rope-divider{height:6px; width:100%; background:var(--rope-stripe); background-size:40px 40px; margin:20px 0; border-radius:2px; opacity:0.9;}
   .hero-sub{max-width:620px; color:var(--ink-dim); font-size:16.5px; margin-top:4px;}
+  .hero-photo{position:relative; margin:0; min-height:500px; align-self:stretch; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:var(--radius); box-shadow:24px 24px 0 rgba(200,16,46,0.12); clip-path:polygon(8% 0,100% 0,100% 100%,0 100%,0 8%);}
+  .hero-photo::after{content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(10,12,23,.42),transparent 45%),linear-gradient(0deg,rgba(10,12,23,.35),transparent 38%); pointer-events:none;}
+  .hero-photo img{width:100%; height:100%; position:absolute; inset:0; object-fit:cover; object-position:center; filter:saturate(.88) contrast(1.05);}
+  .hero-photo figcaption{position:absolute; z-index:2; right:18px; bottom:16px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.78);}
+  @media(max-width:860px){
+    .hero-inner{min-height:auto; grid-template-columns:1fr; gap:34px; padding-top:50px;}
+    .hero-photo{min-height:clamp(310px,70vw,470px); order:2; box-shadow:14px 14px 0 rgba(200,16,46,0.12);}
+  }
 
   /* ---------- section shell ---------- */
   .tabpanel{display:none; padding:64px 0;}
@@ -69,8 +78,8 @@
   .section-lede{max-width:660px; color:var(--ink-dim); font-size:16px; margin-top:14px;}
 
   /* ---------- event cards (This Month) ---------- */
-  .events{display:flex; flex-direction:column; gap:26px; margin-top:44px;}
-  .event{background:var(--navy-800); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius); padding:30px 30px 28px; position:relative; overflow:hidden;}
+  .events{display:flex; flex-direction:column; gap:30px; margin-top:44px;}
+  .event{background:var(--navy-800); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius); position:relative; overflow:hidden; display:grid; grid-template-columns:minmax(260px,0.78fr) minmax(0,1.22fr); min-height:360px;}
   .event::before{content:''; position:absolute; top:0; left:0; right:0; height:4px; background:var(--red-600);}
   .event.fight::before{background:linear-gradient(90deg,var(--red-600),var(--red-700));}
   .event-top{display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:8px;}
@@ -78,6 +87,22 @@
   .event-when .time{color:var(--ink-dim);}
   .event h3{font-size:34px; color:var(--cream); margin:2px 0 14px;}
   .event p{color:var(--ink-dim); font-size:15.5px; margin:0 0 4px; max-width:70ch;}
+  .event-media{position:relative; margin:0; min-height:100%; overflow:hidden; background:var(--navy-900);}
+  .event-media::after{content:''; position:absolute; inset:0; background:linear-gradient(90deg,transparent 60%,rgba(27,31,59,.5)); pointer-events:none;}
+  .event-media img{width:100%; height:100%; position:absolute; inset:0; object-fit:cover; transition:transform .45s ease;}
+  .event:hover .event-media img{transform:scale(1.025);}
+  .event-body{padding:30px 30px 28px; align-self:center;}
+  @media(min-width:860px){
+    .event:nth-child(even){grid-template-columns:minmax(0,1.22fr) minmax(260px,0.78fr);}
+    .event:nth-child(even) .event-media{order:2;}
+    .event:nth-child(even) .event-media::after{background:linear-gradient(270deg,transparent 60%,rgba(27,31,59,.5));}
+  }
+  @media(max-width:859px){
+    .event{grid-template-columns:1fr;}
+    .event-media{min-height:300px;}
+    .event-media::after{background:linear-gradient(0deg,rgba(27,31,59,.48),transparent 55%);}
+  }
+  @media(max-width:520px){.event-media{min-height:235px;} .event-body{padding:26px 22px 24px;}}
   .event-list-label{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-dim); margin:22px 0 12px;}
   .event-list{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
   @media(min-width:720px){.event-list{grid-template-columns:1fr 1fr; gap:10px 32px;}}
@@ -119,13 +144,18 @@
 
   /* ---------- recaps ---------- */
   .recaps{display:flex; flex-direction:column; gap:26px; margin-top:44px;}
-  .recap{background:var(--navy-800); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius); padding:30px 30px 28px; position:relative; overflow:hidden;}
+  .recap{background:var(--navy-800); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius); position:relative; overflow:hidden;}
   .recap::before{content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,var(--gold),var(--red-600));}
   .recap-top{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:6px;}
   .recap-when{font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--ink-dim); letter-spacing:0.06em; text-transform:uppercase;}
   .recap-badge{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); border:1px solid rgba(201,162,39,0.5); background:rgba(201,162,39,0.12); padding:5px 11px; border-radius:20px;}
   .recap h3{font-size:32px; color:var(--cream); margin:2px 0 14px;}
   .recap p{color:var(--ink-dim); font-size:15.5px; margin:0 0 12px; max-width:72ch;}
+  .recap-media{display:grid; grid-template-columns:1fr 1fr; gap:4px; min-height:310px; background:var(--navy-900);}
+  .recap-media.single{grid-template-columns:1fr;}
+  .recap-media img{width:100%; height:310px; object-fit:cover; display:block;}
+  .recap-content{padding:30px 30px 28px;}
+  @media(max-width:620px){.recap-media{grid-template-columns:1fr; min-height:0;} .recap-media img{height:260px;} .recap-content{padding:26px 22px 24px;}}
   .recap-stat{display:flex; align-items:center; gap:22px; flex-wrap:wrap; margin:6px 0 16px;}
   .recap-stat .num{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:clamp(42px,8vw,64px); color:var(--red-600); line-height:1;}
   .recap-stat .num-label{color:var(--ink-dim); font-size:14px; max-width:280px;}
@@ -174,10 +204,16 @@
 
 <header class="hero" id="top">
   <div class="hero-inner">
-    <div class="hero-eyebrow">Urban Muaythai · Miami · Gold Coast</div>
-    <h1>WHAT'S<br><em>COMING UP.</em></h1>
-    <div class="rope-divider" role="presentation"></div>
-    <p class="hero-sub">Everything the Urban Army has locked in — what's on this month, the full 2026 calendar, and recaps of the events we've already smashed.</p>
+    <div class="hero-copy">
+      <div class="hero-eyebrow">Urban Muaythai · Miami · Gold Coast</div>
+      <h1>WHAT'S<br><em>COMING UP.</em></h1>
+      <div class="rope-divider" role="presentation"></div>
+      <p class="hero-sub">Everything the Urban Army has locked in — what's on this month, the full 2026 calendar, and recaps of the events we've already smashed.</p>
+    </div>
+    <figure class="hero-photo">
+      <img src="blue grading.png" alt="Young Urban Muaythai students lined up in the gym" width="1536" height="1024" fetchpriority="high">
+      <figcaption>Built together</figcaption>
+    </figure>
   </div>
 </header>
 
@@ -190,62 +226,74 @@
         <span class="section-num">AUG '26</span>
         <h2>August —<br>this month.</h2>
       </div>
-      <p class="section-lede">Three big ones this month. Mark the calendar, grab a partner, and chat to the front desk to lock in your spot.</p>
+      <p class="section-lede">Four big ones this month. Mark the calendar, grab a partner, and chat to the front desk to lock in your spot.</p>
 
       <div class="events">
         <article class="event train" id="pad-flow">
-          <div class="event-top">
-            <span class="event-when">Saturday · 15 August <span class="time">· 8:00 AM</span></span>
-            <span class="event-tag tag-train">Workshop</span>
+          <figure class="event-media"><img src="recent2.png" alt="A student and coach working together on pads" width="1536" height="1024" loading="lazy"></figure>
+          <div class="event-body">
+            <div class="event-top">
+              <span class="event-when">Saturday · 15 August <span class="time">· 8:00 AM</span></span>
+              <span class="event-tag tag-train">Workshop</span>
+            </div>
+            <h3>Pad Flow Workshop</h3>
+            <p>Our Pad Flow Workshop is built for anyone who struggles with calling freestyle pads — but it's open to everybody, regardless of experience. It's a partner-based class focused on developing smooth, effective pad holding and striking.</p>
+            <div class="event-list-label">In this session you'll learn to</div>
+            <ul class="event-list">
+              <li>Link combinations together naturally</li>
+              <li>Call and flow combinations effectively</li>
+              <li>Transition between all eight weapons of Muay Thai</li>
+              <li>Improve timing, communication and fight IQ</li>
+              <li>Build confidence as both a striker and a pad holder</li>
+            </ul>
+            <p style="margin-top:20px;">Whether you're new to pad holding or looking to sharpen up, this workshop will make you a more complete training partner.</p>
           </div>
-          <h3>Pad Flow Workshop</h3>
-          <p>Our Pad Flow Workshop is built for anyone who struggles with calling freestyle pads — but it's open to everybody, regardless of experience. It's a partner-based class focused on developing smooth, effective pad holding and striking.</p>
-          <div class="event-list-label">In this session you'll learn to</div>
-          <ul class="event-list">
-            <li>Link combinations together naturally</li>
-            <li>Call and flow combinations effectively</li>
-            <li>Transition between all eight weapons of Muay Thai</li>
-            <li>Improve timing, communication and fight IQ</li>
-            <li>Build confidence as both a striker and a pad holder</li>
-          </ul>
-          <p style="margin-top:20px;">Whether you're new to pad holding or looking to sharpen up, this workshop will make you a more complete training partner.</p>
         </article>
 
         <article class="event social" id="spar-social">
-          <div class="event-top">
-            <span class="event-when">Friday · 21 August <span class="time">· 4:30 PM – 6:00 PM</span></span>
-            <span class="event-tag tag-social">Social</span>
+          <figure class="event-media"><img src="recent 3.png" alt="Urban Muaythai members smiling together between sparring rounds" width="1402" height="1122" loading="lazy"></figure>
+          <div class="event-body">
+            <div class="event-top">
+              <span class="event-when">Friday · 21 August <span class="time">· 4:30 PM – 6:00 PM</span></span>
+              <span class="event-tag tag-social">Social</span>
+            </div>
+            <h3>Spar, Slices &amp; Suds</h3>
+            <p>Our in-club sparring and social event! The sparring session is open to all levels — including kids, teens and advanced students. After training, stick around to relax with your teammates, enjoy some pizza and get to know everyone around the club.</p>
+            <div class="event-list-label">What to expect</div>
+            <ul class="event-list">
+              <li>In-club sparring for all experience levels</li>
+              <li>Pizza provided</li>
+              <li>BYO drinks</li>
+              <li>A fun, relaxed social atmosphere</li>
+              <li>Meet new teammates and enjoy time with the community</li>
+            </ul>
           </div>
-          <h3>Spar, Slices &amp; Suds</h3>
-          <p>Our in-club sparring and social event! The sparring session is open to all levels — including kids, teens and advanced students. After training, stick around to relax with your teammates, enjoy some pizza and get to know everyone around the club.</p>
-          <div class="event-list-label">What to expect</div>
-          <ul class="event-list">
-            <li>In-club sparring for all experience levels</li>
-            <li>Pizza provided</li>
-            <li>BYO drinks</li>
-            <li>A fun, relaxed social atmosphere</li>
-            <li>Meet new teammates and enjoy time with the community</li>
-          </ul>
         </article>
 
         <article class="event" id="blue-grading">
-          <div class="event-top">
-            <span class="event-when">Saturday · 22 August <span class="time">· 9:15 AM</span></span>
-            <span class="event-tag tag-flagship">Grading</span>
+          <figure class="event-media"><img src="urbanmuaythaigym_1781222368_3917498935109058337_2042458529.jpg" alt="Urban Muaythai students and their coach after training" width="1080" height="928" loading="lazy"></figure>
+          <div class="event-body">
+            <div class="event-top">
+              <span class="event-when">Saturday · 22 August <span class="time">· 9:15 AM</span></span>
+              <span class="event-tag tag-flagship">Grading</span>
+            </div>
+            <h3>Adult Blue Grading</h3>
+            <p>Our next adult blue grading — a chance to step up, show what you've been drilling and earn that next level.</p>
+            <div class="pickup-note"><strong>Invites:</strong> already sent — keep an eye on your inbox. If yours has landed, you're in.</div>
           </div>
-          <h3>Adult Blue Grading</h3>
-          <p>Our next adult blue grading — a chance to step up, show what you've been drilling and earn that next level.</p>
-          <div class="pickup-note"><strong>Invites:</strong> already sent — keep an eye on your inbox. If yours has landed, you're in.</div>
         </article>
 
         <article class="event fight" id="destiny">
-          <div class="event-top">
-            <span class="event-when">Saturday · 29 August</span>
-            <span class="event-tag tag-fight">Fight Show</span>
+          <figure class="event-media"><img src="urbanmuaythaigym_1784008802_3940842044320112682_2042458529.jpg" alt="The Urban Muaythai fight team gathered around the ring" width="3024" height="2023" loading="lazy"></figure>
+          <div class="event-body">
+            <div class="event-top">
+              <span class="event-when">Saturday · 29 August</span>
+              <span class="event-tag tag-fight">Fight Show</span>
+            </div>
+            <h3>Destiny Fight Show</h3>
+            <p>Support the Urban Muay Thai fight team at the Destiny Fight Show! We'd love to see the Urban Army out in force, backing our fighters as they step up under the lights.</p>
+            <div class="pickup-note"><strong>Tickets:</strong> available to purchase through the gym as soon as we receive them. Keep an eye out for more info in the coming weeks.</div>
           </div>
-          <h3>Destiny Fight Show</h3>
-          <p>Support the Urban Muay Thai fight team at the Destiny Fight Show! We'd love to see the Urban Army out in force, backing our fighters as they step up under the lights.</p>
-          <div class="pickup-note"><strong>Tickets:</strong> available to purchase through the gym as soon as we receive them. Keep an eye out for more info in the coming weeks.</div>
         </article>
       </div>
     </div>
@@ -328,34 +376,45 @@
 
         <!-- ===== Winter Weapon 2026 ===== -->
         <article class="recap">
-          <div class="recap-top">
-            <span class="recap-when">Wrapped · 1 August 2026</span>
-            <span class="recap-badge">Recap</span>
+          <div class="recap-media">
+            <img src="recent1.png" alt="Training partners enjoying a light moment in class" width="1536" height="1024" loading="lazy">
+            <img src="recent 4.png" alt="Young students practising pad work together" width="1086" height="1449" loading="lazy">
           </div>
-          <h3>Winter Weapon 2026</h3>
-          <p>Our biggest winter challenge yet. Winter Weapon was all about staying consistent, keeping each other accountable and continuing to show up through the colder months — and the Army delivered. Huge effort from everyone who chased down a reward tier.</p>
-          <ul class="recap-highlights">
-            <li>7 members earned the YETI Bottle tier</li>
-            <li>47 members earned Limited-Edition Shorts</li>
-            <li>Consistency streaks held right through winter</li>
-            <li>Rewards ready for pick-up at the front desk</li>
-          </ul>
-          <a class="recap-link" href="https://urbanmuaythai.github.io/Thank-You/#winter-weapon" target="_blank" rel="noopener">Read the full wrap-up</a>
+          <div class="recap-content">
+            <div class="recap-top">
+              <span class="recap-when">Wrapped · 1 August 2026</span>
+              <span class="recap-badge">Recap</span>
+            </div>
+            <h3>Winter Weapon 2026</h3>
+            <p>Our biggest winter challenge yet. Winter Weapon was all about staying consistent, keeping each other accountable and continuing to show up through the colder months — and the Army delivered. Huge effort from everyone who chased down a reward tier.</p>
+            <ul class="recap-highlights">
+              <li>7 members earned the YETI Bottle tier</li>
+              <li>47 members earned Limited-Edition Shorts</li>
+              <li>Consistency streaks held right through winter</li>
+              <li>Rewards ready for pick-up at the front desk</li>
+            </ul>
+            <a class="recap-link" href="https://urbanmuaythai.github.io/Thank-You/#winter-weapon" target="_blank" rel="noopener">Read the full wrap-up</a>
+          </div>
         </article>
 
         <!-- ===== Trivia Night ===== -->
         <article class="recap">
-          <div class="recap-top">
-            <span class="recap-when">Wrapped · July 2026</span>
-            <span class="recap-badge">Recap</span>
+          <div class="recap-media single">
+            <img src="urbanmuaythaigym_1781222368_3917498941350266574_2042458529.jpg" alt="Young Urban Muaythai members posing with their coach" width="1080" height="933" loading="lazy">
           </div>
-          <h3>Trivia Night</h3>
-          <div class="recap-stat">
-            <span class="num">$1037</span>
-            <span class="num-label"><strong>Raised on the night</strong>Thanks to everyone who came, bought tickets, donated prizes and dug deep for our fighters.</span>
+          <div class="recap-content">
+            <div class="recap-top">
+              <span class="recap-when">Wrapped · July 2026</span>
+              <span class="recap-badge">Recap</span>
+            </div>
+            <h3>Trivia Night</h3>
+            <div class="recap-stat">
+              <span class="num">$1037</span>
+              <span class="num-label"><strong>Raised on the night</strong>Thanks to everyone who came, bought tickets, donated prizes and dug deep for our fighters.</span>
+            </div>
+            <p>A cracking night that brought the whole community together — good food, tough questions and a whole lot of support behind the Urban Muaythai fight team.</p>
+            <a class="recap-link" href="https://urbanmuaythai.github.io/Thank-You/#trivia" target="_blank" rel="noopener">See the thank-you &amp; donors</a>
           </div>
-          <p>A cracking night that brought the whole community together — good food, tough questions and a whole lot of support behind the Urban Muaythai fight team.</p>
-          <a class="recap-link" href="https://urbanmuaythai.github.io/Thank-You/#trivia" target="_blank" rel="noopener">See the thank-you &amp; donors</a>
         </article>
 
         <!-- ============================================================
