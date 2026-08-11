@@ -158,6 +158,9 @@
   .recap-media{display:grid; grid-template-columns:1fr 1fr; gap:4px; min-height:310px; background:var(--navy-900);}
   .recap-media.single{grid-template-columns:1fr;}
   .recap-media img{width:100%; height:310px; object-fit:cover; display:block;}
+  .winter-gallery{grid-template-columns:repeat(4,1fr); min-height:0;}
+  .winter-gallery img{height:420px; object-position:center top;}
+  .gallery-swipe{display:none;}
   .trivia-gallery{grid-template-columns:repeat(4,1fr); grid-template-rows:280px 280px;}
   .trivia-gallery img{height:100%;}
   .trivia-gallery img:nth-child(1){grid-column:1 / span 2; grid-row:1;}
@@ -169,6 +172,10 @@
   @media(max-width:620px){
     .recap-media{grid-template-columns:1fr; min-height:0;}
     .recap-media img{height:260px;}
+    .winter-gallery{grid-template-columns:repeat(4,minmax(260px,82vw)); grid-template-rows:400px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none;}
+    .winter-gallery::-webkit-scrollbar{display:none;}
+    .winter-gallery img{height:400px; scroll-snap-align:start;}
+    .recap .gallery-swipe{display:block; margin:0; padding:10px 22px; background:var(--navy-900); font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase;}
     .trivia-gallery{grid-template-columns:1fr 1fr; grid-template-rows:210px 280px 240px;}
     .trivia-gallery img{height:100%;}
     .trivia-gallery img:nth-child(1){grid-column:1 / span 2; grid-row:1;}
@@ -398,10 +405,13 @@
 
         <!-- ===== Winter Weapon 2026 ===== -->
         <article class="recap">
-          <div class="recap-media">
-            <img src="recent1.png" alt="Training partners enjoying a light moment in class" width="1536" height="1024" loading="lazy">
-            <img src="recent 4.png" alt="Young students practising pad work together" width="1086" height="1449" loading="lazy">
+          <div class="recap-media winter-gallery" tabindex="0" aria-label="Winter Weapon photo gallery">
+            <img src="winter-weapon-group.png" alt="Winter Weapon participants training together in beanies" width="451" height="778" loading="lazy">
+            <img src="winter-weapon-beanie-prize.png" alt="Emily and teammates celebrating the craziest training beanie prize" width="581" height="863" loading="lazy">
+            <img src="winter-weapon-cold.jpg" alt="Urban Muaythai members who kept training through the cold mornings" width="1195" height="1520" loading="lazy">
+            <img src="winter-weapon-show-up.jpg" alt="The Winter Weapon community celebrating everyone who kept showing up" width="1194" height="1518" loading="lazy">
           </div>
+          <p class="gallery-swipe" aria-hidden="true">Swipe to see more →</p>
           <div class="recap-content">
             <div class="recap-top">
               <span class="recap-when">Wrapped · 1 August 2026</span>
