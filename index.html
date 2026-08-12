@@ -211,9 +211,16 @@
   .referral-copy p:not(.referral-intro){color:var(--ink-dim); margin:0 0 16px; max-width:58ch;}
   .referral-rule{margin:24px 0; padding:18px 20px; background:var(--navy-900); border-left:3px solid var(--red-600); color:var(--ink); font-size:14.5px;}
   .referral-rule strong{color:var(--cream);}
+  .referral-rewards{margin:26px 0;}
+  .referral-rewards h3{margin:0 0 14px; font-size:20px; color:var(--cream);}
+  .reward-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px;}
+  .reward-item{padding:15px 16px; background:var(--navy-900); border:1px solid rgba(255,255,255,.08);}
+  .reward-points{display:block; margin-bottom:5px; font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red-500);}
+  .reward-name{display:block; color:var(--cream); font-weight:600; line-height:1.4;}
+  .reward-note{display:block; margin-top:5px; color:var(--ink-dim); font-size:12px; line-height:1.35;}
   .referral-cta{display:inline-block; margin-top:6px; background:var(--red-600); color:#fff; font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; padding:13px 18px; border-radius:2px; transition:background .15s,transform .15s;}
   @media(max-width:820px){.referral-card{grid-template-columns:1fr;} .referral-poster{min-height:620px;} .referral-copy{padding:36px 30px 40px;}}
-  @media(max-width:520px){.referral{padding-top:52px;} .referral-poster{min-height:480px;} .referral-poster img{padding:8px;} .referral-copy{padding:30px 22px 34px;} .referral-intro{font-size:16.5px;}}
+  @media(max-width:520px){.referral{padding-top:52px;} .referral-poster{min-height:480px;} .referral-poster img{padding:8px;} .referral-copy{padding:30px 22px 34px;} .referral-intro{font-size:16.5px;} .reward-grid{grid-template-columns:1fr;}}
   .closing{text-align:center; padding:64px 24px 24px;}
   .closing .display{font-size:clamp(28px,6vw,48px);}
   .closing .display em{font-style:normal; color:var(--red-600);}
@@ -509,6 +516,15 @@
           <p>Current Urban Muaythai members earn referral points when a friend joins and pays for our 28 Days Kickstarter Program. Build your points and unlock member rewards including drinks, gear and exclusive extras.</p>
           <div class="referral-rule"><strong>Who can refer:</strong> any current, active, paying Urban Muaythai member.</div>
           <div class="referral-rule"><strong>How a referral qualifies:</strong> your friend must sign up and pay for the 28 Days Kickstarter Program. Once their enrolment is confirmed, your referral points will be added.</div>
+          <div class="referral-rewards">
+            <h3>Referral rewards</h3>
+            <div class="reward-grid">
+              <div class="reward-item"><span class="reward-points">10 points</span><span class="reward-name">Maximus drink or Big Water</span><span class="reward-note">One item per redemption.</span></div>
+              <div class="reward-item"><span class="reward-points">20 points</span><span class="reward-name">Hand wraps or Thai oil</span><span class="reward-note">Subject to stock availability.</span></div>
+              <div class="reward-item"><span class="reward-points">30 points</span><span class="reward-name">Merch item</span><span class="reward-note">Choose from a shirt, Muay Thai shorts or groin guard. Subject to stock availability.</span></div>
+              <div class="reward-item"><span class="reward-points">50 points</span><span class="reward-name">Punch gloves or Punch leather shin guards</span><span class="reward-note">Subject to stock availability.</span></div>
+            </div>
+          </div>
           <p>Bring your friend to their first class or speak with reception so we can link the referral to your membership.</p>
           <div class="referral-cta">Refer a friend at reception</div>
         </div>
