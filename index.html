@@ -142,7 +142,10 @@
   .timeline-event-title{font-family:'Inter',sans-serif; font-size:16px; font-weight:600; color:var(--ink); margin-right:auto;}
   .timeline-event.flagship .timeline-event-title{color:var(--cream); font-size:18px;}
   .timeline-event-note{font-family:'Inter',sans-serif; font-size:13px; font-style:italic; color:var(--ink-dim); width:100%; margin-left:138px;}
-  @media (max-width:600px){.timeline-event{padding-left:24px;} .timeline-event-date{min-width:100%; order:-1;} .timeline-event-note{margin-left:0;} .timeline-event::before{top:20px;}}
+  .timeline-event-image{width:180px; height:120px; object-fit:cover; border-radius:8px; border:1px solid rgba(255,255,255,.12); flex-shrink:0; box-shadow:0 8px 24px rgba(0,0,0,.22);}
+  .timeline-event.has-image .timeline-event-note{margin-left:334px;}
+  @media (max-width:760px){.timeline-event.has-image .timeline-event-image{width:140px; height:93px;} .timeline-event.has-image .timeline-event-note{margin-left:0;}}
+  @media (max-width:600px){.timeline-event{padding-left:24px;} .timeline-event-date{min-width:100%; order:-1;} .timeline-event-note{margin-left:0;} .timeline-event::before{top:20px;} .timeline-event.has-image .timeline-event-image{width:100%; height:auto; aspect-ratio:3/2;}}
 
   .ongoing-card{margin-top:40px; background:var(--navy-800); border:1px solid rgba(255,255,255,0.08); border-left:3px solid var(--gold); border-radius:var(--radius); padding:26px 26px 24px;}
   .ongoing-label{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--gold); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:10px;}
@@ -338,7 +341,7 @@
         </article>
 
         <article class="event" id="teens-blue-grading">
-          <figure class="event-media"><img src="blue grading.png" alt="Teen Urban Muaythai students celebrating their grading progress together" width="1536" height="1024" loading="lazy"></figure>
+          <figure class="event-media"><img src="teens-blue-grading.png" alt="Teen Urban Muaythai students lined up for Blue Grading training" width="1536" height="1024" loading="lazy"></figure>
           <div class="event-body">
             <div class="event-top">
               <span class="event-when">Monday · 31 August</span>
@@ -371,18 +374,18 @@
             <div class="timeline-event"><span class="timeline-event-date">Fri 21 Aug</span><span class="timeline-event-title">Spar, Slices &amp; Suds</span><span class="event-tag tag-social">Social</span></div>
             <div class="timeline-event flagship"><span class="timeline-event-date">Sat 22 Aug</span><span class="timeline-event-title">Adult Blue Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
             <div class="timeline-event fight"><span class="timeline-event-date">Sat 29 Aug</span><span class="timeline-event-title">Destiny Fight Show</span><span class="event-tag tag-fight">Fight Show</span></div>
-            <div class="timeline-event flagship"><span class="timeline-event-date">Mon 31 Aug</span><span class="timeline-event-title">Teens Blue Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
+            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="teens-blue-grading.png" alt="Teen Urban Muaythai students lined up for Blue Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Mon 31 Aug</span><span class="timeline-event-title">Teens Blue Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
           </div>
         </div>
 
         <div class="timeline-month">
           <div class="timeline-month-label">September</div>
           <div class="timeline-list">
-            <div class="timeline-event flagship"><span class="timeline-event-date">Tue 1 Sep</span><span class="timeline-event-title">Kids Blue Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
-            <div class="timeline-event flagship"><span class="timeline-event-date">Wed 2 Sep</span><span class="timeline-event-title">Teens Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
-            <div class="timeline-event flagship"><span class="timeline-event-date">Thu 3 Sep</span><span class="timeline-event-title">Kids Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
+            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="kids-blue-grading.png" alt="Young Urban Muaythai students lined up for Kids Blue Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Tue 1 Sep</span><span class="timeline-event-title">Kids Blue Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
+            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="teens-yellow-grading.png" alt="Teen Urban Muaythai students lined up for Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Wed 2 Sep</span><span class="timeline-event-title">Teens Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
+            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="kids-yellow-grading.png" alt="Young Urban Muaythai students lined up for Kids Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Thu 3 Sep</span><span class="timeline-event-title">Kids Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
             <div class="timeline-event"><span class="timeline-event-date">Fri 4 Sep</span><span class="timeline-event-title">Learn to Spar Workshop</span><span class="event-tag tag-train">Workshop</span></div>
-            <div class="timeline-event flagship"><span class="timeline-event-date">Sat 12 Sep</span><span class="timeline-event-title">Adult Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
+            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="adult-yellow-grading.png" alt="Adult Urban Muaythai students lined up for Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Sat 12 Sep</span><span class="timeline-event-title">Adult Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
             <div class="timeline-event"><span class="timeline-event-date">Fri 18 Sep</span><span class="timeline-event-title">Clinch Workshop</span><span class="event-tag tag-train">Workshop</span></div>
             <div class="timeline-event flagship"><span class="timeline-event-date">Sat 26 Sep</span><span class="timeline-event-title">Thai Temple Day</span><span class="event-tag tag-flagship">Experience</span><span class="timeline-event-note">Planned — details to be confirmed.</span></div>
           </div>
