@@ -81,6 +81,9 @@
   .events{display:flex; flex-direction:column; gap:30px; margin-top:44px;}
   .event{background:var(--navy-800); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius); position:relative; overflow:hidden; display:grid; grid-template-columns:minmax(260px,0.78fr) minmax(0,1.22fr); min-height:360px;}
   .event::before{content:''; position:absolute; top:0; left:0; right:0; height:4px; background:var(--red-600);}
+  .event.next{border-color:rgba(201,162,39,.45); box-shadow:0 18px 52px rgba(0,0,0,.24),0 0 0 1px rgba(201,162,39,.08);}
+  .event.next::before{background:linear-gradient(90deg,var(--gold),var(--red-600));}
+  .next-up{display:inline-block; margin-bottom:14px; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--gold);}
   .event.fight::before{background:linear-gradient(90deg,var(--red-600),var(--red-700));}
   .event-top{display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:8px;}
   .event-when{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--gold); letter-spacing:0.06em; text-transform:uppercase;}
@@ -168,6 +171,9 @@
   .trivia-gallery img:nth-child(3){grid-column:4; grid-row:1;}
   .trivia-gallery img:nth-child(4){grid-column:1 / span 2; grid-row:2;}
   .trivia-gallery img:nth-child(5){grid-column:4; grid-row:2;}
+  .pad-flow-gallery img{height:500px; object-position:center;}
+  .ufc-gallery{grid-template-columns:repeat(3,1fr); grid-template-rows:260px 260px;}
+  .ufc-gallery img{height:100%;}
   .recap-content{padding:30px 30px 28px;}
   @media(max-width:620px){
     .recap-media{grid-template-columns:1fr; min-height:0;}
@@ -183,6 +189,8 @@
     .trivia-gallery img:nth-child(3){grid-column:2; grid-row:2;}
     .trivia-gallery img:nth-child(4){grid-column:1; grid-row:3;}
     .trivia-gallery img:nth-child(5){grid-column:2; grid-row:3;}
+    .pad-flow-gallery img{height:auto; min-height:280px;}
+    .ufc-gallery{grid-template-columns:repeat(2,1fr); grid-template-rows:repeat(3,220px);}
     .recap-content{padding:26px 22px 24px;}
   }
   .recap-stat{display:flex; align-items:center; gap:22px; flex-wrap:wrap; margin:6px 0 16px;}
@@ -196,6 +204,7 @@
   .recap-link{display:inline-block; margin-top:16px; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--red-600); text-decoration:none; border-bottom:1px solid transparent; transition:border-color .15s;}
   .recap-link:hover{border-color:var(--red-600);}
   .recap-link::after{content:' →';}
+  button.recap-link{padding:0; background:none; border:0; border-bottom:1px solid transparent; cursor:pointer;}
   .recap-empty{color:var(--ink-dim); font-size:14.5px; border:1px dashed rgba(255,255,255,0.14); border-radius:var(--radius); padding:20px; text-align:center;}
 
   /* ---------- referral + closing + footer ---------- */
@@ -277,33 +286,13 @@
         <span class="section-num">AUG '26</span>
         <h2>August —<br>this month.</h2>
       </div>
-      <p class="section-lede">Four big ones this month. Mark the calendar, grab a partner, and chat to the front desk to lock in your spot.</p>
+      <p class="section-lede">Next up: Spar, Slices &amp; Suds this Friday. Three August events are still to come — mark the calendar and chat to reception to lock in your spot.</p>
 
       <div class="events">
-        <article class="event train" id="pad-flow">
-          <figure class="event-media"><img src="recent2.png" alt="A student and coach working together on pads" width="1536" height="1024" loading="lazy"></figure>
-          <div class="event-body">
-            <div class="event-top">
-              <span class="event-when">Saturday · 15 August <span class="time">· 8:00 AM</span></span>
-              <span class="event-tag tag-train">Workshop</span>
-            </div>
-            <h3>Pad Flow Workshop</h3>
-            <p>Our Pad Flow Workshop is built for anyone who struggles with calling freestyle pads — but it's open to everybody, regardless of experience. It's a partner-based class focused on developing smooth, effective pad holding and striking.</p>
-            <div class="event-list-label">In this session you'll learn to</div>
-            <ul class="event-list">
-              <li>Link combinations together naturally</li>
-              <li>Call and flow combinations effectively</li>
-              <li>Transition between all eight weapons of Muay Thai</li>
-              <li>Improve timing, communication and fight IQ</li>
-              <li>Build confidence as both a striker and a pad holder</li>
-            </ul>
-            <p style="margin-top:20px;">Whether you're new to pad holding or looking to sharpen up, this workshop will make you a more complete training partner.</p>
-          </div>
-        </article>
-
-        <article class="event social" id="spar-social">
+        <article class="event social next" id="spar-social">
           <figure class="event-media"><img src="recent 3.png" alt="Urban Muaythai members smiling together between sparring rounds" width="1402" height="1122" loading="lazy"></figure>
           <div class="event-body">
+            <span class="next-up">Next event</span>
             <div class="event-top">
               <span class="event-when">Friday · 21 August <span class="time">· 4:30 PM – 6:00 PM</span></span>
               <span class="event-tag tag-social">Social</span>
@@ -318,6 +307,7 @@
               <li>A fun, relaxed social atmosphere</li>
               <li>Meet new teammates and enjoy time with the community</li>
             </ul>
+            <button class="recap-link tab-jump" type="button" data-tab="tab-recaps" data-focus="ufc-social">See our previous social recaps</button>
           </div>
         </article>
 
@@ -424,6 +414,27 @@
 
       <div class="recaps">
 
+        <!-- ===== Pad Flow Workshop ===== -->
+        <article class="recap" id="pad-flow-recap">
+          <div class="recap-media single pad-flow-gallery">
+            <img src="pad-flow-workshop-recap.png" alt="The Urban Army together after the Pad Flow Workshop" width="472" height="366" loading="lazy">
+          </div>
+          <div class="recap-content">
+            <div class="recap-top">
+              <span class="recap-when">Wrapped · 15 August 2026</span>
+              <span class="recap-badge">Workshop recap</span>
+            </div>
+            <h3>Pad Flow Workshop</h3>
+            <p>The Urban Army turned out for a focused morning of better pad holding, smoother combinations and sharper communication. Members worked with their training partners to call freestyle pads with more confidence and flow through all eight weapons of Muay Thai.</p>
+            <ul class="recap-highlights">
+              <li>Combinations linked together more naturally</li>
+              <li>Stronger timing between strikers and pad holders</li>
+              <li>Smoother transitions across all eight weapons</li>
+              <li>More confident, complete training partners</li>
+            </ul>
+          </div>
+        </article>
+
         <!-- ===== Winter Weapon 2026 ===== -->
         <article class="recap">
           <div class="recap-media winter-gallery" tabindex="0" aria-label="Winter Weapon photo gallery">
@@ -447,6 +458,32 @@
               <li>Rewards have been ordered — we'll reach out once they arrive</li>
             </ul>
             <a class="recap-link" href="https://urbanmuaythai.github.io/Thank-You/#winter-weapon" target="_blank" rel="noopener">Read the full wrap-up</a>
+          </div>
+        </article>
+
+        <!-- ===== UFC Social Day ===== -->
+        <article class="recap" id="ufc-social">
+          <div class="recap-media ufc-gallery" aria-label="UFC Social Day photo gallery">
+            <img src="ufc-social-group-table.jpg" alt="Urban Muaythai members gathered around a table at UFC Social Day" width="1080" height="813" loading="lazy">
+            <img src="ufc-social-friends.jpg" alt="Friends enjoying food and drinks during UFC Social Day" width="1080" height="813" loading="lazy">
+            <img src="ufc-social-young-members.jpg" alt="Young Urban Muaythai members smiling together at the UFC social" width="1080" height="813" loading="lazy">
+            <img src="ufc-social-women.jpg" alt="Three friends celebrating together at UFC Social Day" width="1080" height="813" loading="lazy">
+            <img src="ufc-social-men.jpg" alt="Urban Muaythai teammates watching the UFC together" width="1080" height="811" loading="lazy">
+            <img src="ufc-social-team.jpg" alt="Another group of Urban Muaythai members at the UFC watch party" width="1080" height="813" loading="lazy">
+          </div>
+          <div class="recap-content">
+            <div class="recap-top">
+              <span class="recap-when">Wrapped · 12 July 2026</span>
+              <span class="recap-badge">Social recap</span>
+            </div>
+            <h3>UFC Social Day</h3>
+            <p>We swapped the mats for a relaxed UFC watch party and a chance to catch up away from training. Great fights, good food and plenty of laughs made it another strong day out for the Urban Muaythai community.</p>
+            <ul class="recap-highlights">
+              <li>The Urban Army watched the action together</li>
+              <li>Members, friends and families joined the day</li>
+              <li>Plenty of food, drinks and team photos</li>
+              <li>A relaxed social catch-up beyond the gym</li>
+            </ul>
           </div>
         </article>
 
@@ -585,6 +622,17 @@
       if(e.key === 'ArrowRight') idx = (i+1) % tabs.length;
       if(e.key === 'ArrowLeft')  idx = (i-1+tabs.length) % tabs.length;
       if(idx !== null){ e.preventDefault(); tabs[idx].focus(); activate(tabs[idx].id, false); }
+    });
+  });
+  Array.prototype.slice.call(document.querySelectorAll('.tab-jump')).forEach(function(link){
+    link.addEventListener('click', function(){
+      var tabId = link.getAttribute('data-tab');
+      var focusId = link.getAttribute('data-focus');
+      activate(tabId, false);
+      window.setTimeout(function(){
+        var target = focusId ? document.getElementById(focusId) : document.getElementById(panels[tabId]);
+        if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+      }, 50);
     });
   });
   // open correct tab from hash on load (e.g. link #calendar or #recaps from an email)
