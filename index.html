@@ -171,7 +171,9 @@
   .trivia-gallery img:nth-child(3){grid-column:4; grid-row:1;}
   .trivia-gallery img:nth-child(4){grid-column:1 / span 2; grid-row:2;}
   .trivia-gallery img:nth-child(5){grid-column:4; grid-row:2;}
-  .pad-flow-gallery img{height:500px; object-position:center;}
+  .pad-flow-gallery{grid-template-columns:1.2fr 1fr; grid-template-rows:250px 250px;}
+  .pad-flow-gallery img{height:100%; object-position:center;}
+  .pad-flow-gallery img:first-child{grid-row:1 / span 2;}
   .ufc-gallery{grid-template-columns:repeat(3,1fr); grid-template-rows:260px 260px;}
   .ufc-gallery img{height:100%;}
   .recap-content{padding:30px 30px 28px;}
@@ -189,7 +191,9 @@
     .trivia-gallery img:nth-child(3){grid-column:2; grid-row:2;}
     .trivia-gallery img:nth-child(4){grid-column:1; grid-row:3;}
     .trivia-gallery img:nth-child(5){grid-column:2; grid-row:3;}
-    .pad-flow-gallery img{height:auto; min-height:280px;}
+    .pad-flow-gallery{grid-template-columns:1fr; grid-template-rows:240px 240px 240px;}
+    .pad-flow-gallery img{height:100%; min-height:0;}
+    .pad-flow-gallery img:first-child{grid-row:auto;}
     .ufc-gallery{grid-template-columns:repeat(2,1fr); grid-template-rows:repeat(3,220px);}
     .recap-content{padding:26px 22px 24px;}
   }
@@ -416,8 +420,10 @@
 
         <!-- ===== Pad Flow Workshop ===== -->
         <article class="recap" id="pad-flow-recap">
-          <div class="recap-media single pad-flow-gallery">
+          <div class="recap-media pad-flow-gallery" aria-label="Pad Flow Workshop photo gallery">
             <img src="pad-flow-workshop-recap.png" alt="The Urban Army together after the Pad Flow Workshop" width="472" height="366" loading="lazy">
+            <img src="recent1.png" alt="Two Pad Flow Workshop partners smiling together between combinations" width="1536" height="1024" loading="lazy">
+            <img src="recent2.png" alt="A striker and pad holder practising combinations during the Pad Flow Workshop" width="1536" height="1024" loading="lazy">
           </div>
           <div class="recap-content">
             <div class="recap-top">
