@@ -97,6 +97,11 @@
   .event-media.poster,.event-media.portrait{min-height:520px; background:#070707;}
   .event-media.poster::after,.event-media.portrait::after{display:none;}
   .event-media.poster img,.event-media.portrait img{object-fit:contain; object-position:center; padding:10px; background:#070707;}
+  .event.fight-showcase{grid-template-columns:1fr;}
+  .poster-pair{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px; min-height:680px; background:#070707;}
+  .poster-pair::after{display:none;}
+  .poster-pair img{position:static; width:100%; height:680px; object-fit:contain; object-position:center; padding:10px; background:#070707;}
+  .event.fight-showcase .event-body{padding:34px 30px 32px;}
   .event-body{padding:30px 30px 28px; align-self:center;}
   @media(min-width:860px){
     .event:nth-child(even){grid-template-columns:minmax(0,1.22fr) minmax(260px,0.78fr);}
@@ -109,7 +114,11 @@
     .event-media.poster,.event-media.portrait{min-height:480px;}
     .event-media::after{background:linear-gradient(0deg,rgba(27,31,59,.48),transparent 55%);}
   }
-  @media(max-width:520px){.event-media{min-height:235px;} .event-media.poster,.event-media.portrait{min-height:430px;} .event-body{padding:26px 22px 24px;}}
+  @media(max-width:700px){
+    .poster-pair{grid-template-columns:1fr; min-height:0;}
+    .poster-pair img{height:auto; max-height:none;}
+  }
+  @media(max-width:520px){.event-media{min-height:235px;} .event-media.poster,.event-media.portrait{min-height:430px;} .poster-pair{min-height:0;} .event-body{padding:26px 22px 24px;}}
   .event-list-label{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-dim); margin:22px 0 12px;}
   .event-list{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
   @media(min-width:720px){.event-list{grid-template-columns:1fr 1fr; gap:10px 32px;}}
@@ -296,8 +305,11 @@
       <p class="section-lede">Next up: Destiny Fight Show this Saturday. Get behind the fight team, then finish the month with Teens Blue Grading.</p>
 
       <div class="events">
-        <article class="event fight next" id="destiny">
-          <figure class="event-media poster"><img src="destiny-fight-ettridge.jpg" alt="Destiny Muaythai XXXII poster for Ettridge versus Crittenden on 29 August 2026" width="1080" height="1350" loading="lazy"></figure>
+        <article class="event fight next fight-showcase" id="destiny">
+          <figure class="event-media poster-pair" aria-label="Destiny Fight Show posters for Urban Muaythai fighters">
+            <img src="destiny-fight-ettridge.jpg" alt="Destiny Muaythai XXXII poster for Ettridge versus Crittenden on 29 August 2026" width="1080" height="1350" loading="lazy">
+            <img src="destiny-chelsea-vs-houston.jpg" alt="Destiny Muaythai XXXII poster for Chelsea versus Houston on 29 August 2026" width="1241" height="1408" loading="lazy">
+          </figure>
           <div class="event-body">
             <span class="next-up">Next event</span>
             <div class="event-top">
@@ -305,7 +317,7 @@
               <span class="event-tag tag-fight">Fight Show</span>
             </div>
             <h3>Destiny Fight Show</h3>
-            <p>Support the Urban Muay Thai fight team at the Destiny Fight Show, featuring Ettridge vs Crittenden for the Destiny Pro Light Heavyweight Title! We'd love to see the Urban Army out in force, backing our fighters as they step up under the lights.</p>
+            <p>Support both Urban Muaythai fighters at the Destiny Fight Show! Ettridge takes on Crittenden for the Destiny Pro Light Heavyweight Title, while Chelsea steps into the ring against Houston. We'd love to see the Urban Army out in force, backing both fighters as they step up under the lights.</p>
             <div class="pickup-note"><strong>Tickets have arrived:</strong> grab yours at reception. Visit reception for more information. <strong>Cash only.</strong></div>
           </div>
         </article>
@@ -343,7 +355,7 @@
             <div class="timeline-event"><span class="timeline-event-date">Sat 15 Aug</span><span class="timeline-event-title">Pad Flow Workshop</span><span class="event-tag tag-train">Workshop</span></div>
             <div class="timeline-event"><span class="timeline-event-date">Fri 21 Aug</span><span class="timeline-event-title">Spar, Slices &amp; Suds</span><span class="event-tag tag-social">Social</span></div>
             <div class="timeline-event flagship"><span class="timeline-event-date">Sat 22 Aug</span><span class="timeline-event-title">Adult Blue Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
-            <div class="timeline-event fight"><span class="timeline-event-date">Sat 29 Aug</span><span class="timeline-event-title">Destiny Fight Show</span><span class="event-tag tag-fight">Fight Show</span><span class="timeline-event-note">Ettridge vs Crittenden · Destiny Pro Light Heavyweight Title.</span></div>
+            <div class="timeline-event fight"><span class="timeline-event-date">Sat 29 Aug</span><span class="timeline-event-title">Destiny Fight Show</span><span class="event-tag tag-fight">Fight Show</span><span class="timeline-event-note">Ettridge vs Crittenden for the Destiny Pro Light Heavyweight Title · Chelsea vs Houston.</span></div>
             <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="teens-blue-grading.png" alt="Teen Urban Muaythai students lined up for Blue Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Mon 31 Aug</span><span class="timeline-event-title">Teens Blue Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
           </div>
         </div>
