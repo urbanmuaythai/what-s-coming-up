@@ -175,6 +175,9 @@
   .trivia-gallery img:nth-child(4){grid-column:1 / span 2; grid-row:2;}
   .trivia-gallery img:nth-child(5){grid-column:4; grid-row:2;}
   .pad-flow-feature img{height:auto; max-height:760px; object-fit:contain; background:#050505;}
+  .grading-recap img{height:520px; object-fit:contain; background:#050505;}
+  .spar-recap-gallery{grid-template-columns:repeat(3,1fr); min-height:0;}
+  .spar-recap-gallery img{height:300px;}
   .ufc-gallery{grid-template-columns:repeat(3,1fr); grid-template-rows:260px 260px;}
   .ufc-gallery img{height:100%;}
   .recap-content{padding:30px 30px 28px;}
@@ -193,6 +196,9 @@
     .trivia-gallery img:nth-child(4){grid-column:1; grid-row:3;}
     .trivia-gallery img:nth-child(5){grid-column:2; grid-row:3;}
     .pad-flow-feature img{height:auto; min-height:0;}
+    .grading-recap img{height:auto; max-height:520px;}
+    .spar-recap-gallery{grid-template-columns:1fr;}
+    .spar-recap-gallery img{height:260px;}
     .ufc-gallery{grid-template-columns:repeat(2,1fr); grid-template-rows:repeat(3,220px);}
     .recap-content{padding:26px 22px 24px;}
   }
@@ -289,47 +295,13 @@
         <span class="section-num">AUG '26</span>
         <h2>August —<br>this month.</h2>
       </div>
-      <p class="section-lede">Next up: Spar, Slices &amp; Suds this Friday. Four August events are still to come — mark the calendar and chat to reception to lock in your spot.</p>
+      <p class="section-lede">Next up: Destiny Fight Show this Saturday. Get behind the fight team, then finish the month with Teens Blue Grading.</p>
 
       <div class="events">
-        <article class="event social next" id="spar-social">
-          <figure class="event-media"><img src="recent 3.png" alt="Urban Muaythai members smiling together between sparring rounds" width="1402" height="1122" loading="lazy"></figure>
-          <div class="event-body">
-            <span class="next-up">Next event</span>
-            <div class="event-top">
-              <span class="event-when">Friday · 21 August <span class="time">· 4:30 PM – 6:00 PM</span></span>
-              <span class="event-tag tag-social">Social</span>
-            </div>
-            <h3>Spar, Slices &amp; Suds</h3>
-            <p>Our in-club sparring and social event! The sparring session is open to teens and adults of all experience levels. After training, stick around to relax with your teammates, enjoy some pizza and get to know everyone around the club.</p>
-            <div class="event-list-label">What to expect</div>
-            <ul class="event-list">
-              <li>In-club sparring for teens and adults of all experience levels</li>
-              <li>Pizza provided</li>
-              <li>BYO drinks</li>
-              <li>A fun, relaxed social atmosphere</li>
-              <li>Meet new teammates and enjoy time with the community</li>
-            </ul>
-            <button class="recap-link tab-jump" type="button" data-tab="tab-recaps" data-focus="ufc-social">See our previous social recaps</button>
-          </div>
-        </article>
-
-        <article class="event" id="blue-grading">
-          <figure class="event-media portrait"><img src="adult-blue-grading.jpg?v=2" alt="Adult Blue Grading participants and coaches together in the Urban Muaythai ring" width="1440" height="1920" loading="lazy"></figure>
-          <div class="event-body">
-            <div class="event-top">
-              <span class="event-when">Saturday · 22 August <span class="time">· 9:15 AM</span></span>
-              <span class="event-tag tag-flagship">Grading</span>
-            </div>
-            <h3>Adult Blue Grading</h3>
-            <p>Our next adult blue grading — a chance to step up, show what you've been drilling and earn that next level.</p>
-            <div class="pickup-note"><strong>Invites have been sent:</strong> please RSVP using the link in your email.</div>
-          </div>
-        </article>
-
-        <article class="event fight" id="destiny">
+        <article class="event fight next" id="destiny">
           <figure class="event-media poster"><img src="destiny-fight-ettridge.jpg" alt="Destiny Muaythai XXXII poster for Ettridge versus Crittenden on 29 August 2026" width="1080" height="1350" loading="lazy"></figure>
           <div class="event-body">
+            <span class="next-up">Next event</span>
             <div class="event-top">
               <span class="event-when">Saturday · 29 August</span>
               <span class="event-tag tag-fight">Fight Show</span>
@@ -434,6 +406,38 @@
       <p class="section-lede">Missed one, or want to relive it? Here's how the Urban Army's recent events went down.</p>
 
       <div class="recaps">
+
+        <!-- ===== Adult Blue Grading ===== -->
+        <article class="recap" id="adult-blue-grading-recap">
+          <div class="recap-media single grading-recap">
+            <img src="adult-blue-grading.jpg?v=2" alt="Adult Blue Grading participants and coaches together in the Urban Muaythai ring" width="1440" height="1920" loading="lazy">
+          </div>
+          <div class="recap-content">
+            <div class="recap-top">
+              <span class="recap-when">Wrapped · 22 August 2026</span>
+              <span class="recap-badge">Grading recap</span>
+            </div>
+            <h3>Adult Blue Grading</h3>
+            <p>Adult Blue Grading is wrapped. The group stepped up to demonstrate the technique, composure and consistency they have been building in training. A strong morning of focused work from everyone who took part.</p>
+          </div>
+        </article>
+
+        <!-- ===== Spar, Slices & Suds ===== -->
+        <article class="recap" id="spar-social-recap">
+          <div class="recap-media spar-recap-gallery" aria-label="Spar, Slices and Suds photo gallery">
+            <img src="recent1.png" alt="Urban Muaythai members enjoying relaxed rounds together at Spar, Slices and Suds" width="1536" height="1024" loading="lazy">
+            <img src="recent2.png" alt="Urban Muaythai members working together during the sparring session" width="1536" height="1024" loading="lazy">
+            <img src="recent 3.png" alt="Urban Muaythai teammates sharing a laugh between rounds" width="1402" height="1122" loading="lazy">
+          </div>
+          <div class="recap-content">
+            <div class="recap-top">
+              <span class="recap-when">Wrapped · 21 August 2026</span>
+              <span class="recap-badge">Social recap</span>
+            </div>
+            <h3>Spar, Slices &amp; Suds</h3>
+            <p>Spar, Slices &amp; Suds brought teens and adults together for relaxed rounds on the mats, followed by pizza and a team catch-up. Thanks to everyone who trained, supported and stayed for the social.</p>
+          </div>
+        </article>
 
         <!-- ===== Pad Flow Workshop ===== -->
         <article class="recap" id="pad-flow-recap">
