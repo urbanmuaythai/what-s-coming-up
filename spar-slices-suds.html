@@ -46,11 +46,16 @@
   .section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:34px;}
   h2{font-size:clamp(44px,7vw,72px); color:var(--cream);}
   .section-note{max-width:410px; margin:0; color:var(--ink-dim); font-size:14px;}
-  .gallery{columns:3 280px; column-gap:16px;}
-  .gallery figure{position:relative; margin:0 0 16px; break-inside:avoid; overflow:hidden; background:var(--navy-800); border:1px solid rgba(255,255,255,.1); border-radius:4px;}
-  .gallery figure::after{content:''; position:absolute; inset:0; pointer-events:none; box-shadow:inset 0 0 0 1px rgba(255,255,255,.03);}
-  .gallery img{width:100%; height:auto; transition:transform .35s ease,filter .35s ease; filter:saturate(.93) contrast(1.03);}
-  .gallery figure:hover img{transform:scale(1.015); filter:saturate(1) contrast(1.03);}
+  .gallery{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:38px 20px; padding:18px 10px 28px;}
+  .gallery figure{position:relative; margin:0; padding:12px 12px 42px; background:#f4f0e6; border:1px solid rgba(10,12,23,.14); border-radius:2px; box-shadow:0 14px 34px rgba(0,0,0,.28); transition:transform .28s ease,box-shadow .28s ease;}
+  .gallery figure:nth-child(4n+1){transform:rotate(-1.7deg);}
+  .gallery figure:nth-child(4n+2){transform:rotate(1.3deg) translateY(-5px);}
+  .gallery figure:nth-child(4n+3){transform:rotate(-.7deg) translateY(4px);}
+  .gallery figure:nth-child(4n){transform:rotate(1.8deg) translateY(-2px);}
+  .gallery figure:hover{transform:rotate(0) translateY(-7px); box-shadow:0 22px 44px rgba(0,0,0,.36); z-index:2;}
+  .gallery img{width:100%; height:auto; margin-top:52px; border:1px solid rgba(10,12,23,.14); background:#d8d4ca; transition:filter .28s ease; filter:saturate(.93) contrast(1.03);}
+  .gallery figure:hover img{filter:saturate(1) contrast(1.03);}
+  .gallery figcaption{position:absolute; left:14px; bottom:13px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.06em; color:var(--red);}
   .closing{padding:62px 0 72px; border-top:1px solid rgba(255,255,255,.07); text-align:center; background:var(--navy-900);}
   .closing h2 em{color:var(--red); font-style:normal;}
   .closing p{margin:16px 0 0; color:var(--ink-dim);}
@@ -61,13 +66,18 @@
     .section-head{display:block;}
     .section-note{margin-top:14px;}
   }
+  @media(max-width:940px){
+    .gallery{grid-template-columns:repeat(2,minmax(0,1fr)); gap:34px 22px;}
+  }
   @media(max-width:520px){
     .wrap{width:min(100% - 32px,1180px);}
     .nav-inner{min-height:54px;}
     .hero-inner{padding:46px 0 50px;}
     .logo-card{padding:16px;}
     .gallery-section{padding:54px 0 64px;}
-    .gallery{columns:1;}
+    .gallery{grid-template-columns:1fr; gap:32px; padding-inline:6px;}
+    .gallery figure{padding:10px 10px 40px;}
+    .gallery img{margin-top:38px;}
   }
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;} *{transition:none !important;}}
 </style>
@@ -103,15 +113,15 @@
       <p class="section-note">Friends caught up, new connections were made and the big question was already being asked: when is the next one? Spar, Slices &amp; Suds will return!</p>
     </div>
     <div class="gallery" aria-label="Spar, Slices and Suds photo gallery">
-      <figure><img src="spar-suds-slices-01.jpg" alt="Urban Muaythai members sparring together on the gym floor" width="3024" height="4032" loading="lazy"></figure>
-      <figure><img src="spar-suds-slices-02.jpg" alt="A smiling Urban Muaythai member ready for another sparring round" width="3024" height="4032" loading="lazy"></figure>
-      <figure><img src="spar-suds-slices-03.jpg" alt="Urban Muaythai members sparring while a teammate watches" width="3024" height="4032" loading="lazy"></figure>
-      <figure><img src="spar-suds-slices-04.jpg" alt="Two Urban Muaythai members posing in sparring gear between rounds" width="3024" height="4032" loading="lazy"></figure>
-      <figure><img src="spar-suds-slices-05.jpg" alt="Urban Muaythai teammates catching their breath after sparring" width="3024" height="4032" loading="lazy"></figure>
-      <figure><img src="spar-suds-slices-06.jpg" alt="A young Urban Muaythai member resting with sparring gear" width="3024" height="4032" loading="lazy"></figure>
-      <figure><img src="spar-suds-slices-07.jpg" alt="Two teammates smiling together after training" width="3024" height="4032" loading="lazy"></figure>
-      <figure><img src="spar-suds-slices-08.jpg" alt="Urban Muaythai members sharing pizza after the sparring session" width="3024" height="4032" loading="lazy"></figure>
-      <figure><img src="spar-suds-slices-09.jpg" alt="A group of Urban Muaythai teammates relaxing together after training" width="3024" height="4032" loading="lazy"></figure>
+      <figure><img src="spar-suds-slices-01.jpg" alt="Urban Muaythai members sparring together on the gym floor" width="3024" height="4032" loading="lazy"><figcaption>2026/08/21</figcaption></figure>
+      <figure><img src="spar-suds-slices-02.jpg" alt="A smiling Urban Muaythai member ready for another sparring round" width="3024" height="4032" loading="lazy"><figcaption>2026/08/21</figcaption></figure>
+      <figure><img src="spar-suds-slices-03.jpg" alt="Urban Muaythai members sparring while a teammate watches" width="3024" height="4032" loading="lazy"><figcaption>2026/08/21</figcaption></figure>
+      <figure><img src="spar-suds-slices-04.jpg" alt="Two Urban Muaythai members posing in sparring gear between rounds" width="3024" height="4032" loading="lazy"><figcaption>2026/08/21</figcaption></figure>
+      <figure><img src="spar-suds-slices-05.jpg" alt="Urban Muaythai teammates catching their breath after sparring" width="3024" height="4032" loading="lazy"><figcaption>2026/08/21</figcaption></figure>
+      <figure><img src="spar-suds-slices-06.jpg" alt="A young Urban Muaythai member resting with sparring gear" width="3024" height="4032" loading="lazy"><figcaption>2026/08/21</figcaption></figure>
+      <figure><img src="spar-suds-slices-07.jpg" alt="Two teammates smiling together after training" width="3024" height="4032" loading="lazy"><figcaption>2026/08/21</figcaption></figure>
+      <figure><img src="spar-suds-slices-08.jpg" alt="Urban Muaythai members sharing pizza after the sparring session" width="3024" height="4032" loading="lazy"><figcaption>2026/08/21</figcaption></figure>
+      <figure><img src="spar-suds-slices-09.jpg" alt="A group of Urban Muaythai teammates relaxing together after training" width="3024" height="4032" loading="lazy"><figcaption>2026/08/21</figcaption></figure>
     </div>
   </div>
 </main>
