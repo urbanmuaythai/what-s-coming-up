@@ -69,8 +69,8 @@
     .shot.wide{grid-column:span 8}
     .shot img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease,filter .45s ease}
     .shot:hover img{transform:scale(1.025);filter:brightness(1.08)}
-    .shot figcaption{position:absolute;left:10px;bottom:8px;padding:5px 7px;background:rgba(8,9,20,.75);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#d7d1c5;opacity:0;transition:opacity .2s}
-    .shot:hover figcaption{opacity:1}
+    .shot figcaption,.chelsea-shot figcaption{position:absolute;left:10px;bottom:8px;padding:5px 7px;background:rgba(8,9,20,.75);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#d7d1c5;opacity:0;transition:opacity .2s}
+    .shot:hover figcaption,.chelsea-shot:hover figcaption{opacity:1}
     .closing{padding:54px 0 80px;border-top:1px solid var(--line);text-align:center}
     .closing h2{font-size:clamp(52px,7vw,88px)}
     .closing p{max-width:680px;margin:18px auto;color:var(--muted);font-size:17px}
@@ -79,7 +79,7 @@
     footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:42px}.posters{max-width:650px;margin:auto}.story-grid,.reflection-card,.mitch-intro{grid-template-columns:1fr;gap:24px}.shot,.shot.wide,.chelsea-shot,.chelsea-shot.feature{grid-column:span 6}.gallery-head{align-items:start;flex-direction:column}.gallery-head .credit{text-align:left}}
     @media(max-width:680px){.mitch-media{grid-template-columns:1fr}.mitch-media figure{min-height:0}.mitch-media video,.mitch-media img{height:auto;max-height:none}}
-    @media(max-width:560px){.wrap{width:min(100% - 24px,var(--max))}.hero{padding:48px 0 60px}.posters{gap:8px}.posters img:first-child{transform:rotate(-2deg) translateY(8px)}.story{padding-top:62px}.fight-reflection{padding-top:30px}.reflection-card,.mitch-card{padding:28px 22px}.gallery,.chelsea-gallery{gap:9px}.shot,.shot.wide,.chelsea-shot,.chelsea-shot.feature{grid-column:1/-1}.shot figcaption{opacity:1}.topbar-inner{min-height:56px}.back{font-size:9px}}
+    @media(max-width:560px){.wrap{width:min(100% - 24px,var(--max))}.hero{padding:48px 0 60px}.posters{gap:8px}.posters img:first-child{transform:rotate(-2deg) translateY(8px)}.story{padding-top:62px}.fight-reflection{padding-top:30px}.reflection-card,.mitch-card{padding:28px 22px}.gallery,.chelsea-gallery{gap:9px}.shot,.shot.wide,.chelsea-shot,.chelsea-shot.feature{grid-column:1/-1}.shot figcaption,.chelsea-shot figcaption{opacity:1}.topbar-inner{min-height:56px}.back{font-size:9px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.shot img{transition:none}}
   </style>
 </head>
@@ -143,7 +143,12 @@
           <figure class="chelsea-shot feature"><img src="chelsea-fight-08.jpg" alt="Chelsea's supporters holding handmade signs after the fight" width="1366" height="910" loading="lazy"></figure>
           <figure class="chelsea-shot feature"><img src="chelsea-fight-09.jpg" alt="Chelsea standing with her Urban Muaythai coach backstage" width="2730" height="1820" loading="lazy"></figure>
           <figure class="chelsea-shot"><img src="chelsea-fight-10.jpg" alt="Chelsea focused while listening to her team backstage" width="2730" height="1820" loading="lazy"></figure>
+          <figure class="chelsea-shot"><img src="destiny-prep-06.jpg" alt="Chelsea and her coach smiling backstage" width="2730" height="1820" loading="lazy"><figcaption>Ready together</figcaption></figure>
+          <figure class="chelsea-shot"><img src="destiny-prep-09.jpg" alt="Chelsea listening closely to her corner backstage" width="2730" height="1820" loading="lazy"><figcaption>Locked in</figcaption></figure>
+          <figure class="chelsea-shot feature"><img src="destiny-prep-12.jpg" alt="Chelsea focused between coaches backstage" width="2730" height="1820" loading="lazy"><figcaption>Composed</figcaption></figure>
+          <figure class="chelsea-shot feature"><img src="destiny-prep-16.jpg" alt="An Urban Muaythai coach fitting pads for the warm-up" width="2730" height="1820" loading="lazy"><figcaption>Corner work</figcaption></figure>
         </div>
+        <p class="credit">Selected backstage preparation photos courtesy of <a href="https://www.instagram.com/ccifilms.__/" target="_blank" rel="noopener">@ccifilms.__</a>.</p>
       </div>
     </section>
 
@@ -206,15 +211,11 @@
           <figure class="shot"><img src="destiny-prep-03.jpg" alt="Urban Muaythai coach focused backstage" width="2730" height="1820" loading="lazy"><figcaption>Final focus</figcaption></figure>
           <figure class="shot wide"><img src="destiny-prep-04.jpg" alt="Ettridge warming up with a body kick backstage" width="2730" height="1820" loading="lazy"><figcaption>Warming up</figcaption></figure>
           <figure class="shot"><img src="destiny-prep-05.jpg" alt="Ettridge drilling a knee with his coach backstage" width="2730" height="1820" loading="lazy"><figcaption>Last rounds</figcaption></figure>
-          <figure class="shot"><img src="destiny-prep-06.jpg" alt="Chelsea and her coach smiling backstage" width="2730" height="1820" loading="lazy"><figcaption>Ready together</figcaption></figure>
           <figure class="shot wide"><img src="destiny-prep-07.jpg" alt="The Urban Muaythai corner supporting a fighter backstage" width="2730" height="1820" loading="lazy"><figcaption>The corner</figcaption></figure>
           <figure class="shot"><img src="destiny-prep-08.jpg" alt="Ettridge sharpening elbows on pads backstage" width="2730" height="1820" loading="lazy"><figcaption>Sharpening up</figcaption></figure>
-          <figure class="shot"><img src="destiny-prep-09.jpg" alt="Chelsea listening closely to her corner backstage" width="2730" height="1820" loading="lazy"><figcaption>Locked in</figcaption></figure>
           <figure class="shot wide"><img src="destiny-prep-10.jpg" alt="Traditional Muay Thai mongkol and garland waiting backstage" width="2730" height="1820" loading="lazy"><figcaption>Tradition</figcaption></figure>
-          <figure class="shot"><img src="destiny-prep-12.jpg" alt="Chelsea focused between coaches backstage" width="2730" height="1820" loading="lazy"><figcaption>Composed</figcaption></figure>
           <figure class="shot wide"><img src="destiny-prep-13.jpg" alt="A fighter's hands being wrapped by the Urban Muaythai team" width="2730" height="1820" loading="lazy"><figcaption>Every detail</figcaption></figure>
           <figure class="shot"><img src="destiny-prep-14.jpg" alt="Ettridge in profile preparing backstage" width="2730" height="1820" loading="lazy"><figcaption>Quiet preparation</figcaption></figure>
-          <figure class="shot wide"><img src="destiny-prep-16.jpg" alt="An Urban Muaythai coach fitting pads for the warm-up" width="2730" height="1820" loading="lazy"><figcaption>Corner work</figcaption></figure>
         </div>
       </div>
     </section>
