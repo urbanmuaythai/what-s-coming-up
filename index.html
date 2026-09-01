@@ -119,6 +119,15 @@
     .poster-pair img{height:auto; max-height:none;}
   }
   @media(max-width:520px){.event-media{min-height:235px;} .event-media.poster,.event-media.portrait{min-height:430px;} .poster-pair{min-height:0;} .event-body{padding:26px 22px 24px;}}
+  .events .event.details-only{grid-template-columns:1fr; min-height:0;}
+  .event.details-only .event-body{align-self:stretch;}
+  .session-schedule{display:grid; gap:8px; margin-top:20px;}
+  .session-row{display:grid; grid-template-columns:120px 1fr; gap:18px; align-items:center; padding:12px 14px; background:var(--navy-900); border-left:3px solid var(--gold); border-radius:2px;}
+  .session-time{font-family:'JetBrains Mono',monospace; color:var(--gold); font-size:12px; letter-spacing:.04em; text-transform:uppercase;}
+  .session-name{color:var(--cream); font-size:14px; font-weight:600;}
+  .session-row.open{border-left-color:var(--red-600);}
+  .session-row.open .session-time{color:var(--red-600);}
+  @media(max-width:520px){.session-row{grid-template-columns:1fr; gap:4px;}}
   .event-list-label{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-dim); margin:22px 0 12px;}
   .event-list{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
   @media(min-width:720px){.event-list{grid-template-columns:1fr 1fr; gap:10px 32px;}}
@@ -186,6 +195,8 @@
   .pad-flow-feature img{height:auto; max-height:760px; object-fit:contain; background:#050505;}
   .grading-recap img{height:520px; object-fit:contain; background:#050505;}
   .spar-recap-logo img{height:440px; object-fit:contain; background:#050505; padding:24px;}
+  .destiny-recap-posters{grid-template-columns:repeat(2,minmax(0,1fr)); min-height:0; background:#050505;}
+  .destiny-recap-posters img{height:620px; object-fit:contain; background:#050505; padding:12px;}
   .ufc-gallery{grid-template-columns:repeat(3,1fr); grid-template-rows:260px 260px;}
   .ufc-gallery img{height:100%;}
   .recap-content{padding:30px 30px 28px;}
@@ -206,6 +217,8 @@
     .pad-flow-feature img{height:auto; min-height:0;}
     .grading-recap img{height:auto; max-height:520px;}
     .spar-recap-logo img{height:340px; padding:18px;}
+    .destiny-recap-posters{grid-template-columns:1fr;}
+    .destiny-recap-posters img{height:auto; padding:8px;}
     .ufc-gallery{grid-template-columns:repeat(2,1fr); grid-template-rows:repeat(3,220px);}
     .recap-content{padding:26px 22px 24px;}
   }
@@ -299,39 +312,80 @@
   <section class="tabpanel active" id="panel-month" role="tabpanel" aria-labelledby="tab-month" tabindex="0">
     <div class="wrap">
       <div class="section-head">
-        <span class="section-num">AUG '26</span>
-        <h2>August —<br>this month.</h2>
+        <span class="section-num">SEP '26</span>
+        <h2>September —<br>this month.</h2>
       </div>
-      <p class="section-lede">Next up: Destiny Fight Show this Saturday. Get behind the fight team, then finish the month with Teens Blue Grading.</p>
+      <p class="section-lede">September opens with three grading days, followed by two focused workshops, open sparring and Adult Yellow Grading. Keep showing up and keep building.</p>
 
       <div class="events">
-        <article class="event fight next fight-showcase" id="destiny">
-          <figure class="event-media poster-pair" aria-label="Destiny Fight Show posters for Urban Muaythai fighters">
-            <img src="destiny-fight-ettridge.jpg" alt="Destiny Muaythai XXXII poster for Ettridge versus Crittenden on 29 August 2026" width="1080" height="1350" loading="lazy">
-            <img src="destiny-chelsea-vs-houston.jpg" alt="Destiny Muaythai XXXII poster for Chelsea versus Houston on 29 August 2026" width="1241" height="1408" loading="lazy">
-          </figure>
+        <article class="event next" id="kids-blue-grading">
+          <figure class="event-media"><img src="kids-blue-grading.png" alt="Young Urban Muaythai students preparing for Kids Blue Grading" width="1536" height="1024" loading="lazy"></figure>
           <div class="event-body">
-            <span class="next-up">Next event</span>
+            <span class="next-up">September starts here</span>
             <div class="event-top">
-              <span class="event-when">Saturday · 29 August</span>
-              <span class="event-tag tag-fight">Fight Show</span>
+              <span class="event-when">Tuesday · 1 September</span>
+              <span class="event-tag tag-flagship">Grading</span>
             </div>
-            <h3>Destiny Fight Show</h3>
-            <p>Support both Urban Muaythai fighters at the Destiny Fight Show! Ettridge takes on Crittenden for the Destiny Pro Light Heavyweight Title, while Chelsea steps into the ring against Houston. We'd love to see the Urban Army out in force, backing both fighters as they step up under the lights.</p>
-            <div class="pickup-note"><strong>Tickets have arrived:</strong> grab yours at reception. Visit reception for more information. <strong>Cash only.</strong></div>
+            <h3>Kids Blue Grading</h3>
+            <p>Our young warriors step up to demonstrate their technique, focus and progress.</p>
+            <div class="pickup-note"><strong>Invites have been sent:</strong> please RSVP using the link in your email.</div>
           </div>
         </article>
 
-        <article class="event" id="teens-blue-grading">
-          <figure class="event-media"><img src="teens-blue-grading.png" alt="Teen Urban Muaythai students lined up for Blue Grading training" width="1536" height="1024" loading="lazy"></figure>
+        <article class="event" id="teens-yellow-grading">
+          <figure class="event-media"><img src="teens-yellow-grading.png" alt="Teen Urban Muaythai students preparing for Yellow Grading" width="1536" height="1024" loading="lazy"></figure>
           <div class="event-body">
             <div class="event-top">
-              <span class="event-when">Monday · 31 August</span>
+              <span class="event-when">Wednesday · 2 September</span>
               <span class="event-tag tag-flagship">Grading</span>
             </div>
-            <h3>Teens Blue Grading</h3>
-            <p>Our teens are stepping up for their Blue Grading — a chance to demonstrate their technique, composure and progress.</p>
+            <h3>Teens Yellow Grading</h3>
+            <p>Our teens put their skills, composure and consistency to the test as they work towards their Yellow Singlets.</p>
             <div class="pickup-note"><strong>Invites have been sent:</strong> please RSVP using the link in your email.</div>
+          </div>
+        </article>
+
+        <article class="event" id="kids-yellow-grading">
+          <figure class="event-media"><img src="kids-yellow-grading.png" alt="Young Urban Muaythai students preparing for Kids Yellow Grading" width="1536" height="1024" loading="lazy"></figure>
+          <div class="event-body">
+            <div class="event-top"><span class="event-when">Thursday · 3 September</span><span class="event-tag tag-flagship">Grading</span></div>
+            <h3>Kids Yellow Grading</h3>
+            <p>A chance for our young members to show how far they have come and earn their next level.</p>
+            <div class="pickup-note"><strong>Invites have been sent:</strong> please RSVP using the link in your email.</div>
+          </div>
+        </article>
+
+        <article class="event details-only" id="learn-to-spar-workshop">
+          <div class="event-body">
+            <div class="event-top"><span class="event-when">Friday · 4 September</span><span class="event-tag tag-train">Workshop</span></div>
+            <h3>Learn to Spar Workshop</h3>
+            <p>Build confidence, control and ring awareness before putting the lesson into practice. The regular sparring class still runs immediately after the workshop and is open to everyone.</p>
+            <div class="session-schedule" aria-label="Learn to Spar Workshop schedule">
+              <div class="session-row"><span class="session-time">4:30–5:30 pm</span><span class="session-name">Learn to Spar Workshop</span></div>
+              <div class="session-row open"><span class="session-time">5:30–6:30 pm</span><span class="session-name">Sparring — open to everyone</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="event" id="adult-yellow-grading">
+          <figure class="event-media"><img src="adult-yellow-grading.png" alt="Adult Urban Muaythai members preparing for Yellow Grading" width="1536" height="1024" loading="lazy"></figure>
+          <div class="event-body">
+            <div class="event-top"><span class="event-when">Saturday · 12 September</span><span class="event-tag tag-flagship">Grading</span></div>
+            <h3>Adult Yellow Grading</h3>
+            <p>Our adults step up to showcase the technique, fitness and resilience they have built through training.</p>
+            <div class="pickup-note"><strong>Invites have been sent:</strong> please RSVP using the link in your email.</div>
+          </div>
+        </article>
+
+        <article class="event details-only" id="clinch-workshop">
+          <div class="event-body">
+            <div class="event-top"><span class="event-when">Friday · 18 September</span><span class="event-tag tag-train">Workshop</span></div>
+            <h3>Clinch Workshop</h3>
+            <p>Sharpen your clinch control, balance and positioning, then stay on the mats for the regular open sparring class immediately afterwards.</p>
+            <div class="session-schedule" aria-label="Clinch Workshop schedule">
+              <div class="session-row"><span class="session-time">4:30–5:30 pm</span><span class="session-name">Clinch Workshop</span></div>
+              <div class="session-row open"><span class="session-time">5:30–6:30 pm</span><span class="session-name">Sparring — open to everyone</span></div>
+            </div>
           </div>
         </article>
       </div>
@@ -366,10 +420,9 @@
             <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="kids-blue-grading.png" alt="Young Urban Muaythai students lined up for Kids Blue Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Tue 1 Sep</span><span class="timeline-event-title">Kids Blue Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
             <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="teens-yellow-grading.png" alt="Teen Urban Muaythai students lined up for Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Wed 2 Sep</span><span class="timeline-event-title">Teens Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
             <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="kids-yellow-grading.png" alt="Young Urban Muaythai students lined up for Kids Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Thu 3 Sep</span><span class="timeline-event-title">Kids Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
-            <div class="timeline-event"><span class="timeline-event-date">Fri 4 Sep</span><span class="timeline-event-title">Learn to Spar Workshop</span><span class="event-tag tag-train">Workshop</span></div>
+            <div class="timeline-event"><span class="timeline-event-date">Fri 4 Sep</span><span class="timeline-event-title">Learn to Spar Workshop</span><span class="event-tag tag-train">Workshop</span><span class="timeline-event-note">4:30–5:30 pm workshop · 5:30–6:30 pm sparring open to everyone. Sparring still runs after the workshop.</span></div>
             <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="adult-yellow-grading.png" alt="Adult Urban Muaythai students lined up for Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Sat 12 Sep</span><span class="timeline-event-title">Adult Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
-            <div class="timeline-event"><span class="timeline-event-date">Fri 18 Sep</span><span class="timeline-event-title">Clinch Workshop</span><span class="event-tag tag-train">Workshop</span></div>
-            <div class="timeline-event flagship"><span class="timeline-event-date">Sat 26 Sep</span><span class="timeline-event-title">Thai Temple Day</span><span class="event-tag tag-flagship">Experience</span><span class="timeline-event-note">Planned — details to be confirmed.</span></div>
+            <div class="timeline-event"><span class="timeline-event-date">Fri 18 Sep</span><span class="timeline-event-title">Clinch Workshop</span><span class="event-tag tag-train">Workshop</span><span class="timeline-event-note">4:30–5:30 pm workshop · 5:30–6:30 pm sparring open to everyone. Sparring still runs after the workshop.</span></div>
           </div>
         </div>
 
@@ -416,6 +469,31 @@
       <p class="section-lede">Missed one, or want to relive it? Here's how the Urban Army's recent events went down.</p>
 
       <div class="recaps">
+
+        <!-- ===== Teens Blue Grading ===== -->
+        <article class="recap" id="teens-blue-grading-recap">
+          <div class="recap-media single grading-recap">
+            <img src="teens-blue-grading.png" alt="Teen Urban Muaythai students lined up for Blue Grading training" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="recap-content">
+            <div class="recap-top"><span class="recap-when">Wrapped · 31 August 2026</span><span class="recap-badge">Grading recap</span></div>
+            <h3>Teens Blue Grading</h3>
+            <p>Our teens closed out August by stepping up for Blue Grading and putting their hard-earned skills on display. They showed focus, composure and the confidence that comes from consistent training. A strong effort from everyone who took on the challenge.</p>
+          </div>
+        </article>
+
+        <!-- ===== Destiny Fight Show ===== -->
+        <article class="recap" id="destiny-fight-recap">
+          <div class="recap-media destiny-recap-posters" aria-label="Destiny Fight Show posters for Ettridge and Chelsea">
+            <img src="destiny-fight-ettridge.jpg" alt="Destiny Muaythai XXXII poster for Ettridge versus Crittenden" width="1080" height="1350" loading="lazy">
+            <img src="destiny-chelsea-vs-houston.jpg" alt="Destiny Muaythai XXXII poster for Chelsea versus Houston" width="1241" height="1408" loading="lazy">
+          </div>
+          <div class="recap-content">
+            <div class="recap-top"><span class="recap-when">Wrapped · 29 August 2026</span><span class="recap-badge">Fight show recap</span></div>
+            <h3>Destiny Fight Show</h3>
+            <p>Ettridge and Chelsea represented Urban Muaythai under the Destiny lights, backed by the Urban Army. Two big matchups, one united team and another proud night for everyone who trained, supported and showed up.</p>
+          </div>
+        </article>
 
         <!-- ===== Adult Blue Grading ===== -->
         <article class="recap" id="adult-blue-grading-recap">
