@@ -99,6 +99,8 @@
   .event-media.poster img,.event-media.portrait img{object-fit:contain; object-position:center; padding:10px; background:#070707;}
   .event-media.olympics-media::after{display:none;}
   .event-media.olympics-media img{object-fit:contain; object-position:center; padding:12px; background:#f5f5f3;}
+  .event-media.workshop-media::after{display:none;}
+  .event-media.workshop-media img{object-fit:contain; object-position:center; background:#070707;}
   .event.fight-showcase{grid-template-columns:1fr;}
   .poster-pair{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px; min-height:680px; background:#070707;}
   .poster-pair::after{display:none;}
@@ -129,6 +131,10 @@
   .session-name{color:var(--cream); font-size:14px; font-weight:600;}
   .session-row.open{border-left-color:var(--red-600);}
   .session-row.open .session-time{color:var(--red-600);}
+  .workshop-demo{margin-top:20px; padding:16px; background:var(--navy-950); border:1px solid rgba(255,255,255,.1); border-radius:3px;}
+  .workshop-demo-label{margin:0 0 6px; font-family:'JetBrains Mono',monospace; color:var(--gold); font-size:11px; letter-spacing:.1em; text-transform:uppercase;}
+  .workshop-demo p{margin:0 0 12px; font-size:13px;}
+  .workshop-demo video{display:block; width:100%; max-height:390px; object-fit:contain; background:#050505; border:1px solid rgba(255,255,255,.08);}
   @media(max-width:520px){.session-row{grid-template-columns:1fr; gap:4px;}}
   .event-list-label{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-dim); margin:22px 0 12px;}
   .event-list{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
@@ -369,7 +375,8 @@
           </div>
         </article>
 
-        <article class="event details-only" id="learn-to-spar-workshop">
+        <article class="event" id="learn-to-spar-workshop">
+          <figure class="event-media workshop-media"><img src="learn-to-spar-workshop.png" alt="Learn to Spar Workshop at Urban Muaythai — build skills, control and confidence" width="1776" height="887" loading="lazy"></figure>
           <div class="event-body">
             <div class="event-top"><span class="event-when">Friday · 4 September</span><span class="event-tag tag-train">Workshop</span></div>
             <h3>Learn to Spar Workshop</h3>
@@ -391,7 +398,8 @@
           </div>
         </article>
 
-        <article class="event details-only" id="clinch-workshop">
+        <article class="event" id="clinch-workshop">
+          <figure class="event-media workshop-media"><img src="clinch-workshop.png" alt="Clinch Workshop at Urban Muaythai — build skills, control and confidence" width="1776" height="887" loading="lazy"></figure>
           <div class="event-body">
             <div class="event-top"><span class="event-when">Friday · 18 September</span><span class="event-tag tag-train">Workshop</span></div>
             <h3>Clinch Workshop</h3>
@@ -399,6 +407,14 @@
             <div class="session-schedule" aria-label="Clinch Workshop schedule">
               <div class="session-row"><span class="session-time">4:30–5:30 pm</span><span class="session-name">Clinch Workshop</span></div>
               <div class="session-row open"><span class="session-time">5:30–6:30 pm</span><span class="session-name">Sparring — open to everyone</span></div>
+            </div>
+            <div class="workshop-demo">
+              <div class="workshop-demo-label">Coach Harry demo</div>
+              <p>Preview the clinch and double-hand control work Coach Harry will be developing in the workshop.</p>
+              <video controls playsinline preload="metadata" poster="clinch-workshop.png" aria-label="Coach Harry demonstrating clinch and double-hand control">
+                <source src="coach-harry-clinch-demo.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
             </div>
           </div>
         </article>
@@ -435,9 +451,9 @@
             <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="kids-blue-grading.png" alt="Young Urban Muaythai students lined up for Kids Blue Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Tue 1 Sep</span><span class="timeline-event-title">Kids Blue Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
             <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="teens-yellow-grading.png" alt="Teen Urban Muaythai students lined up for Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Wed 2 Sep</span><span class="timeline-event-title">Teens Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
             <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="kids-yellow-grading.png" alt="Young Urban Muaythai students lined up for Kids Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Thu 3 Sep</span><span class="timeline-event-title">Kids Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
-            <div class="timeline-event"><span class="timeline-event-date">Fri 4 Sep</span><span class="timeline-event-title">Learn to Spar Workshop</span><span class="event-tag tag-train">Workshop</span><span class="timeline-event-note">4:30–5:30 pm workshop · 5:30–6:30 pm sparring open to everyone. Sparring still runs after the workshop.</span></div>
+            <div class="timeline-event has-image"><img class="timeline-event-image" src="learn-to-spar-workshop.png" alt="Learn to Spar Workshop" width="1776" height="887" loading="lazy"><span class="timeline-event-date">Fri 4 Sep</span><span class="timeline-event-title">Learn to Spar Workshop</span><span class="event-tag tag-train">Workshop</span><span class="timeline-event-note">4:30–5:30 pm workshop · 5:30–6:30 pm sparring open to everyone. Sparring still runs after the workshop.</span></div>
             <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="adult-yellow-grading.png" alt="Adult Urban Muaythai students lined up for Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Sat 12 Sep</span><span class="timeline-event-title">Adult Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
-            <div class="timeline-event"><span class="timeline-event-date">Fri 18 Sep</span><span class="timeline-event-title">Clinch Workshop</span><span class="event-tag tag-train">Workshop</span><span class="timeline-event-note">4:30–5:30 pm workshop · 5:30–6:30 pm sparring open to everyone. Sparring still runs after the workshop.</span></div>
+            <div class="timeline-event has-image"><img class="timeline-event-image" src="clinch-workshop.png" alt="Clinch Workshop" width="1776" height="887" loading="lazy"><span class="timeline-event-date">Fri 18 Sep</span><span class="timeline-event-title">Clinch Workshop</span><span class="event-tag tag-train">Workshop</span><span class="timeline-event-note">4:30–5:30 pm workshop · 5:30–6:30 pm sparring open to everyone. Sparring still runs after the workshop.</span></div>
           </div>
         </div>
 
