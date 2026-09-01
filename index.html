@@ -97,6 +97,8 @@
   .event-media.poster,.event-media.portrait{min-height:520px; background:#070707;}
   .event-media.poster::after,.event-media.portrait::after{display:none;}
   .event-media.poster img,.event-media.portrait img{object-fit:contain; object-position:center; padding:10px; background:#070707;}
+  .event-media.olympics-media::after{display:none;}
+  .event-media.olympics-media img{object-fit:contain; object-position:center; padding:12px; background:#f5f5f3;}
   .event.fight-showcase{grid-template-columns:1fr;}
   .poster-pair{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px; min-height:680px; background:#070707;}
   .poster-pair::after{display:none;}
@@ -161,6 +163,7 @@
   .timeline-event.flagship .timeline-event-title{color:var(--cream); font-size:18px;}
   .timeline-event-note{font-family:'Inter',sans-serif; font-size:13px; font-style:italic; color:var(--ink-dim); width:100%; margin-left:138px;}
   .timeline-event-image{width:180px; height:120px; object-fit:cover; border-radius:8px; border:1px solid rgba(255,255,255,.12); flex-shrink:0; box-shadow:0 8px 24px rgba(0,0,0,.22);}
+  .timeline-event-image.olympics-mark{object-fit:contain; padding:5px; background:#f5f5f3;}
   .timeline-event.has-image .timeline-event-note{margin-left:334px;}
   @media (max-width:760px){.timeline-event.has-image .timeline-event-image{width:140px; height:93px;} .timeline-event.has-image .timeline-event-note{margin-left:0;}}
   @media (max-width:600px){.timeline-event{padding-left:24px;} .timeline-event-date{min-width:100%; order:-1;} .timeline-event-note{margin-left:0;} .timeline-event::before{top:20px;} .timeline-event.has-image .timeline-event-image{width:100%; height:auto; aspect-ratio:3/2;}}
@@ -318,13 +321,14 @@
       <p class="section-lede">September opens with three grading days and a full month of Urban Muay Thai Olympics training, followed by focused workshops, open sparring and Adult Yellow Grading. Keep showing up and keep building towards competition day.</p>
 
       <div class="events">
-        <article class="event details-only next" id="urban-muay-thai-olympics">
+        <article class="event next" id="urban-muay-thai-olympics">
+          <figure class="event-media olympics-media"><img src="urban-muay-thai-olympics-logo.png" alt="Urban Muay Thai Olympics logo featuring traditional mongkol headbands" width="1536" height="1024"></figure>
           <div class="event-body">
             <span class="next-up">September training block</span>
             <div class="event-top"><span class="event-when">All September · Competition 10 October</span><span class="event-tag tag-flagship">Program</span></div>
             <h3>Urban Muay Thai Olympics</h3>
             <p>September is training month for the Urban Muay Thai Olympics. Across the month, members will practise a range of events during scheduled sessions and build towards competition day on Saturday, 10 October.</p>
-            <div class="pickup-note"><strong>Registrations:</strong> members will be able to register for events over the coming weeks. Keep an eye out for details and choose the events you want to take on.</div>
+            <div class="pickup-note"><strong>More details to come:</strong> members will be able to register for events over the coming weeks. Keep an eye out for the full event list and choose the challenges you want to take on.</div>
           </div>
         </article>
 
@@ -427,7 +431,7 @@
         <div class="timeline-month">
           <div class="timeline-month-label">September</div>
           <div class="timeline-list">
-            <div class="timeline-event flagship"><span class="timeline-event-date">All September</span><span class="timeline-event-title">Urban Muay Thai Olympics Training Block</span><span class="event-tag tag-flagship">Program</span><span class="timeline-event-note">Practise the events throughout September. Registrations open over the coming weeks ahead of competition day on 10 October.</span></div>
+            <div class="timeline-event flagship has-image"><img class="timeline-event-image olympics-mark" src="urban-muay-thai-olympics-logo.png" alt="Urban Muay Thai Olympics logo" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">All September</span><span class="timeline-event-title">Urban Muay Thai Olympics Training Block</span><span class="event-tag tag-flagship">Program</span><span class="timeline-event-note">Practise the events throughout September ahead of competition day on 10 October. Registrations and more details are coming soon.</span></div>
             <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="kids-blue-grading.png" alt="Young Urban Muaythai students lined up for Kids Blue Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Tue 1 Sep</span><span class="timeline-event-title">Kids Blue Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
             <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="teens-yellow-grading.png" alt="Teen Urban Muaythai students lined up for Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Wed 2 Sep</span><span class="timeline-event-title">Teens Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
             <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="kids-yellow-grading.png" alt="Young Urban Muaythai students lined up for Kids Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Thu 3 Sep</span><span class="timeline-event-title">Kids Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
@@ -503,7 +507,7 @@
           <div class="recap-content">
             <div class="recap-top"><span class="recap-when">Wrapped · 29 August 2026</span><span class="recap-badge">Fight show recap</span></div>
             <h3>Destiny Fight Show</h3>
-            <p>Ettridge and Chelsea represented Urban Muaythai under the Destiny lights, backed by the Urban Army. Two big matchups, one united team and another proud night for everyone who trained, supported and showed up.</p>
+            <p>Chelsea opened the show with aggression, power and plenty to be proud of. She did not come away with the win, but left the ring knowing exactly what to sharpen next—and made it clear this will not be the last time we see her compete. Mitch's winning fight recap will be added when more details are available.</p>
             <a class="recap-link" href="destiny-fight-recap.html">View the full fight recap</a>
           </div>
         </article>
