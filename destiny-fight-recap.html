@@ -44,12 +44,21 @@
     .result{display:inline-block;margin-top:18px;padding:7px 10px;border:1px solid rgba(213,31,54,.55);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#ff8a97}
     .reflection-copy{position:relative;z-index:1;color:#d4d1ca;font-size:17px}.reflection-copy p{margin:0 0 18px}
     blockquote{margin:24px 0;padding:0 0 0 22px;border-left:3px solid var(--gold);font-size:clamp(21px,3vw,28px);line-height:1.4;color:var(--ink);font-weight:600}
-    .coming-update{font-family:'JetBrains Mono',monospace;font-size:11px!important;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)!important;margin-top:28px!important}
     .chelsea-gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:14px}
     .chelsea-shot{margin:0;grid-column:span 4;position:relative;overflow:hidden;background:var(--panel);border:1px solid var(--line);aspect-ratio:3/2}
     .chelsea-shot.feature{grid-column:span 8}
     .chelsea-shot img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease,filter .4s ease}
     .chelsea-shot:hover img{transform:scale(1.025);filter:brightness(1.07)}
+    .mitch-recap{padding:26px 0 90px}
+    .mitch-card{padding:44px;background:linear-gradient(135deg,rgba(213,182,109,.15),rgba(213,31,54,.08));border:1px solid rgba(213,182,109,.4)}
+    .mitch-intro{display:grid;grid-template-columns:minmax(220px,.5fr) minmax(0,1fr);gap:54px;align-items:start;margin-bottom:34px}
+    .mitch-intro h2{font-size:clamp(52px,7vw,86px)}
+    .victory{display:inline-block;margin-top:18px;padding:7px 10px;border:1px solid rgba(213,182,109,.58);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+    .mitch-copy{color:#d4d1ca;font-size:17px}.mitch-copy p{margin:0 0 18px}
+    .mitch-media{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr);gap:14px;align-items:stretch}
+    .mitch-media figure{margin:0;background:#050505;border:1px solid var(--line);position:relative;min-height:560px}
+    .mitch-media video,.mitch-media img{width:100%;height:100%;max-height:720px;object-fit:contain;background:#050505;display:block}
+    .mitch-media figcaption{position:absolute;left:10px;bottom:8px;padding:5px 7px;background:rgba(8,9,20,.78);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#d7d1c5}
     .credit{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;color:var(--muted);margin:24px 0 0}
     .credit a{color:var(--gold);text-decoration-color:rgba(213,182,109,.45);text-underline-offset:4px}
     .gallery-section{padding:68px 0 92px}
@@ -68,8 +77,9 @@
     .button{display:inline-block;margin-top:14px;padding:13px 18px;border:1px solid var(--red);color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}.button:hover{background:var(--red)}
     footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase}
     footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:42px}.posters{max-width:650px;margin:auto}.story-grid,.reflection-card{grid-template-columns:1fr;gap:24px}.shot,.shot.wide,.chelsea-shot,.chelsea-shot.feature{grid-column:span 6}.gallery-head{align-items:start;flex-direction:column}.gallery-head .credit{text-align:left}}
-    @media(max-width:560px){.wrap{width:min(100% - 24px,var(--max))}.hero{padding:48px 0 60px}.posters{gap:8px}.posters img:first-child{transform:rotate(-2deg) translateY(8px)}.story{padding-top:62px}.fight-reflection{padding-top:30px}.reflection-card{padding:28px 22px}.gallery,.chelsea-gallery{gap:9px}.shot,.shot.wide,.chelsea-shot,.chelsea-shot.feature{grid-column:1/-1}.shot figcaption{opacity:1}.topbar-inner{min-height:56px}.back{font-size:9px}}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:42px}.posters{max-width:650px;margin:auto}.story-grid,.reflection-card,.mitch-intro{grid-template-columns:1fr;gap:24px}.shot,.shot.wide,.chelsea-shot,.chelsea-shot.feature{grid-column:span 6}.gallery-head{align-items:start;flex-direction:column}.gallery-head .credit{text-align:left}}
+    @media(max-width:680px){.mitch-media{grid-template-columns:1fr}.mitch-media figure{min-height:0}.mitch-media video,.mitch-media img{height:auto;max-height:none}}
+    @media(max-width:560px){.wrap{width:min(100% - 24px,var(--max))}.hero{padding:48px 0 60px}.posters{gap:8px}.posters img:first-child{transform:rotate(-2deg) translateY(8px)}.story{padding-top:62px}.fight-reflection{padding-top:30px}.reflection-card,.mitch-card{padding:28px 22px}.gallery,.chelsea-gallery{gap:9px}.shot,.shot.wide,.chelsea-shot,.chelsea-shot.feature{grid-column:1/-1}.shot figcaption{opacity:1}.topbar-inner{min-height:56px}.back{font-size:9px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.shot img{transition:none}}
   </style>
 </head>
@@ -117,11 +127,10 @@
             <span class="result">No win · Plenty learned</span>
           </div>
           <div class="reflection-copy">
-            <p>Chelsea opened the show and embraced every second of the experience. Although she did not come away with the win, she treated the result as part of the game and came away proud of the performance she put forward.</p>
+            <p>Opening the show, Chelsea delivered the best performance of her career so far. Richie saw a huge improvement: she used her angles, committed to her attacks and, most importantly, stayed clear-minded enough to read the fight as it unfolded.</p>
             <blockquote>“I was super proud of the aggression and power I brought, and I came away knowing exactly what I need to work on for next time.”</blockquote>
-            <p>The opportunity gave Chelsea the chance to step into the ring, test herself and identify exactly where the next stage of work begins. Her message afterwards was clear: this is definitely not the last time we will see her in the ring.</p>
-            <p>As the opening fight, Chelsea also got to enjoy the rest of the show after her own work was done—a night of lessons, support and watching the team throw down together.</p>
-            <p class="coming-update">Mitch's winning fight recap will be added when more details are available.</p>
+            <p>Chelsea did not get the win, with Houston proving stronger in the clinch during the final round. Even so, the fight showed just how far Chelsea has come over the last six months. Her composure, awareness and willingness to attack gave the team plenty to celebrate and a clear foundation to build on.</p>
+            <p>As the opening fight, Chelsea also got to enjoy the rest of the show after her own work was done—a night of lessons, support and watching the team throw down together. Her message afterwards was clear: this is definitely not the last time we will see her in the ring.</p>
           </div>
         </article>
         <div class="chelsea-gallery" aria-label="Chelsea fight-night photo gallery">
@@ -136,6 +145,39 @@
           <figure class="chelsea-shot feature"><img src="chelsea-fight-09.jpg" alt="Chelsea standing with her Urban Muaythai coach backstage" width="2730" height="1820" loading="lazy"></figure>
           <figure class="chelsea-shot"><img src="chelsea-fight-10.jpg" alt="Chelsea focused while listening to her team backstage" width="2730" height="1820" loading="lazy"></figure>
         </div>
+      </div>
+    </section>
+
+    <section class="mitch-recap" aria-labelledby="mitch-recap-title">
+      <div class="wrap">
+        <article class="mitch-card">
+          <div class="mitch-intro">
+            <div>
+              <p class="eyebrow">Fight recap</p>
+              <h2 id="mitch-recap-title">Mitch<br>steps up</h2>
+              <span class="victory">Victory · A talent to watch</span>
+            </div>
+            <div class="mitch-copy">
+              <p>Mitch accepted the fight on late notice after Harry was ruled out with a broken nose. It was only Mitch's 10th fight, and across the ring stood a seasoned campaigner entering his 50th—a formidable test and a major opportunity to step up.</p>
+              <p>Mitch took that opportunity with both hands. He showcased the sharp Muay Thai skills the team has watched him build in recent weeks and produced a fantastic victory against a vastly more experienced opponent.</p>
+              <blockquote>“It was a great victory, but more than that, Mitch showcased some fantastic Muay Thai skills. He is definitely a talent to look out for.” — Richie</blockquote>
+              <p>The performance made an immediate impression. Promoters have already been reaching out to match Mitch on future shows, and the whole team is incredibly proud of the skill, courage and professionalism with which he represented Urban Muaythai.</p>
+            </div>
+          </div>
+          <div class="mitch-media">
+            <figure>
+              <video controls playsinline preload="metadata" poster="mitch-destiny-champion.jpg" aria-label="Mitch's Destiny Muaythai fight highlight video">
+                <source src="mitch-destiny-fight.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+              <figcaption>Watch Mitch's Destiny victory</figcaption>
+            </figure>
+            <figure>
+              <img src="mitch-destiny-champion.jpg" alt="Mitch celebrating his Destiny Muaythai victory with the championship belt" width="1103" height="1650" loading="lazy">
+              <figcaption>Victory at Destiny Muaythai XXXII</figcaption>
+            </figure>
+          </div>
+        </article>
       </div>
     </section>
 
