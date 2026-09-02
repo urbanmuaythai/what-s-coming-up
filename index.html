@@ -89,14 +89,13 @@
   .celebration-title h3{font-size:36px;}
   .celebration-icon{display:grid; place-items:center; width:42px; height:42px; border-radius:50%; background:rgba(200,16,46,.15); border:1px solid rgba(200,16,46,.38); font-size:20px;}
   .celebration-list{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px;}
-  .celebration-item{display:grid; grid-template-columns:92px minmax(0,1fr) auto; gap:14px; align-items:center; min-height:78px; padding:14px 16px; background:var(--navy-800); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius);}
+  .celebration-item{display:grid; grid-template-columns:92px minmax(0,1fr); gap:14px; align-items:center; min-height:78px; padding:14px 16px; background:var(--navy-800); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius);}
   .celebration-date{font-family:'JetBrains Mono',monospace; font-size:11px; line-height:1.45; letter-spacing:.05em; text-transform:uppercase; color:var(--gold);}
   .celebration-name{font-weight:700; color:var(--cream);}
   .celebration-detail{display:block; margin-top:2px; font-size:12px; color:var(--ink-dim);}
-  .celebration-badge{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.04em; color:var(--ink-dim); border:1px solid rgba(255,255,255,.14); border-radius:20px; padding:4px 8px; white-space:nowrap;}
   .celebration-note{margin-top:28px; padding:16px 18px; border-left:3px solid var(--gold); background:var(--navy-900); color:var(--ink-dim); font-size:13px;}
   @media(max-width:800px){.celebration-list{grid-template-columns:1fr;}}
-  @media(max-width:520px){.celebration-item{grid-template-columns:78px minmax(0,1fr);}.celebration-badge{grid-column:2; justify-self:start;}.celebration-stat strong{font-size:44px;}}
+  @media(max-width:520px){.celebration-item{grid-template-columns:78px minmax(0,1fr);}.celebration-stat strong{font-size:44px;}}
 
   /* ---------- event cards (This Month) ---------- */
   .events{display:flex; flex-direction:column; gap:30px; margin-top:44px;}
@@ -529,18 +528,18 @@
       <section class="celebration-block" aria-labelledby="birthday-heading">
         <div class="celebration-title"><span class="celebration-icon" aria-hidden="true">🎂</span><h3 id="birthday-heading">Birthdays this week</h3></div>
         <div class="celebration-list">
-          <article class="celebration-item"><span class="celebration-date">Fri<br>28 Aug</span><div><span class="celebration-name">Koby J.</span><span class="celebration-detail">Happy birthday!</span></div><span class="celebration-badge">U18</span></article>
-          <article class="celebration-item"><span class="celebration-date">Sat<br>29 Aug</span><div><span class="celebration-name">Jess C.</span><span class="celebration-detail">Happy birthday!</span></div><span class="celebration-badge">Adult</span></article>
-          <article class="celebration-item"><span class="celebration-date">Sat<br>29 Aug</span><div><span class="celebration-name">Thomas R.</span><span class="celebration-detail">Happy birthday!</span></div><span class="celebration-badge">Adult</span></article>
-          <article class="celebration-item"><span class="celebration-date">Sun<br>30 Aug</span><div><span class="celebration-name">Benji O.</span><span class="celebration-detail">Happy birthday!</span></div><span class="celebration-badge">U18</span></article>
-          <article class="celebration-item"><span class="celebration-date">Sun<br>30 Aug</span><div><span class="celebration-name">Reef I.</span><span class="celebration-detail">Happy birthday!</span></div><span class="celebration-badge">U18</span></article>
-          <article class="celebration-item"><span class="celebration-date">Sun<br>30 Aug</span><div><span class="celebration-name">Vitoria D.</span><span class="celebration-detail">Happy birthday!</span></div><span class="celebration-badge">Adult</span></article>
-          <article class="celebration-item"><span class="celebration-date">Mon<br>31 Aug</span><div><span class="celebration-name">Aitor T.</span><span class="celebration-detail">Happy birthday!</span></div><span class="celebration-badge">Adult</span></article>
-          <article class="celebration-item"><span class="celebration-date">Mon<br>31 Aug</span><div><span class="celebration-name">Ana S.</span><span class="celebration-detail">Happy birthday!</span></div><span class="celebration-badge">U18</span></article>
-          <article class="celebration-item"><span class="celebration-date">Tue<br>01 Sep</span><div><span class="celebration-name">Lewis S.</span><span class="celebration-detail">Happy birthday!</span></div><span class="celebration-badge">Adult</span></article>
-          <article class="celebration-item"><span class="celebration-date">Wed<br>02 Sep</span><div><span class="celebration-name">Daniel D.</span><span class="celebration-detail">Happy birthday!</span></div><span class="celebration-badge">Adult</span></article>
-          <article class="celebration-item"><span class="celebration-date">Wed<br>02 Sep</span><div><span class="celebration-name">Nathan F.</span><span class="celebration-detail">Happy birthday!</span></div><span class="celebration-badge">Adult</span></article>
-          <article class="celebration-item"><span class="celebration-date">Thu<br>03 Sep</span><div><span class="celebration-name">Logan T.</span><span class="celebration-detail">Happy birthday!</span></div><span class="celebration-badge">Adult</span></article>
+          <article class="celebration-item"><span class="celebration-date">Fri<br>28 Aug</span><div><span class="celebration-name">Koby J.</span><span class="celebration-detail">Happy birthday!</span></div></article>
+          <article class="celebration-item"><span class="celebration-date">Sat<br>29 Aug</span><div><span class="celebration-name">Jess C.</span><span class="celebration-detail">Happy birthday!</span></div></article>
+          <article class="celebration-item"><span class="celebration-date">Sat<br>29 Aug</span><div><span class="celebration-name">Thomas R.</span><span class="celebration-detail">Happy birthday!</span></div></article>
+          <article class="celebration-item"><span class="celebration-date">Sun<br>30 Aug</span><div><span class="celebration-name">Benji O.</span><span class="celebration-detail">Happy birthday!</span></div></article>
+          <article class="celebration-item"><span class="celebration-date">Sun<br>30 Aug</span><div><span class="celebration-name">Reef I.</span><span class="celebration-detail">Happy birthday!</span></div></article>
+          <article class="celebration-item"><span class="celebration-date">Sun<br>30 Aug</span><div><span class="celebration-name">Vitoria D.</span><span class="celebration-detail">Happy birthday!</span></div></article>
+          <article class="celebration-item"><span class="celebration-date">Mon<br>31 Aug</span><div><span class="celebration-name">Aitor T.</span><span class="celebration-detail">Happy birthday!</span></div></article>
+          <article class="celebration-item"><span class="celebration-date">Mon<br>31 Aug</span><div><span class="celebration-name">Ana S.</span><span class="celebration-detail">Happy birthday!</span></div></article>
+          <article class="celebration-item"><span class="celebration-date">Tue<br>01 Sep</span><div><span class="celebration-name">Lewis S.</span><span class="celebration-detail">Happy birthday!</span></div></article>
+          <article class="celebration-item"><span class="celebration-date">Wed<br>02 Sep</span><div><span class="celebration-name">Daniel D.</span><span class="celebration-detail">Happy birthday!</span></div></article>
+          <article class="celebration-item"><span class="celebration-date">Wed<br>02 Sep</span><div><span class="celebration-name">Nathan F.</span><span class="celebration-detail">Happy birthday!</span></div></article>
+          <article class="celebration-item"><span class="celebration-date">Thu<br>03 Sep</span><div><span class="celebration-name">Logan T.</span><span class="celebration-detail">Happy birthday!</span></div></article>
         </div>
       </section>
 
