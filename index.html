@@ -8,6 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="whats-coming-up-cover.png" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -50,24 +51,27 @@
 
   /* ---------- hero ---------- */
   .hero{position:relative; overflow:hidden;
-    background:radial-gradient(100% 100% at 88% 0%, rgba(200,16,46,0.25), transparent 55%), linear-gradient(180deg, var(--navy-900) 0%, var(--navy-950) 96%);
+    background:
+      linear-gradient(90deg,rgba(10,12,23,.96) 0%,rgba(10,12,23,.84) 37%,rgba(10,12,23,.3) 72%,rgba(10,12,23,.42) 100%),
+      linear-gradient(0deg,rgba(10,12,23,.78) 0%,transparent 48%),
+      url('whats-coming-up-cover.png') center 48% / cover no-repeat;
     border-bottom:1px solid rgba(255,255,255,0.06);}
-  .hero::after{content:''; position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size:100% 38px; mask-image:linear-gradient(180deg, transparent, #000 45%, transparent);}
-  .hero-inner{position:relative; z-index:2; width:100%; min-height:610px; padding:64px 24px 54px; max-width:1180px; margin:0 auto; display:grid; grid-template-columns:minmax(0,0.9fr) minmax(420px,1.1fr); align-items:center; gap:52px;}
-  .hero-copy{position:relative; z-index:2;}
+  .hero::after{content:''; position:absolute; inset:0; pointer-events:none; background:radial-gradient(90% 100% at 8% 45%,rgba(200,16,46,.09),transparent 58%);}
+  .hero-inner{position:relative; z-index:2; width:100%; min-height:640px; padding:72px 24px 62px; max-width:1080px; margin:0 auto; display:flex; align-items:center;}
+  .hero-copy{position:relative; z-index:2; max-width:570px; text-shadow:0 3px 22px rgba(0,0,0,.75);}
   .hero-eyebrow{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:var(--red-600); margin-bottom:14px; display:flex; align-items:center; gap:10px;}
   .hero-eyebrow::before{content:''; width:26px; height:2px; background:var(--red-600); display:inline-block;}
   .hero h1{font-size:clamp(46px, 9vw, 96px); color:var(--cream);}
   .hero h1 em{font-style:normal; color:var(--red-600);}
   .rope-divider{height:6px; width:100%; background:var(--rope-stripe); background-size:40px 40px; margin:20px 0; border-radius:2px; opacity:0.9;}
-  .hero-sub{max-width:620px; color:var(--ink-dim); font-size:16.5px; margin-top:4px;}
-  .hero-photo{position:relative; margin:0; min-height:500px; align-self:stretch; overflow:hidden; border:1px solid rgba(255,255,255,0.13); border-radius:var(--radius); box-shadow:24px 24px 0 rgba(200,16,46,0.12); clip-path:polygon(8% 0,100% 0,100% 100%,0 100%,0 8%);}
-  .hero-photo::after{content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(10,12,23,.42),transparent 45%),linear-gradient(0deg,rgba(10,12,23,.35),transparent 38%); pointer-events:none;}
-  .hero-photo img{width:100%; height:100%; position:absolute; inset:0; object-fit:cover; object-position:center; filter:saturate(.88) contrast(1.05);}
-  .hero-photo figcaption{position:absolute; z-index:2; right:18px; bottom:16px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.78);}
+  .hero-sub{max-width:560px; color:#d4d2cc; font-size:16.5px; margin-top:4px;}
   @media(max-width:860px){
-    .hero-inner{min-height:auto; grid-template-columns:1fr; gap:34px; padding-top:50px;}
-    .hero-photo{min-height:clamp(310px,70vw,470px); order:2; box-shadow:14px 14px 0 rgba(200,16,46,0.12);}
+    .hero{background:
+      linear-gradient(90deg,rgba(10,12,23,.92),rgba(10,12,23,.38)),
+      linear-gradient(0deg,rgba(10,12,23,.9),rgba(10,12,23,.22) 58%),
+      url('whats-coming-up-cover.png') 56% center / cover no-repeat;}
+    .hero-inner{min-height:580px; padding-top:58px; padding-bottom:54px; align-items:flex-end;}
+    .hero-copy{max-width:600px;}
   }
 
   /* ---------- section shell ---------- */
@@ -328,10 +332,6 @@
       <div class="rope-divider" role="presentation"></div>
       <p class="hero-sub">Everything the Urban Army has locked in — what's on this month, the full 2026 calendar, and recaps of the events we've already smashed.</p>
     </div>
-    <figure class="hero-photo">
-      <img src="blue grading.png" alt="Young Urban Muaythai students lined up in the gym" width="1536" height="1024" fetchpriority="high">
-      <figcaption>Built together</figcaption>
-    </figure>
   </div>
 </header>
 
