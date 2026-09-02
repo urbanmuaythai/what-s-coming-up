@@ -45,7 +45,7 @@
   .tab:focus-visible{outline:2px solid var(--red-600); outline-offset:2px; border-radius:2px;}
   @media (max-width:640px){
     .nav-inner{flex-wrap:wrap; gap:10px;}
-    .tablist{width:100%; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:2px;}
+    .tablist{width:100%; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:2px;}
     .tab{font-size:9px; padding:8px 4px; white-space:normal; line-height:1.25; text-align:center;}
   }
 
@@ -207,6 +207,36 @@
   .ongoing-card h3{font-size:26px; color:var(--cream); margin-bottom:10px;}
   .ongoing-card p{color:var(--ink-dim); font-size:14.5px; max-width:640px; margin:0;}
 
+  /* ---------- gradings hub ---------- */
+  .grading-section{margin-top:48px;}
+  .grading-section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:20px; padding-bottom:15px; margin-bottom:20px; border-bottom:1px solid rgba(255,255,255,.12);}
+  .grading-section-head h3{font-size:36px;}
+  .grading-section-head p{max-width:470px; margin:0; color:var(--ink-dim); font-size:14px; text-align:right;}
+  .grading-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px;}
+  .grading-recap-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px;}
+  .grading-card,.grading-recap-card{overflow:hidden; background:var(--navy-800); border:1px solid rgba(255,255,255,.09); border-radius:var(--radius); position:relative;}
+  .grading-card::before,.grading-recap-card::before{content:''; position:absolute; inset:0 0 auto; height:4px; background:linear-gradient(90deg,var(--gold),var(--red-600)); z-index:2;}
+  .grading-card figure{margin:0; aspect-ratio:16/9; overflow:hidden; background:#050505;}
+  .grading-card figure img{display:block; width:100%; height:100%; object-fit:cover; transition:transform .4s ease;}
+  .grading-card:hover figure img{transform:scale(1.025);}
+  .grading-card-body{padding:24px;}
+  .grading-date{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold);}
+  .grading-card h4,.grading-recap-card h4{font-family:'Bebas Neue',sans-serif; letter-spacing:.03em; line-height:1; color:var(--cream); font-size:30px; margin:8px 0 12px;}
+  .grading-card p,.grading-recap-card p{color:var(--ink-dim); font-size:14.5px; margin:0;}
+  .grading-card.flagship{grid-column:1/-1; background:linear-gradient(120deg,rgba(201,162,39,.14),var(--navy-800) 46%,var(--navy-900)); border-color:rgba(201,162,39,.45);}
+  .grading-card.flagship .grading-card-body{padding:30px;}
+  .grading-card.flagship h4{font-size:36px;}
+  .grading-recap-card img{display:block; width:100%; height:480px; object-fit:contain; background:#050505;}
+  .grading-recap-body{padding:24px;}
+  @media(max-width:900px){.grading-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+  @media(max-width:760px){
+    .grading-section-head{display:block;}
+    .grading-section-head p{margin-top:8px; text-align:left;}
+    .grading-grid,.grading-recap-grid{grid-template-columns:1fr;}
+    .grading-card.flagship{grid-column:auto;}
+    .grading-recap-card img{height:auto; max-height:520px;}
+  }
+
   /* ---------- recaps ---------- */
   .recaps{display:flex; flex-direction:column; gap:26px; margin-top:44px;}
   .recap{background:var(--navy-800); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius); position:relative; overflow:hidden;}
@@ -323,6 +353,7 @@
     <div class="tablist" role="tablist" aria-label="What's coming up views">
       <button class="tab" role="tab" id="tab-month" aria-controls="panel-month" aria-selected="true">This Month</button>
       <button class="tab" role="tab" id="tab-calendar" aria-controls="panel-calendar" aria-selected="false">2026 Calendar</button>
+      <button class="tab" role="tab" id="tab-gradings" aria-controls="panel-gradings" aria-selected="false">Gradings</button>
       <button class="tab" role="tab" id="tab-birthdays" aria-controls="panel-birthdays" aria-selected="false">Birthdays</button>
       <button class="tab" role="tab" id="tab-recaps" aria-controls="panel-recaps" aria-selected="false">Recaps</button>
     </div>
@@ -516,7 +547,59 @@
     </div>
   </section>
 
-  <!-- ================= TAB 3 · BIRTHDAYS ================= -->
+  <!-- ================= TAB 3 · GRADINGS ================= -->
+  <section class="tabpanel" id="panel-gradings" role="tabpanel" aria-labelledby="tab-gradings" tabindex="0" hidden>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">GRADING HUB</span>
+        <h2>Gradings —<br>coming up &amp; recaps.</h2>
+      </div>
+      <p class="section-lede">Everything grading-related in one place — upcoming dates, what to prepare for and recent Urban Army results.</p>
+
+      <section class="grading-section" aria-labelledby="upcoming-gradings-heading">
+        <div class="grading-section-head">
+          <h3 id="upcoming-gradings-heading">What's coming up</h3>
+          <p>Invited members should use the link in their grading email to RSVP.</p>
+        </div>
+        <div class="grading-grid">
+          <article class="grading-card">
+            <figure><img src="teens-yellow-grading.png" alt="Teen Urban Muaythai students preparing for Yellow Grading" width="1536" height="1024" loading="lazy"></figure>
+            <div class="grading-card-body"><span class="grading-date">Wednesday · 2 September</span><h4>Teens Yellow Grading</h4><p>Our teens step up to demonstrate their technique, composure and progress as they work towards their Yellow Singlets.</p></div>
+          </article>
+          <article class="grading-card">
+            <figure><img src="kids-yellow-grading.png" alt="Young Urban Muaythai students preparing for Yellow Grading" width="1536" height="1024" loading="lazy"></figure>
+            <div class="grading-card-body"><span class="grading-date">Thursday · 3 September</span><h4>Kids Yellow Grading</h4><p>Our young warriors put their focus, technique and hard work on display as they take the next step in their training.</p></div>
+          </article>
+          <article class="grading-card">
+            <figure><img src="adult-yellow-grading.png" alt="Adult Urban Muaythai students preparing for Yellow Grading" width="1536" height="1024" loading="lazy"></figure>
+            <div class="grading-card-body"><span class="grading-date">Saturday · 12 September</span><h4>Adult Yellow Grading</h4><p>Adult members take on their Yellow Grading and showcase the skills, control and consistency built through training.</p></div>
+          </article>
+          <article class="grading-card flagship">
+            <div class="grading-card-body"><span class="grading-date">Saturday · 5 December</span><h4>Purple &amp; Black Gradings</h4><p>A major end-of-year grading day, followed by the Gala Ball Awards Night — our biggest celebration of the year.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="grading-section" aria-labelledby="grading-recaps-heading">
+        <div class="grading-section-head">
+          <h3 id="grading-recaps-heading">Recent grading recaps</h3>
+          <p>Celebrating the members who stepped up, tested their skills and earned their next singlet.</p>
+        </div>
+        <div class="grading-recap-grid">
+          <article class="grading-recap-card">
+            <img src="blue-grading-recap-september.jpg" alt="Urban Muaythai Teens Blue Grading participants with their coach" width="4284" height="5712" loading="lazy">
+            <div class="grading-recap-body"><span class="grading-date">Wrapped · 31 August 2026</span><h4>Teens Blue Grading</h4><p>Our teens closed out August by putting their hard-earned skills on display. They showed focus, composure and the confidence that comes from consistent training.</p></div>
+          </article>
+          <article class="grading-recap-card">
+            <img src="adult-blue-grading-august-2026.jpg" alt="Seven Urban Muaythai Adult Blue Grading participants with their coach" loading="lazy">
+            <div class="grading-recap-body"><span class="grading-date">Wrapped · 22 August 2026</span><h4>Adult Blue Grading</h4><p>Seven members stepped up, pushed the pace and showcased their progress. All seven completed the grading and earned their Blue Singlets — a huge, well-deserved achievement.</p></div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- ================= TAB 4 · BIRTHDAYS ================= -->
   <section class="tabpanel" id="panel-birthdays" role="tabpanel" aria-labelledby="tab-birthdays" tabindex="0" hidden>
     <div class="wrap">
       <div class="section-head">
@@ -551,7 +634,7 @@
     </div>
   </section>
 
-  <!-- ================= TAB 4 · RECAPS ================= -->
+  <!-- ================= TAB 5 · RECAPS ================= -->
   <section class="tabpanel" id="panel-recaps" role="tabpanel" aria-labelledby="tab-recaps" tabindex="0" hidden>
     <div class="wrap">
       <div class="section-head">
@@ -802,6 +885,7 @@
   var panels = {
     'tab-month':'panel-month',
     'tab-calendar':'panel-calendar',
+    'tab-gradings':'panel-gradings',
     'tab-birthdays':'panel-birthdays',
     'tab-recaps':'panel-recaps'
   };
@@ -844,7 +928,7 @@
   // open correct tab from hash on load (e.g. link #calendar or #recaps from an email)
   (function(){
     var h = (location.hash || '').replace('#','');
-    var map = {calendar:'tab-calendar', birthdays:'tab-birthdays', celebrations:'tab-birthdays', recaps:'tab-recaps', month:'tab-month'};
+    var map = {calendar:'tab-calendar', gradings:'tab-gradings', birthdays:'tab-birthdays', celebrations:'tab-birthdays', recaps:'tab-recaps', month:'tab-month'};
     if(map[h]){ activate(map[h], false); }
   })();
 </script>
