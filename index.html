@@ -45,7 +45,7 @@
   .tab:focus-visible{outline:2px solid var(--red-600); outline-offset:2px; border-radius:2px;}
   @media (max-width:640px){
     .nav-inner{flex-wrap:wrap; gap:10px;}
-    .tablist{width:100%; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:2px;}
+    .tablist{width:100%; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:2px;}
     .tab{font-size:9px; padding:8px 4px; white-space:normal; line-height:1.25; text-align:center;}
   }
 
@@ -81,29 +81,6 @@
   .section-num{font-family:'JetBrains Mono',monospace; color:var(--red-600); font-size:14px;}
   .section-head h2{font-size:clamp(32px,5vw,52px); color:var(--cream);}
   .section-lede{max-width:660px; color:var(--ink-dim); font-size:16px; margin-top:14px;}
-
-  /* ---------- birthdays ---------- */
-  #panel-birthdays .section-head{justify-content:center; text-align:center;}
-  #panel-birthdays .section-lede{margin:14px auto 0; text-align:center;}
-  .celebration-summary{max-width:520px; margin:34px 0 42px;}
-  #panel-birthdays .celebration-summary{margin-left:auto; margin-right:auto; text-align:center;}
-  .celebration-stat{padding:24px; background:linear-gradient(135deg,var(--navy-800),var(--navy-900)); border:1px solid rgba(255,255,255,.09); border-top:3px solid var(--red-600); border-radius:var(--radius);}
-  .celebration-stat strong{display:block; font-family:'Bebas Neue',sans-serif; font-size:52px; line-height:1; color:var(--cream);}
-  .celebration-stat span{display:block; margin-top:7px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-dim);}
-  .celebration-block{margin-top:46px;}
-  .celebration-block:first-of-type{margin-top:0;}
-  .celebration-title{display:flex; align-items:center; gap:14px; margin-bottom:18px;}
-  #panel-birthdays .celebration-title{justify-content:center;}
-  .celebration-title h3{font-size:36px;}
-  .celebration-icon{display:grid; place-items:center; width:42px; height:42px; border-radius:50%; background:rgba(200,16,46,.15); border:1px solid rgba(200,16,46,.38); font-size:20px;}
-  .celebration-list{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px;}
-  #panel-birthdays .celebration-list{max-width:940px; margin-left:auto; margin-right:auto;}
-  .celebration-item{display:grid; grid-template-columns:92px minmax(0,1fr); gap:14px; align-items:center; min-height:78px; padding:14px 16px; background:var(--navy-800); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius);}
-  .celebration-date{font-family:'JetBrains Mono',monospace; font-size:11px; line-height:1.45; letter-spacing:.05em; text-transform:uppercase; color:var(--gold);}
-  .celebration-name{font-weight:700; color:var(--cream);}
-  .celebration-detail{display:block; margin-top:2px; font-size:12px; color:var(--ink-dim);}
-  @media(max-width:800px){.celebration-list{grid-template-columns:1fr;}}
-  @media(max-width:520px){.celebration-item{grid-template-columns:78px minmax(0,1fr);}.celebration-stat strong{font-size:44px;}}
 
   /* ---------- event cards (This Month) ---------- */
   .events{display:flex; flex-direction:column; gap:30px; margin-top:44px;}
@@ -354,7 +331,6 @@
       <button class="tab" role="tab" id="tab-month" aria-controls="panel-month" aria-selected="true">This Month</button>
       <button class="tab" role="tab" id="tab-calendar" aria-controls="panel-calendar" aria-selected="false">2026 Calendar</button>
       <button class="tab" role="tab" id="tab-gradings" aria-controls="panel-gradings" aria-selected="false">Gradings</button>
-      <button class="tab" role="tab" id="tab-birthdays" aria-controls="panel-birthdays" aria-selected="false">Birthdays</button>
       <button class="tab" role="tab" id="tab-recaps" aria-controls="panel-recaps" aria-selected="false">Recaps</button>
     </div>
   </div>
@@ -599,42 +575,7 @@
     </div>
   </section>
 
-  <!-- ================= TAB 4 · BIRTHDAYS ================= -->
-  <section class="tabpanel" id="panel-birthdays" role="tabpanel" aria-labelledby="tab-birthdays" tabindex="0" hidden>
-    <div class="wrap">
-      <div class="section-head">
-        <span class="section-num">28 AUG — 03 SEP</span>
-        <h2>Birthdays<br>this week.</h2>
-      </div>
-      <p class="section-lede">A weekly shout-out to the Urban Army members celebrating another trip around the sun.</p>
-
-      <div class="celebration-summary" aria-label="This week's birthday total">
-        <div class="celebration-stat"><strong>12</strong><span>Member birthdays this week</span></div>
-      </div>
-
-      <section class="celebration-block" aria-labelledby="birthday-heading">
-        <div class="celebration-title"><span class="celebration-icon" aria-hidden="true">🎂</span><h3 id="birthday-heading">Birthdays this week</h3></div>
-        <div class="celebration-list">
-          <article class="celebration-item"><span class="celebration-date">Fri<br>28 Aug</span><div><span class="celebration-name">Koby J.</span><span class="celebration-detail">Happy birthday!</span></div></article>
-          <article class="celebration-item"><span class="celebration-date">Sat<br>29 Aug</span><div><span class="celebration-name">Jess C.</span><span class="celebration-detail">Happy birthday!</span></div></article>
-          <article class="celebration-item"><span class="celebration-date">Sat<br>29 Aug</span><div><span class="celebration-name">Thomas R.</span><span class="celebration-detail">Happy birthday!</span></div></article>
-          <article class="celebration-item"><span class="celebration-date">Sun<br>30 Aug</span><div><span class="celebration-name">Benji O.</span><span class="celebration-detail">Happy birthday!</span></div></article>
-          <article class="celebration-item"><span class="celebration-date">Sun<br>30 Aug</span><div><span class="celebration-name">Reef I.</span><span class="celebration-detail">Happy birthday!</span></div></article>
-          <article class="celebration-item"><span class="celebration-date">Sun<br>30 Aug</span><div><span class="celebration-name">Vitoria D.</span><span class="celebration-detail">Happy birthday!</span></div></article>
-          <article class="celebration-item"><span class="celebration-date">Mon<br>31 Aug</span><div><span class="celebration-name">Aitor T.</span><span class="celebration-detail">Happy birthday!</span></div></article>
-          <article class="celebration-item"><span class="celebration-date">Mon<br>31 Aug</span><div><span class="celebration-name">Ana S.</span><span class="celebration-detail">Happy birthday!</span></div></article>
-          <article class="celebration-item"><span class="celebration-date">Tue<br>01 Sep</span><div><span class="celebration-name">Lewis S.</span><span class="celebration-detail">Happy birthday!</span></div></article>
-          <article class="celebration-item"><span class="celebration-date">Wed<br>02 Sep</span><div><span class="celebration-name">Daniel D.</span><span class="celebration-detail">Happy birthday!</span></div></article>
-          <article class="celebration-item"><span class="celebration-date">Wed<br>02 Sep</span><div><span class="celebration-name">Nathan F.</span><span class="celebration-detail">Happy birthday!</span></div></article>
-          <article class="celebration-item"><span class="celebration-date">Thu<br>03 Sep</span><div><span class="celebration-name">Logan T.</span><span class="celebration-detail">Happy birthday!</span></div></article>
-        </div>
-      </section>
-
-
-    </div>
-  </section>
-
-  <!-- ================= TAB 5 · RECAPS ================= -->
+  <!-- ================= TAB 4 · RECAPS ================= -->
   <section class="tabpanel" id="panel-recaps" role="tabpanel" aria-labelledby="tab-recaps" tabindex="0" hidden>
     <div class="wrap">
       <div class="section-head">
@@ -886,7 +827,6 @@
     'tab-month':'panel-month',
     'tab-calendar':'panel-calendar',
     'tab-gradings':'panel-gradings',
-    'tab-birthdays':'panel-birthdays',
     'tab-recaps':'panel-recaps'
   };
   function activate(tabId, focusPanel){
@@ -928,7 +868,7 @@
   // open correct tab from hash on load (e.g. link #calendar or #recaps from an email)
   (function(){
     var h = (location.hash || '').replace('#','');
-    var map = {calendar:'tab-calendar', gradings:'tab-gradings', birthdays:'tab-birthdays', celebrations:'tab-birthdays', recaps:'tab-recaps', month:'tab-month'};
+    var map = {calendar:'tab-calendar', gradings:'tab-gradings', recaps:'tab-recaps', month:'tab-month'};
     if(map[h]){ activate(map[h], false); }
   })();
 </script>
