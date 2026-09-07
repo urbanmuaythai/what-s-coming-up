@@ -189,13 +189,15 @@
   .grading-section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:20px; padding-bottom:15px; margin-bottom:20px; border-bottom:1px solid rgba(255,255,255,.12);}
   .grading-section-head h3{font-size:36px;}
   .grading-section-head p{max-width:470px; margin:0; color:var(--ink-dim); font-size:14px; text-align:right;}
-  .grading-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px;}
+  .grading-grid{display:grid; grid-template-columns:1fr; gap:18px;}
   .grading-recap-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px;}
   .grading-card,.grading-recap-card{overflow:hidden; background:var(--navy-800); border:1px solid rgba(255,255,255,.09); border-radius:var(--radius); position:relative;}
   .grading-card::before,.grading-recap-card::before{content:''; position:absolute; inset:0 0 auto; height:4px; background:linear-gradient(90deg,var(--gold),var(--red-600)); z-index:2;}
   .grading-card figure{margin:0; aspect-ratio:16/9; overflow:hidden; background:#050505;}
   .grading-card figure img{display:block; width:100%; height:100%; object-fit:cover; transition:transform .4s ease;}
   .grading-card:hover figure img{transform:scale(1.025);}
+  .grading-card:not(.flagship){display:grid; grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);}
+  .grading-card:not(.flagship) figure{aspect-ratio:auto; min-height:300px;}
   .grading-card-body{padding:24px;}
   .grading-date{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold);}
   .grading-card h4,.grading-recap-card h4{font-family:'Bebas Neue',sans-serif; letter-spacing:.03em; line-height:1; color:var(--cream); font-size:30px; margin:8px 0 12px;}
@@ -205,12 +207,13 @@
   .grading-card.flagship h4{font-size:36px;}
   .grading-recap-card img{display:block; width:100%; height:480px; object-fit:contain; background:#050505;}
   .grading-recap-body{padding:24px;}
-  @media(max-width:900px){.grading-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
   @media(max-width:760px){
     .grading-section-head{display:block;}
     .grading-section-head p{margin-top:8px; text-align:left;}
     .grading-grid,.grading-recap-grid{grid-template-columns:1fr;}
     .grading-card.flagship{grid-column:auto;}
+    .grading-card:not(.flagship){display:block;}
+    .grading-card:not(.flagship) figure{aspect-ratio:16/9; min-height:0;}
     .grading-recap-card img{height:auto; max-height:520px;}
   }
 
@@ -356,7 +359,7 @@
         <span class="section-num">SEP '26</span>
         <h2>September —<br>this month.</h2>
       </div>
-      <p class="section-lede">September opens with three grading days and a full month of Urban Muay Thai Olympics training, followed by focused workshops, open sparring and Adult Yellow Grading. Keep showing up and keep building towards competition day.</p>
+      <p class="section-lede">September continues with a full month of Urban Muay Thai Olympics training, followed by Adult Yellow Grading and the Clinch Workshop. Keep showing up and keep building towards competition day.</p>
 
       <div class="events">
         <article class="event next" id="urban-muay-thai-olympics">
@@ -367,56 +370,6 @@
             <h3>Urban Muay Thai Olympics</h3>
             <p>September is training month for the Urban Muay Thai Olympics. Across the month, members will practise a range of events during scheduled sessions and build towards competition day on Saturday, 10 October.</p>
             <div class="pickup-note"><strong>More details to come:</strong> members will be able to register for events over the coming weeks. Keep an eye out for the full event list and choose the challenges you want to take on.</div>
-          </div>
-        </article>
-
-        <article class="event next" id="kids-blue-grading">
-          <figure class="event-media"><img src="kids-blue-grading.png" alt="Young Urban Muaythai students preparing for Kids Blue Grading" width="1536" height="1024" loading="lazy"></figure>
-          <div class="event-body">
-            <span class="next-up">September starts here</span>
-            <div class="event-top">
-              <span class="event-when">Tuesday · 1 September</span>
-              <span class="event-tag tag-flagship">Grading</span>
-            </div>
-            <h3>Kids Blue Grading</h3>
-            <p>Our young warriors step up to demonstrate their technique, focus and progress.</p>
-            <div class="pickup-note"><strong>Invites have been sent:</strong> please RSVP using the link in your email.</div>
-          </div>
-        </article>
-
-        <article class="event" id="teens-yellow-grading">
-          <figure class="event-media"><img src="teens-yellow-grading.png" alt="Teen Urban Muaythai students preparing for Yellow Grading" width="1536" height="1024" loading="lazy"></figure>
-          <div class="event-body">
-            <div class="event-top">
-              <span class="event-when">Wednesday · 2 September</span>
-              <span class="event-tag tag-flagship">Grading</span>
-            </div>
-            <h3>Teens Yellow Grading</h3>
-            <p>Our teens put their skills, composure and consistency to the test as they work towards their Yellow Singlets.</p>
-            <div class="pickup-note"><strong>Invites have been sent:</strong> please RSVP using the link in your email.</div>
-          </div>
-        </article>
-
-        <article class="event" id="kids-yellow-grading">
-          <figure class="event-media"><img src="kids-yellow-grading.png" alt="Young Urban Muaythai students preparing for Kids Yellow Grading" width="1536" height="1024" loading="lazy"></figure>
-          <div class="event-body">
-            <div class="event-top"><span class="event-when">Thursday · 3 September</span><span class="event-tag tag-flagship">Grading</span></div>
-            <h3>Kids Yellow Grading</h3>
-            <p>A chance for our young members to show how far they have come and earn their next level.</p>
-            <div class="pickup-note"><strong>Invites have been sent:</strong> please RSVP using the link in your email.</div>
-          </div>
-        </article>
-
-        <article class="event" id="learn-to-spar-workshop">
-          <figure class="event-media workshop-media"><img src="learn-to-spar-workshop.png" alt="Learn to Spar Workshop at Urban Muaythai — build skills, control and confidence" width="1776" height="887" loading="lazy"></figure>
-          <div class="event-body">
-            <div class="event-top"><span class="event-when">Friday · 4 September</span><span class="event-tag tag-train">Workshop</span></div>
-            <h3>Learn to Spar Workshop</h3>
-            <p>Build confidence, control and ring awareness before putting the lesson into practice.</p>
-            <div class="session-schedule" aria-label="Learn to Spar Workshop schedule">
-              <div class="session-row"><span class="session-time">4:30–5:30 pm</span><span class="session-name">Learn to Spar Workshop</span></div>
-              <div class="session-row open"><span class="session-time">5:30–6:30 pm</span><span class="session-name">Sparring — open to everyone</span></div>
-            </div>
           </div>
         </article>
 
@@ -465,31 +418,20 @@
 
       <div class="timeline">
 
-        <div class="timeline-month">
-          <div class="timeline-month-label">August</div>
-          <div class="timeline-list">
-            <div class="timeline-event"><span class="timeline-event-date">Sat 15 Aug</span><span class="timeline-event-title">Pad Flow Workshop</span><span class="event-tag tag-train">Workshop</span></div>
-            <div class="timeline-event"><span class="timeline-event-date">Fri 21 Aug</span><span class="timeline-event-title">Spar, Slices &amp; Suds</span><span class="event-tag tag-social">Social</span></div>
-            <div class="timeline-event flagship"><span class="timeline-event-date">Sat 22 Aug</span><span class="timeline-event-title">Adult Blue Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
-            <div class="timeline-event fight"><span class="timeline-event-date">Sat 29 Aug</span><span class="timeline-event-title">Destiny Fight Show</span><span class="event-tag tag-fight">Fight Show</span><span class="timeline-event-note">Ettridge vs Crittenden for the Destiny Pro Light Heavyweight Title · Chelsea vs Houston.</span></div>
-            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="teens-blue-grading.png" alt="Teen Urban Muaythai students lined up for Blue Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Mon 31 Aug</span><span class="timeline-event-title">Teens Blue Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
-          </div>
-        </div>
-
-        <div class="timeline-month">
+        <div class="timeline-month" data-month="8">
           <div class="timeline-month-label">September</div>
           <div class="timeline-list">
             <div class="timeline-event flagship has-image"><img class="timeline-event-image olympics-mark" src="urban-muay-thai-olympics-logo.png" alt="Urban Muay Thai Olympics logo" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">All September</span><span class="timeline-event-title">Urban Muay Thai Olympics Training Block</span><span class="event-tag tag-flagship">Program</span><span class="timeline-event-note">Practise the events throughout September ahead of competition day on 10 October. Registrations and more details are coming soon.</span></div>
-            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="kids-blue-grading.png" alt="Young Urban Muaythai students lined up for Kids Blue Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Tue 1 Sep</span><span class="timeline-event-title">Kids Blue Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
-            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="teens-yellow-grading.png" alt="Teen Urban Muaythai students lined up for Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Wed 2 Sep</span><span class="timeline-event-title">Teens Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
-            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="kids-yellow-grading.png" alt="Young Urban Muaythai students lined up for Kids Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Thu 3 Sep</span><span class="timeline-event-title">Kids Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
-            <div class="timeline-event has-image"><img class="timeline-event-image" src="learn-to-spar-workshop.png" alt="Learn to Spar Workshop" width="1776" height="887" loading="lazy"><span class="timeline-event-date">Fri 4 Sep</span><span class="timeline-event-title">Learn to Spar Workshop</span><span class="event-tag tag-train">Workshop</span><span class="timeline-event-note">4:30–5:30 pm workshop · 5:30–6:30 pm sparring open to everyone. Sparring still runs after the workshop.</span></div>
+            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="kids-blue-grading.png" alt="Young Urban Muaythai students lined up for Kids Blue Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Tue 1 Sep</span><span class="timeline-event-title">Kids Blue Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Now wrapped — see the Recaps tab.</span></div>
+            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="teens-yellow-grading.png" alt="Teen Urban Muaythai students lined up for Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Wed 2 Sep</span><span class="timeline-event-title">Teens Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Now wrapped — see the Recaps tab.</span></div>
+            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="kids-yellow-grading.png" alt="Young Urban Muaythai students lined up for Kids Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Thu 3 Sep</span><span class="timeline-event-title">Kids Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Now wrapped — see the Recaps tab.</span></div>
+            <div class="timeline-event has-image"><img class="timeline-event-image" src="learn-to-spar-workshop.png" alt="Learn to Spar Workshop" width="1776" height="887" loading="lazy"><span class="timeline-event-date">Fri 4 Sep</span><span class="timeline-event-title">Learn to Spar Workshop</span><span class="event-tag tag-train">Workshop</span><span class="timeline-event-note">Now wrapped — see the Recaps tab.</span></div>
             <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="adult-yellow-grading.png" alt="Adult Urban Muaythai students lined up for Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Sat 12 Sep</span><span class="timeline-event-title">Adult Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invites have been sent — please RSVP using the link in your email.</span></div>
             <div class="timeline-event has-image"><img class="timeline-event-image" src="clinch-workshop.png" alt="Clinch Workshop" width="1776" height="887" loading="lazy"><span class="timeline-event-date">Fri 18 Sep</span><span class="timeline-event-title">Clinch Workshop</span><span class="event-tag tag-train">Workshop</span><span class="timeline-event-note">4:30–5:30 pm workshop · 5:30–6:30 pm sparring open to everyone. Sparring still runs after the workshop.</span></div>
           </div>
         </div>
 
-        <div class="timeline-month">
+        <div class="timeline-month" data-month="9">
           <div class="timeline-month-label">October</div>
           <div class="timeline-list">
             <div class="timeline-event fight"><span class="timeline-event-date">Sat 3 Oct</span><span class="timeline-event-title">Honour Fight Show</span><span class="event-tag tag-fight">Fight Show</span></div>
@@ -498,18 +440,29 @@
           </div>
         </div>
 
-        <div class="timeline-month">
+        <div class="timeline-month" data-month="10">
           <div class="timeline-month-label">November</div>
           <div class="timeline-list">
             <div class="timeline-event fight"><span class="timeline-event-date">Sat 14 Nov</span><span class="timeline-event-title">On the Rise — Urban Muaythai Fight Show</span><span class="event-tag tag-fight">Fight Show</span></div>
           </div>
         </div>
 
-        <div class="timeline-month">
+        <div class="timeline-month" data-month="11">
           <div class="timeline-month-label">December</div>
           <div class="timeline-list">
             <div class="timeline-event"><span class="timeline-event-date">1 – 12 Dec</span><span class="timeline-event-title">12 Days of Christmas Sale</span><span class="event-tag tag-promo">Promo</span></div>
             <div class="timeline-event flagship"><span class="timeline-event-date">Sat 5 Dec</span><span class="timeline-event-title">Purple &amp; Black Gradings + Gala Ball Awards Night</span><span class="event-tag tag-flagship">Flagship</span><span class="timeline-event-note">Gradings followed by our biggest awards night of the year.</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-month" data-month="7">
+          <div class="timeline-month-label">August</div>
+          <div class="timeline-list">
+            <div class="timeline-event"><span class="timeline-event-date">Sat 15 Aug</span><span class="timeline-event-title">Pad Flow Workshop</span><span class="event-tag tag-train">Workshop</span></div>
+            <div class="timeline-event"><span class="timeline-event-date">Fri 21 Aug</span><span class="timeline-event-title">Spar, Slices &amp; Suds</span><span class="event-tag tag-social">Social</span></div>
+            <div class="timeline-event flagship"><span class="timeline-event-date">Sat 22 Aug</span><span class="timeline-event-title">Adult Blue Grading</span><span class="event-tag tag-flagship">Grading</span></div>
+            <div class="timeline-event fight"><span class="timeline-event-date">Sat 29 Aug</span><span class="timeline-event-title">Destiny Fight Show</span><span class="event-tag tag-fight">Fight Show</span><span class="timeline-event-note">Ettridge vs Crittenden for the Destiny Pro Light Heavyweight Title · Chelsea vs Houston.</span></div>
+            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="teens-blue-grading.png" alt="Teen Urban Muaythai students lined up for Blue Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Mon 31 Aug</span><span class="timeline-event-title">Teens Blue Grading</span><span class="event-tag tag-flagship">Grading</span></div>
           </div>
         </div>
 
@@ -539,14 +492,6 @@
         </div>
         <div class="grading-grid">
           <article class="grading-card">
-            <figure><img src="teens-yellow-grading.png" alt="Teen Urban Muaythai students preparing for Yellow Grading" width="1536" height="1024" loading="lazy"></figure>
-            <div class="grading-card-body"><span class="grading-date">Wednesday · 2 September</span><h4>Teens Yellow Grading</h4><p>Our teens step up to demonstrate their technique, composure and progress as they work towards their Yellow Singlets.</p></div>
-          </article>
-          <article class="grading-card">
-            <figure><img src="kids-yellow-grading.png" alt="Young Urban Muaythai students preparing for Yellow Grading" width="1536" height="1024" loading="lazy"></figure>
-            <div class="grading-card-body"><span class="grading-date">Thursday · 3 September</span><h4>Kids Yellow Grading</h4><p>Our young warriors put their focus, technique and hard work on display as they take the next step in their training.</p></div>
-          </article>
-          <article class="grading-card">
             <figure><img src="adult-yellow-grading.png" alt="Adult Urban Muaythai students preparing for Yellow Grading" width="1536" height="1024" loading="lazy"></figure>
             <div class="grading-card-body"><span class="grading-date">Saturday · 12 September</span><h4>Adult Yellow Grading</h4><p>Adult members take on their Yellow Grading and showcase the skills, control and consistency built through training.</p></div>
           </article>
@@ -559,9 +504,21 @@
       <section class="grading-section" aria-labelledby="grading-recaps-heading">
         <div class="grading-section-head">
           <h3 id="grading-recaps-heading">Recent grading recaps</h3>
-          <p>Celebrating the members who stepped up, tested their skills and earned their next singlet.</p>
+          <p>Celebrating the members who stepped up, tested their skills and showed their progress.</p>
         </div>
         <div class="grading-recap-grid">
+          <article class="grading-recap-card">
+            <img src="kids-yellow-grading.png" alt="Young Urban Muaythai members at Kids Yellow Grading" width="1536" height="1024" loading="lazy">
+            <div class="grading-recap-body"><span class="grading-date">Wrapped · 3 September 2026</span><h4>Kids Yellow Grading</h4><p>Our young warriors stepped up and put their technique, focus and training progress on display throughout Kids Yellow Grading.</p></div>
+          </article>
+          <article class="grading-recap-card">
+            <img src="teens-yellow-grading.png" alt="Teen Urban Muaythai members at Teens Yellow Grading" width="1536" height="1024" loading="lazy">
+            <div class="grading-recap-body"><span class="grading-date">Wrapped · 2 September 2026</span><h4>Teens Yellow Grading</h4><p>Our teens tested their skills, composure and consistency in a focused Yellow Grading session after months of steady work.</p></div>
+          </article>
+          <article class="grading-recap-card">
+            <img src="kids-blue-grading.png" alt="Young Urban Muaythai members at Kids Blue Grading" width="1536" height="1024" loading="lazy">
+            <div class="grading-recap-body"><span class="grading-date">Wrapped · 1 September 2026</span><h4>Kids Blue Grading</h4><p>September began with our young warriors stepping up for Kids Blue Grading and demonstrating their technique, focus and progress.</p></div>
+          </article>
           <article class="grading-recap-card">
             <img src="blue-grading-recap-september.jpg" alt="Urban Muaythai Teens Blue Grading participants with their coach" width="4284" height="5712" loading="lazy">
             <div class="grading-recap-body"><span class="grading-date">Wrapped · 31 August 2026</span><h4>Teens Blue Grading</h4><p>Our teens closed out August by putting their hard-earned skills on display. They showed focus, composure and the confidence that comes from consistent training.</p></div>
@@ -585,6 +542,54 @@
       <p class="section-lede">Missed one, or want to relive it? Here's how the Urban Army's recent events went down.</p>
 
       <div class="recaps">
+
+        <!-- ===== Learn to Spar Workshop ===== -->
+        <article class="recap" id="learn-to-spar-workshop-recap">
+          <div class="recap-media single">
+            <img src="learn-to-spar-workshop.png" alt="Learn to Spar Workshop at Urban Muaythai" width="1776" height="887" loading="lazy">
+          </div>
+          <div class="recap-content">
+            <div class="recap-top"><span class="recap-when">Wrapped · 4 September 2026</span><span class="recap-badge">Workshop recap</span></div>
+            <h3>Learn to Spar Workshop</h3>
+            <p>Members worked on confidence, control and ring awareness in a focused Learn to Spar session, building the foundations for safer and more effective rounds on the mats.</p>
+          </div>
+        </article>
+
+        <!-- ===== Kids Yellow Grading ===== -->
+        <article class="recap" id="kids-yellow-grading-recap">
+          <div class="recap-media single grading-recap">
+            <img src="kids-yellow-grading.png" alt="Young Urban Muaythai members at Kids Yellow Grading" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="recap-content">
+            <div class="recap-top"><span class="recap-when">Wrapped · 3 September 2026</span><span class="recap-badge">Grading recap</span></div>
+            <h3>Kids Yellow Grading</h3>
+            <p>Our young warriors stepped up and put their technique, focus and training progress on display throughout Kids Yellow Grading.</p>
+          </div>
+        </article>
+
+        <!-- ===== Teens Yellow Grading ===== -->
+        <article class="recap" id="teens-yellow-grading-recap">
+          <div class="recap-media single grading-recap">
+            <img src="teens-yellow-grading.png" alt="Teen Urban Muaythai members at Teens Yellow Grading" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="recap-content">
+            <div class="recap-top"><span class="recap-when">Wrapped · 2 September 2026</span><span class="recap-badge">Grading recap</span></div>
+            <h3>Teens Yellow Grading</h3>
+            <p>Our teens tested their skills, composure and consistency in a focused Yellow Grading session after months of steady work.</p>
+          </div>
+        </article>
+
+        <!-- ===== Kids Blue Grading ===== -->
+        <article class="recap" id="kids-blue-grading-recap">
+          <div class="recap-media single grading-recap">
+            <img src="kids-blue-grading.png" alt="Young Urban Muaythai members at Kids Blue Grading" width="1536" height="1024" loading="lazy">
+          </div>
+          <div class="recap-content">
+            <div class="recap-top"><span class="recap-when">Wrapped · 1 September 2026</span><span class="recap-badge">Grading recap</span></div>
+            <h3>Kids Blue Grading</h3>
+            <p>September began with our young warriors stepping up for Kids Blue Grading and demonstrating their technique, focus and progress.</p>
+          </div>
+        </article>
 
         <!-- ===== Teens Blue Grading ===== -->
         <article class="recap" id="teens-blue-grading-recap">
@@ -829,6 +834,36 @@
     'tab-gradings':'panel-gradings',
     'tab-recaps':'panel-recaps'
   };
+  function orderCalendarMonths(){
+    var timeline = document.querySelector('#panel-calendar .timeline');
+    if(!timeline){ return; }
+    var months = Array.prototype.slice.call(timeline.querySelectorAll('.timeline-month[data-month]'));
+    var now = new Date();
+    var currentMonth = now.getMonth();
+    var hasCurrentMonth = now.getFullYear() === 2026 && months.some(function(month){
+      return Number(month.getAttribute('data-month')) === currentMonth;
+    });
+    months.sort(function(a,b){
+      var aMonth = Number(a.getAttribute('data-month'));
+      var bMonth = Number(b.getAttribute('data-month'));
+      if(!hasCurrentMonth){ return aMonth - bMonth; }
+      var aRank = aMonth >= currentMonth ? aMonth - currentMonth : 12 - currentMonth + aMonth;
+      var bRank = bMonth >= currentMonth ? bMonth - currentMonth : 12 - currentMonth + bMonth;
+      return aRank - bRank;
+    });
+    var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    months.forEach(function(month){
+      var monthNumber = Number(month.getAttribute('data-month'));
+      var label = month.querySelector('.timeline-month-label');
+      if(label){
+        if(hasCurrentMonth && monthNumber === currentMonth){ label.textContent = monthNames[monthNumber] + ' · Current month'; }
+        else if(hasCurrentMonth && monthNumber < currentMonth){ label.textContent = 'Earlier in 2026 · ' + monthNames[monthNumber]; }
+        else { label.textContent = monthNames[monthNumber]; }
+      }
+      timeline.appendChild(month);
+    });
+  }
+  orderCalendarMonths();
   function activate(tabId, focusPanel){
     tabs.forEach(function(t){
       var on = (t.id === tabId);
