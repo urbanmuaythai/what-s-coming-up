@@ -296,11 +296,10 @@
 
   /* ---------- referral + closing + footer ---------- */
   .referral{padding:72px 0 24px;}
-  .referral-card{display:grid; grid-template-columns:minmax(380px,.95fr) minmax(0,1.05fr); align-items:start; background:var(--navy-800); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); overflow:hidden; position:relative;}
-  .referral-card::before{content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,var(--red-600),var(--gold)); z-index:2;}
-  .referral-poster{margin:0; background:#050507;}
+  .referral-card{display:grid; grid-template-columns:minmax(380px,.95fr) minmax(0,1.05fr); align-items:start; gap:22px; background:transparent;}
+  .referral-poster{margin:0; background:#050507; border:1px solid rgba(255,255,255,.1); border-top:4px solid var(--gold); border-radius:var(--radius); overflow:hidden;}
   .referral-poster img{width:100%; height:auto; object-fit:contain; object-position:top center;}
-  .referral-copy{padding:48px; align-self:center;}
+  .referral-copy{padding:44px; background:var(--navy-800); border:1px solid rgba(255,255,255,.1); border-top:4px solid var(--red-600); border-radius:var(--radius);}
   .referral-kicker{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); margin-bottom:14px;}
   .referral h2{font-size:clamp(38px,5vw,62px); margin-bottom:18px;}
   .referral-intro{font-size:18px; color:var(--cream); margin:0 0 18px; max-width:36ch;}
