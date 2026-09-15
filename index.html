@@ -130,6 +130,9 @@
   @media(max-width:520px){.event-media{min-height:235px;} .event-media.poster,.event-media.portrait{min-height:430px;} .poster-pair{min-height:0;} .event-body{padding:26px 22px 24px;}}
   .events .event.details-only{grid-template-columns:1fr; min-height:0;}
   .event.details-only .event-body{align-self:stretch;}
+  .events .event.workshop-feature{grid-template-columns:1fr;}
+  .event.workshop-feature .event-media{min-height:0; aspect-ratio:2/1;}
+  .event.workshop-feature .event-media img{object-fit:cover;}
   .session-schedule{display:grid; gap:8px; margin-top:20px;}
   .session-row{display:grid; grid-template-columns:120px 1fr; gap:18px; align-items:center; padding:12px 14px; background:var(--navy-900); border-left:3px solid var(--gold); border-radius:2px;}
   .session-time{font-family:'JetBrains Mono',monospace; color:var(--gold); font-size:12px; letter-spacing:.04em; text-transform:uppercase;}
@@ -139,9 +142,11 @@
   .workshop-demo{margin-top:20px; padding:16px; background:var(--navy-950); border:1px solid rgba(255,255,255,.1); border-radius:3px;}
   .workshop-demo-label{margin:0 0 6px; font-family:'JetBrains Mono',monospace; color:var(--gold); font-size:11px; letter-spacing:.1em; text-transform:uppercase;}
   .workshop-demo p{margin:0 0 12px; font-size:13px;}
-  .workshop-video + .workshop-video{margin-top:18px; padding-top:18px; border-top:1px solid rgba(255,255,255,.1);}
+  .workshop-videos{display:grid; gap:18px; margin-top:18px;}
+  .workshop-video{min-width:0;}
   .workshop-video h4{margin:0 0 6px; color:var(--cream); font-size:16px;}
-  .workshop-demo video{display:block; width:100%; max-height:390px; object-fit:contain; background:#050505; border:1px solid rgba(255,255,255,.08);}
+  .workshop-demo video{display:block; width:100%; aspect-ratio:16/9; object-fit:contain; background:#050505; border:1px solid rgba(255,255,255,.08);}
+  @media(min-width:860px){.workshop-videos{grid-template-columns:repeat(2,minmax(0,1fr));}}
   @media(max-width:520px){.session-row{grid-template-columns:1fr; gap:4px;}}
   .event-list-label{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-dim); margin:22px 0 12px;}
   .event-list{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
@@ -368,7 +373,7 @@
       <p class="section-lede">September continues with Urban Muay Thai Olympics training, with the Clinch Workshop coming up this Friday. Keep showing up and keep building towards competition day.</p>
 
       <div class="events">
-        <article class="event next" id="clinch-workshop">
+        <article class="event next workshop-feature" id="clinch-workshop">
           <figure class="event-media workshop-media"><img src="clinch-workshop.png" alt="Clinch Workshop at Urban Muaythai — build skills, control and confidence" width="1776" height="887"></figure>
           <div class="event-body">
             <span class="next-up">Next up</span>
@@ -382,21 +387,23 @@
             <div class="workshop-demo">
               <div class="workshop-demo-label">Technique preview</div>
               <p>These previews show how positioning, posture and balance come together to create stronger clinch control.</p>
-              <div class="workshop-video">
-                <h4>Double-hand control</h4>
-                <p>See how a secure two-hand position can help control posture while keeping your own stance balanced.</p>
-                <video controls playsinline preload="metadata" poster="clinch-workshop.png" aria-label="Double-hand clinch control technique preview">
-                  <source src="clinch-double-hand-preview.mp4" type="video/mp4">
-                  Your browser does not support embedded video.
-                </video>
-              </div>
-              <div class="workshop-video">
-                <h4>Clinch positioning and balance</h4>
-                <p>Watch the movement and body positioning used to stay composed, apply pressure and maintain control in close range.</p>
-                <video controls playsinline preload="metadata" poster="clinch-workshop.png" aria-label="Clinch positioning and balance technique preview">
-                  <source src="clinch-technique-preview-2.mp4" type="video/mp4">
-                  Your browser does not support embedded video.
-                </video>
+              <div class="workshop-videos">
+                <div class="workshop-video">
+                  <h4>Double-hand control</h4>
+                  <p>See how a secure two-hand position can help control posture while keeping your own stance balanced.</p>
+                  <video controls playsinline preload="metadata" poster="clinch-workshop.png" aria-label="Double-hand clinch control technique preview">
+                    <source src="clinch-double-hand-preview.mp4" type="video/mp4">
+                    Your browser does not support embedded video.
+                  </video>
+                </div>
+                <div class="workshop-video">
+                  <h4>Clinch positioning and balance</h4>
+                  <p>Watch the movement and body positioning used to stay composed, apply pressure and maintain control in close range.</p>
+                  <video controls playsinline preload="metadata" poster="clinch-positioning-balance-cover.png" aria-label="Clinch positioning and balance technique preview">
+                    <source src="clinch-technique-preview-2.mp4" type="video/mp4">
+                    Your browser does not support embedded video.
+                  </video>
+                </div>
               </div>
             </div>
           </div>
