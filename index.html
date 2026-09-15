@@ -139,6 +139,8 @@
   .workshop-demo{margin-top:20px; padding:16px; background:var(--navy-950); border:1px solid rgba(255,255,255,.1); border-radius:3px;}
   .workshop-demo-label{margin:0 0 6px; font-family:'JetBrains Mono',monospace; color:var(--gold); font-size:11px; letter-spacing:.1em; text-transform:uppercase;}
   .workshop-demo p{margin:0 0 12px; font-size:13px;}
+  .workshop-video + .workshop-video{margin-top:18px; padding-top:18px; border-top:1px solid rgba(255,255,255,.1);}
+  .workshop-video h4{margin:0 0 6px; color:var(--cream); font-size:16px;}
   .workshop-demo video{display:block; width:100%; max-height:390px; object-fit:contain; background:#050505; border:1px solid rgba(255,255,255,.08);}
   @media(max-width:520px){.session-row{grid-template-columns:1fr; gap:4px;}}
   .event-list-label{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-dim); margin:22px 0 12px;}
@@ -379,11 +381,23 @@
             </div>
             <div class="workshop-demo">
               <div class="workshop-demo-label">Technique preview</div>
-              <p>See a sample of the clinch and double-hand control techniques connected with this workshop.</p>
-              <video controls playsinline preload="metadata" poster="clinch-workshop.png" aria-label="Clinch and double-hand control technique preview">
-                <source src="clinch-double-hand-preview.mp4" type="video/mp4">
-                Your browser does not support embedded video.
-              </video>
+              <p>These previews show how positioning, posture and balance come together to create stronger clinch control.</p>
+              <div class="workshop-video">
+                <h4>Double-hand control</h4>
+                <p>See how a secure two-hand position can help control posture while keeping your own stance balanced.</p>
+                <video controls playsinline preload="metadata" poster="clinch-workshop.png" aria-label="Double-hand clinch control technique preview">
+                  <source src="clinch-double-hand-preview.mp4" type="video/mp4">
+                  Your browser does not support embedded video.
+                </video>
+              </div>
+              <div class="workshop-video">
+                <h4>Clinch positioning and balance</h4>
+                <p>Watch the movement and body positioning used to stay composed, apply pressure and maintain control in close range.</p>
+                <video controls playsinline preload="metadata" poster="clinch-workshop.png" aria-label="Clinch positioning and balance technique preview">
+                  <source src="clinch-technique-preview-2.mp4" type="video/mp4">
+                  Your browser does not support embedded video.
+                </video>
+              </div>
             </div>
           </div>
         </article>
