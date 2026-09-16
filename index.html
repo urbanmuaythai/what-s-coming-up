@@ -186,9 +186,10 @@
   .timeline-event-note a:hover,.timeline-event-note a:focus-visible{color:var(--cream);}
   .timeline-event-image{width:180px; height:120px; object-fit:cover; border-radius:8px; border:1px solid rgba(255,255,255,.12); flex-shrink:0; box-shadow:0 8px 24px rgba(0,0,0,.22);}
   .timeline-event-image.olympics-mark{object-fit:contain; padding:5px; background:#f5f5f3;}
+  .timeline-event-image.fight-poster{height:auto; aspect-ratio:1440/1899; object-fit:contain; background:#fff;}
   .timeline-event.has-image .timeline-event-note{margin-left:334px;}
   @media (max-width:760px){.timeline-event.has-image .timeline-event-image{width:140px; height:93px;} .timeline-event.has-image .timeline-event-note{margin-left:0;}}
-  @media (max-width:600px){.timeline-event{padding-left:24px;} .timeline-event-date{min-width:100%; order:-1;} .timeline-event-note{margin-left:0;} .timeline-event::before{top:20px;} .timeline-event.has-image .timeline-event-image{width:100%; height:auto; aspect-ratio:3/2;}}
+  @media (max-width:600px){.timeline-event{padding-left:24px;} .timeline-event-date{min-width:100%; order:-1;} .timeline-event-note{margin-left:0;} .timeline-event::before{top:20px;} .timeline-event.has-image .timeline-event-image{width:100%; height:auto; aspect-ratio:3/2;} .timeline-event.has-image .timeline-event-image.fight-poster{aspect-ratio:1440/1899;}}
 
   .ongoing-card{margin-top:40px; background:var(--navy-800); border:1px solid rgba(255,255,255,0.08); border-left:3px solid var(--gold); border-radius:var(--radius); padding:26px 26px 24px;}
   .ongoing-label{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--gold); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:10px;}
@@ -452,7 +453,7 @@
         <div class="timeline-month" data-month="9">
           <div class="timeline-month-label">October</div>
           <div class="timeline-list">
-            <div class="timeline-event fight"><span class="timeline-event-date">Sat 3 Oct</span><span class="timeline-event-title">Honour Fight Show</span><span class="event-tag tag-fight">Fight Show</span></div>
+            <div class="timeline-event fight has-image"><img class="timeline-event-image fight-poster" src="honour-origins-frenkel-vs-mckenzie.jpg" alt="Honour Origins fight poster featuring Evyatar Frenkel of Urban Muay Thai against Bodhi McKenzie of JTA Training Systems" width="1440" height="1899" loading="lazy"><span class="timeline-event-date">Sat 3 Oct · 2026</span><span class="timeline-event-title">Honour Origins — Evyatar Frenkel vs Bodhi McKenzie</span><span class="event-tag tag-fight">Fight Show</span><span class="timeline-event-note">67 kg · 3 × 2 FTR with elbow pads · Bracken Ridge Indoor Sports Centre. Seated $65 · Standing $40 · Table seating $250 per person (10 per table). <strong>No online ticket sales.</strong> Secure tickets through reception.</span></div>
             <div class="timeline-event flagship"><span class="timeline-event-date">Sat 10 Oct · 10:30 am</span><span class="timeline-event-title">Urban Muay Thai Olympics — Competition Day</span><span class="event-tag tag-flagship">Competition</span><span class="timeline-event-note">Put September's training to the test across 12 events. <a href="urban-muay-thai-olympics.html">See events, scoring and the full day plan.</a></span></div>
             <div class="timeline-event flagship"><span class="timeline-event-date">23 Oct – 6 Nov</span><span class="timeline-event-title">Thailand Tour</span><span class="event-tag tag-flagship">Tour</span><span class="timeline-event-note">Two weeks training in the home of Muay Thai.</span></div>
           </div>
