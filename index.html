@@ -106,6 +106,11 @@
   .event-media.olympics-media img{object-fit:contain; object-position:center; padding:12px; background:#f5f5f3;}
   .event-media.workshop-media::after{display:none;}
   .event-media.workshop-media img{object-fit:contain; object-position:center; background:#070707;}
+  .event-media.video-media{min-height:520px; background:#070707;}
+  .event-media.video-media::after{display:none;}
+  .event-media.video-media video{display:block; width:100%; height:100%; position:absolute; inset:0; object-fit:cover; background:#070707;}
+  .video-play-note{display:inline-flex; align-items:center; gap:8px; margin-top:18px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-dim);}
+  .video-play-note::before{content:''; width:8px; height:8px; border-radius:50%; background:var(--red-600); box-shadow:0 0 0 4px rgba(214,37,52,.13);}
   .event.fight-showcase{grid-template-columns:1fr;}
   .poster-pair{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px; min-height:680px; background:#070707;}
   .poster-pair::after{display:none;}
@@ -121,18 +126,22 @@
     .event{grid-template-columns:1fr;}
     .event-media{min-height:300px;}
     .event-media.poster,.event-media.portrait{min-height:480px;}
+    .event-media.video-media{min-height:520px;}
     .event-media::after{background:linear-gradient(0deg,rgba(27,31,59,.48),transparent 55%);}
   }
   @media(max-width:700px){
     .poster-pair{grid-template-columns:1fr; min-height:0;}
     .poster-pair img{height:auto; max-height:none;}
   }
-  @media(max-width:520px){.event-media{min-height:235px;} .event-media.poster,.event-media.portrait{min-height:430px;} .poster-pair{min-height:0;} .event-body{padding:26px 22px 24px;}}
+  @media(max-width:520px){.event-media{min-height:235px;} .event-media.poster,.event-media.portrait,.event-media.video-media{min-height:430px;} .poster-pair{min-height:0;} .event-body{padding:26px 22px 24px;}}
   .events .event.details-only{grid-template-columns:1fr; min-height:0;}
   .event.details-only .event-body{align-self:stretch;}
   .events .event.workshop-feature{grid-template-columns:1fr;}
   .event.workshop-feature .event-media{min-height:0; aspect-ratio:2/1;}
   .event.workshop-feature .event-media img{object-fit:cover;}
+  .events .event.gala-feature{grid-template-columns:1fr;}
+  .event.gala-feature .event-media{order:0; min-height:0; aspect-ratio:16/9;}
+  .event.gala-feature .event-body{padding:34px 30px 32px;}
   .session-schedule{display:grid; gap:8px; margin-top:20px;}
   .session-row{display:grid; grid-template-columns:120px 1fr; gap:18px; align-items:center; padding:12px 14px; background:var(--navy-900); border-left:3px solid var(--gold); border-radius:2px;}
   .session-time{font-family:'JetBrains Mono',monospace; color:var(--gold); font-size:12px; letter-spacing:.04em; text-transform:uppercase;}
@@ -370,7 +379,7 @@
         <span class="section-num">SEP '26</span>
         <h2>September —<br>this month.</h2>
       </div>
-      <p class="section-lede">September continues with Week 3 of Urban Muay Thai Olympics preparation. This week is about running mini competitions under pressure and building confidence before competition day.</p>
+      <p class="section-lede">September continues with Week 3 of Urban Muay Thai Olympics preparation, while we also look ahead to the Gala Ball Awards Night. Keep building towards competition day and save the date for our end-of-year celebration.</p>
 
       <div class="events">
         <article class="event" id="urban-muay-thai-olympics">
@@ -383,6 +392,23 @@
             <div class="pickup-note current-prep"><strong>Current preparation · Week 3 — Competition week</strong>21–24 September: mini competitions covering speed, strength, Muay Thai and fun events, with a focus on performing under pressure and building confidence.</div>
             <div class="pickup-note"><strong>Register with Jakob at reception:</strong> he will put your name down and record the events you want to enter. Let him know your team for any team events.</div>
             <a class="recap-link" href="urban-muay-thai-olympics.html">View the full Olympics guide</a>
+          </div>
+        </article>
+
+        <article class="event next gala-feature" id="gala-ball-awards-night">
+          <figure class="event-media video-media">
+            <video class="scroll-play-video" controls muted playsinline preload="metadata" data-scroll-play aria-label="Gala Ball Awards Night preview">
+              <source src="gala-ball-awards-night.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <div class="event-body">
+            <span class="next-up">Save the date</span>
+            <div class="event-top"><span class="event-when">Saturday · 5 December</span><span class="event-tag tag-flagship">Awards Night</span></div>
+            <h3>Gala Ball Awards Night</h3>
+            <p>Celebrate the people, progress and achievements that shaped 2026. The Gala Ball Awards Night brings the Urban Army together for our biggest end-of-year celebration, recognising standout performances, commitment and the community behind the team.</p>
+            <p>It follows the Purple and Black Gradings earlier that day. More event details will be announced closer to the night.</p>
+            <span class="video-play-note">Video plays automatically while in view</span>
           </div>
         </article>
 
@@ -934,6 +960,31 @@
     var h = (location.hash || '').replace('#','');
     var map = {calendar:'tab-calendar', gradings:'tab-gradings', recaps:'tab-recaps', month:'tab-month'};
     if(map[h]){ activate(map[h], false); }
+  })();
+
+  // Play featured videos only while they are visible. Videos stay muted so
+  // autoplay works across mobile and desktop browsers; controls allow sound.
+  (function(){
+    var videos = Array.prototype.slice.call(document.querySelectorAll('video[data-scroll-play]'));
+    if(!videos.length){ return; }
+    if(!('IntersectionObserver' in window)){
+      videos.forEach(function(video){ video.setAttribute('controls',''); });
+      return;
+    }
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var video = entry.target;
+        if(entry.isIntersecting && entry.intersectionRatio >= 0.35){
+          var playAttempt = video.play();
+          if(playAttempt && typeof playAttempt.catch === 'function'){
+            playAttempt.catch(function(){ /* Controls remain available if autoplay is blocked. */ });
+          }
+        } else {
+          video.pause();
+        }
+      });
+    }, {threshold:[0,0.35,0.7]});
+    videos.forEach(function(video){ observer.observe(video); });
   })();
 </script>
 </body>
