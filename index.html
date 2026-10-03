@@ -229,7 +229,7 @@
   .grading-card.flagship{grid-column:1/-1; background:linear-gradient(120deg,rgba(201,162,39,.14),var(--navy-800) 46%,var(--navy-900)); border-color:rgba(201,162,39,.45);}
   .grading-card.flagship .grading-card-body{padding:30px;}
   .grading-card.flagship h4{font-size:36px;}
-  .grading-recap-card img{display:block; width:100%; height:480px; object-fit:contain; background:#050505;}
+  .grading-recap-card img,.grading-recap-card video{display:block; width:100%; height:480px; object-fit:contain; background:#050505;}
   .grading-recap-body{padding:24px;}
   @media(max-width:760px){
     .grading-section-head{display:block;}
@@ -238,7 +238,7 @@
     .grading-card.flagship{grid-column:auto;}
     .grading-card:not(.flagship){display:block;}
     .grading-card:not(.flagship) figure{aspect-ratio:16/9; min-height:0;}
-    .grading-recap-card img{height:auto; max-height:520px;}
+    .grading-recap-card img,.grading-recap-card video{height:auto; max-height:520px;}
   }
 
   /* ---------- recaps ---------- */
@@ -253,6 +253,7 @@
   .recap-media{display:grid; grid-template-columns:1fr 1fr; gap:4px; min-height:310px; background:var(--navy-900);}
   .recap-media.single{grid-template-columns:1fr;}
   .recap-media img{width:100%; height:310px; object-fit:cover; display:block;}
+  .recap-media video{display:block; width:100%; height:520px; object-fit:contain; background:#050505;}
   .winter-gallery{grid-template-columns:repeat(4,1fr); min-height:0;}
   .winter-gallery img{height:420px; object-position:center top;}
   .gallery-swipe{display:none;}
@@ -274,6 +275,7 @@
   @media(max-width:620px){
     .recap-media{grid-template-columns:1fr; min-height:0;}
     .recap-media img{height:260px;}
+    .recap-media video{height:auto; max-height:620px;}
     .winter-gallery{grid-template-columns:repeat(4,minmax(260px,82vw)); grid-template-rows:400px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none;}
     .winter-gallery::-webkit-scrollbar{display:none;}
     .winter-gallery img{height:400px; scroll-snap-align:start;}
@@ -379,37 +381,47 @@
   <section class="tabpanel active" id="panel-month" role="tabpanel" aria-labelledby="tab-month" tabindex="0">
     <div class="wrap">
       <div class="section-head">
-        <span class="section-num">SEP '26</span>
-        <h2>September —<br>this month.</h2>
+        <span class="section-num">OCT '26</span>
+        <h2>October —<br>this month.</h2>
       </div>
-      <p class="section-lede">September closes with the final week of Urban Muay Thai Olympics preparation. Evyatar Frenkel steps into Honour Origins next on 3 October, followed by Olympics competition day, the Thailand Tour and the Gala Ball Awards Night later in the year.</p>
+      <p class="section-lede">October is underway. Green Grading wrapped today, Evyatar Frenkel steps into Honour Origins tonight, and the month continues with a public-holiday class, the Urban Muaythai Olympics and the Thailand Tour.</p>
 
       <div class="events">
-        <article class="event" id="urban-muay-thai-olympics">
-          <figure class="event-media olympics-media"><img src="urban-muay-thai-olympics-logo.png" alt="Urban Muay Thai Olympics logo featuring traditional mongkol headbands" width="1536" height="1024"></figure>
-          <div class="event-body">
-            <span class="next-up">Happening now</span>
-            <div class="event-top"><span class="event-when">All September · Competition 10 October</span><span class="event-tag tag-flagship">Program</span></div>
-            <h3>Urban Muay Thai Olympics</h3>
-            <p>September is training month for the Urban Muay Thai Olympics. Across the month, members will practise 12 challenges spanning speed, strength, Muay Thai and fun events before competition day on Saturday, 10 October.</p>
-            <div class="pickup-note current-prep"><strong>Current preparation · Week 4 — Refine your skills</strong>28 September–1 October: choose the event you most want to improve, use your earlier scores as a guide and begin each class with 10 minutes of focused event practice.</div>
-            <div class="pickup-note"><strong>Register with Jakob at reception:</strong> he will put your name down and record the events you want to enter. Let him know your team for any team events.</div>
-            <a class="recap-link" href="urban-muay-thai-olympics.html">View the full Olympics guide</a>
-          </div>
-        </article>
-
         <article class="event fight" id="honour-origins-frenkel-vs-mckenzie">
           <figure class="event-media poster">
             <img src="honour-origins-frenkel-vs-mckenzie.jpg" alt="Honour Origins fight poster featuring Evyatar Frenkel of Urban Muay Thai against Bodhi McKenzie of JTA Training Systems" width="1440" height="1899" loading="lazy">
           </figure>
           <div class="event-body">
-            <span class="next-up">Fight night</span>
+            <span class="next-up">Tonight</span>
             <div class="event-top"><span class="event-when">Saturday · 3 October 2026</span><span class="event-tag tag-fight">Fight Show</span></div>
             <h3>Honour Origins — Evyatar Frenkel vs Bodhi McKenzie</h3>
             <p>No easy fight here. Evyatar Frenkel represents Urban Muay Thai against Bodhi McKenzie of JTA Training Systems in a 67 kg, 3 × 2 FTR bout with elbow pads.</p>
             <div class="pickup-note"><strong>Bracken Ridge Indoor Sports Centre:</strong> 337 Bracken Ridge Road, Bracken Ridge QLD 4017.</div>
             <div class="pickup-note"><strong>Tickets:</strong> seated $65 · standing $40 · table seating $250 per person, with 10 seats per table.</div>
             <div class="pickup-note"><strong>No online ticket sales.</strong> Secure your tickets through reception.</div>
+          </div>
+        </article>
+
+        <article class="event" id="public-holiday-class">
+          <figure class="event-media poster"><img src="october-2026-events.jpg" alt="Urban Muaythai October 2026 dates including Green Grading, public holiday class, Olympics and Thailand Tour" width="1080" height="1350" loading="lazy"></figure>
+          <div class="event-body">
+            <span class="next-up">Monday timetable</span>
+            <div class="event-top"><span class="event-when">Monday · 5 October · 8:00 am</span><span class="event-tag tag-train">Class Update</span></div>
+            <h3>Public Holiday Class — 8:00 am only</h3>
+            <p>There is one Urban Muaythai class on the public holiday. Join the Urban Army on the mats at 8:00 am; the regular timetable will not run that day.</p>
+          </div>
+        </article>
+
+        <article class="event" id="urban-muay-thai-olympics">
+          <figure class="event-media poster"><img src="urban-muaythai-olympics-october-2026.jpg" alt="Urban Muaythai Olympics poster with the twelve speed, strength, Muay Thai and fun events" width="1080" height="1350" loading="lazy"></figure>
+          <div class="event-body">
+            <span class="next-up">Next up · Register now</span>
+            <div class="event-top"><span class="event-when">Saturday · 10 October · 10:30 am</span><span class="event-tag tag-flagship">Competition</span></div>
+            <h3>Urban Muaythai Olympics</h3>
+            <p>Put September's preparation to the test across 12 challenges spanning speed, strength, Muay Thai skills and team events.</p>
+            <div class="pickup-note"><strong>Register with Jakob at reception:</strong> he will put your name down and record the events you want to enter. Let him know your team for any team events.</div>
+            <div class="pickup-note current-prep"><strong>After the events</strong>Stay for the BBQ and medal ceremony with the Urban community.</div>
+            <a class="recap-link" href="urban-muay-thai-olympics.html">View the full Olympics guide</a>
           </div>
         </article>
 
@@ -430,20 +442,26 @@
           </div>
         </article>
 
-        <article class="event next video-feature" id="gala-ball-awards-night">
-          <figure class="event-media video-media">
-            <video class="scroll-play-video" controls muted playsinline preload="metadata" data-scroll-play aria-label="Gala Ball Awards Night preview">
-              <source src="gala-ball-awards-night.mp4" type="video/mp4">
-              Your browser does not support embedded video.
-            </video>
-          </figure>
+        <article class="event fight" id="on-the-rise-fight-series">
+          <figure class="event-media poster"><img src="on-the-rise-2026.jpg" alt="On the Rise Fight Series poster for 14 November 2026" width="1080" height="1350" loading="lazy"></figure>
           <div class="event-body">
-            <span class="next-up">Save the date</span>
-            <div class="event-top"><span class="event-when">Saturday · 5 December</span><span class="event-tag tag-flagship">Awards Night</span></div>
-            <h3>Gala Ball Awards Night</h3>
-            <p>Celebrate the people, progress and achievements that shaped 2026. The Gala Ball Awards Night brings the Urban Army together for our biggest end-of-year celebration, recognising standout performances, commitment and the community behind the team.</p>
-            <p>It follows the Purple and Black Gradings earlier that day. More event details will be announced closer to the night.</p>
-            <span class="video-play-note">Video plays automatically while in view</span>
+            <span class="next-up">Coming in November</span>
+            <div class="event-top"><span class="event-when">Saturday · 14 November</span><span class="event-tag tag-fight">Fight Show</span></div>
+            <h3>On the Rise Fight Series</h3>
+            <p>Urban Muaythai's inaugural fight show is set to showcase rising talent and help build the future champions of Muay Thai. More event details will be shared as fight night approaches.</p>
+          </div>
+        </article>
+
+        <article class="event next" id="gala-ball-awards-night">
+          <figure class="event-media poster"><img src="gala-awards-night-2026.jpg" alt="Urban Muaythai Gala Awards Night poster with event details and 2026 award categories" width="1080" height="1350" loading="lazy"></figure>
+          <div class="event-body">
+            <span class="next-up">Tickets at reception</span>
+            <div class="event-top"><span class="event-when">Saturday · 5 December · 6:00 pm</span><span class="event-tag tag-flagship">Awards Night</span></div>
+            <h3>Gala Awards Night</h3>
+            <p>Celebrate the Urban community at Burleigh Bears Function Room upstairs, with dinner, a drinks package, entertainment and the 2026 awards included.</p>
+            <div class="pickup-note"><strong>Tickets:</strong> $100 each. Grab yours at reception.</div>
+            <div class="pickup-note"><strong>Dress code:</strong> cocktail wear.</div>
+            <p>The night will also celebrate our 2026 Black Singlet members and welcome the newest Urban Legends Hall of Fame inductees.</p>
           </div>
         </article>
 
@@ -478,8 +496,10 @@
         <div class="timeline-month" data-month="9">
           <div class="timeline-month-label">October</div>
           <div class="timeline-list">
+            <div class="timeline-event flagship"><span class="timeline-event-date">Sat 3 Oct · 2026</span><span class="timeline-event-title">Green Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Now wrapped — watch the new video in the Gradings or Recaps tab.</span></div>
             <div class="timeline-event fight has-image"><img class="timeline-event-image fight-poster" src="honour-origins-frenkel-vs-mckenzie.jpg" alt="Honour Origins fight poster featuring Evyatar Frenkel of Urban Muay Thai against Bodhi McKenzie of JTA Training Systems" width="1440" height="1899" loading="lazy"><span class="timeline-event-date">Sat 3 Oct · 2026</span><span class="timeline-event-title">Honour Origins — Evyatar Frenkel vs Bodhi McKenzie</span><span class="event-tag tag-fight">Fight Show</span><span class="timeline-event-note">67 kg · 3 × 2 FTR with elbow pads · Bracken Ridge Indoor Sports Centre. Seated $65 · Standing $40 · Table seating $250 per person (10 per table). <strong>No online ticket sales.</strong> Secure tickets through reception.</span></div>
-            <div class="timeline-event flagship"><span class="timeline-event-date">Sat 10 Oct · 10:30 am</span><span class="timeline-event-title">Urban Muay Thai Olympics — Competition Day</span><span class="event-tag tag-flagship">Competition</span><span class="timeline-event-note">Put September's training to the test across 12 events. <a href="urban-muay-thai-olympics.html">See events, scoring and the full day plan.</a></span></div>
+            <div class="timeline-event"><span class="timeline-event-date">Mon 5 Oct · 8:00 am</span><span class="timeline-event-title">Public Holiday Class — 8:00 am only</span><span class="event-tag tag-train">Class Update</span><span class="timeline-event-note">The regular timetable will not run. Join the single public-holiday class at 8:00 am.</span></div>
+            <div class="timeline-event flagship has-image"><img class="timeline-event-image fight-poster" src="urban-muaythai-olympics-october-2026.jpg" alt="Urban Muaythai Olympics event poster" width="1080" height="1350" loading="lazy"><span class="timeline-event-date">Sat 10 Oct · 10:30 am</span><span class="timeline-event-title">Urban Muaythai Olympics — Competition Day</span><span class="event-tag tag-flagship">Competition</span><span class="timeline-event-note">Put September's training to the test across 12 events, followed by a BBQ and medal ceremony. <a href="urban-muay-thai-olympics.html">See events, scoring and the full day plan.</a></span></div>
             <div class="timeline-event flagship"><span class="timeline-event-date">23 Oct – 6 Nov</span><span class="timeline-event-title">Thailand Tour</span><span class="event-tag tag-flagship">Tour</span><span class="timeline-event-note">Two weeks training in the home of Muay Thai. <a href="thailand-tour.html">Explore the tour and see photos from 2025.</a></span></div>
           </div>
         </div>
@@ -487,7 +507,7 @@
         <div class="timeline-month" data-month="10">
           <div class="timeline-month-label">November</div>
           <div class="timeline-list">
-            <div class="timeline-event fight"><span class="timeline-event-date">Sat 14 Nov</span><span class="timeline-event-title">On the Rise — Urban Muaythai Fight Show</span><span class="event-tag tag-fight">Fight Show</span></div>
+            <div class="timeline-event fight has-image"><img class="timeline-event-image fight-poster" src="on-the-rise-2026.jpg" alt="On the Rise Fight Series poster" width="1080" height="1350" loading="lazy"><span class="timeline-event-date">Sat 14 Nov</span><span class="timeline-event-title">On the Rise Fight Series</span><span class="event-tag tag-fight">Fight Show</span><span class="timeline-event-note">Urban Muaythai's inaugural fight show — building the future champions of Muay Thai.</span></div>
           </div>
         </div>
 
@@ -495,7 +515,7 @@
           <div class="timeline-month-label">December</div>
           <div class="timeline-list">
             <div class="timeline-event"><span class="timeline-event-date">1 – 12 Dec</span><span class="timeline-event-title">12 Days of Christmas Sale</span><span class="event-tag tag-promo">Promo</span></div>
-            <div class="timeline-event flagship"><span class="timeline-event-date">Sat 5 Dec</span><span class="timeline-event-title">Purple &amp; Black Gradings + Gala Ball Awards Night</span><span class="event-tag tag-flagship">Flagship</span><span class="timeline-event-note">Gradings followed by our biggest awards night of the year.</span></div>
+            <div class="timeline-event flagship has-image"><img class="timeline-event-image fight-poster" src="gala-awards-night-2026.jpg" alt="Urban Muaythai Gala Awards Night poster" width="1080" height="1350" loading="lazy"><span class="timeline-event-date">Sat 5 Dec · 6:00 pm</span><span class="timeline-event-title">Purple &amp; Black Gradings + Gala Awards Night</span><span class="event-tag tag-flagship">Flagship</span><span class="timeline-event-note">Burleigh Bears Function Room upstairs · dinner, drinks package, entertainment and awards · cocktail wear · tickets $100 at reception.</span></div>
           </div>
         </div>
 
@@ -548,6 +568,13 @@
         </div>
         <div class="grading-recap-grid">
           <article class="grading-recap-card">
+            <video controls muted playsinline preload="metadata" data-scroll-play aria-label="Urban Muaythai Green Grading recap video">
+              <source src="october-2026-updates.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+            <div class="grading-recap-body"><span class="grading-date">Wrapped · 3 October 2026</span><h4>Green Grading</h4><p>Our members stepped up for Green Grading and put their technique, fitness and consistency to the test. Congratulations to everyone who earned their Green Singlet.</p></div>
+          </article>
+          <article class="grading-recap-card">
             <img src="adult-yellow-grading-recap-september-2026.jpg" alt="Adult Yellow Grading group together in the Urban Muaythai ring" width="4032" height="3024" loading="lazy">
             <div class="grading-recap-body"><span class="grading-date">Wrapped · 12 September 2026</span><h4>Adult Yellow Grading</h4><p>Our adult members stepped up for Yellow Grading and put their technique, fitness and consistency to the test.</p></div>
           </article>
@@ -586,6 +613,21 @@
       <p class="section-lede">Missed one, or want to relive it? Here's how the Urban Army's recent events went down.</p>
 
       <div class="recaps">
+
+        <!-- ===== Green Grading ===== -->
+        <article class="recap" id="green-grading-recap">
+          <div class="recap-media single grading-recap">
+            <video controls muted playsinline preload="metadata" data-scroll-play aria-label="Urban Muaythai Green Grading recap video">
+              <source src="october-2026-updates.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+          </div>
+          <div class="recap-content">
+            <div class="recap-top"><span class="recap-when">Wrapped · 3 October 2026</span><span class="recap-badge">Grading recap</span></div>
+            <h3>Green Grading</h3>
+            <p>Our members stepped up for Green Grading and put their technique, fitness and consistency to the test. Congratulations to everyone who earned their Green Singlet.</p>
+          </div>
+        </article>
 
         <!-- ===== Clinch Workshop ===== -->
         <article class="recap" id="clinch-workshop-recap">
