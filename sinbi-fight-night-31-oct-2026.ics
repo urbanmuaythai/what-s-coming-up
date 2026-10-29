@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Urban Muaythai//Whats Coming Up//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sinbi-31-oct-2026@urbanmuaythai.github.io
+DTSTAMP:20261029T060000Z
+DTSTART:20261031T130000Z
+DTEND:20261031T160000Z
+SUMMARY:Watch Aanya & Cooper fight live – Sinbi Stadium\, Phuket
+DESCRIPTION:Urban Muaythai fighters Aanya and Cooper are in the ring at Sinbi Boxing Stadium\, Phuket.\n8:00 pm Thailand time = 11:00 pm Gold Coast time.\n\nWatch live on YouTube (SINBI MuayThai Official): https://www.youtube.com/@SINBIMuayThai/streams\n\nMore: https://urbanmuaythai.github.io/what-s-coming-up/yokkao-fight-night.html#thailand
+LOCATION:https://www.youtube.com/@SINBIMuayThai/streams
+URL:https://www.youtube.com/@SINBIMuayThai/streams
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aanya & Cooper fight live in 30 minutes
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
