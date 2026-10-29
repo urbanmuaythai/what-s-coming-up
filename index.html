@@ -20,6 +20,7 @@
     --radius: 4px;
   }
   *{box-sizing:border-box;}
+  [hidden]{display:none !important;}
   html{scroll-behavior:smooth;}
   @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;} *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}}
   body{margin:0; background:var(--navy-950); color:var(--ink); font-family:'Inter',system-ui,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased;}
@@ -384,10 +385,11 @@
         <span class="section-num">OCT–DEC '26</span>
         <h2>Upcoming<br>highlights.</h2>
       </div>
-      <p class="section-lede">Celebrate the year at our Gala Awards Night on 5 December — tickets are available at reception and member nominations are open. Next on the calendar, the Thailand Tour runs from 23 October to 6 November.</p>
+      <p class="section-lede">Plan your next Urban event: explore the Gala Awards Night on 5 December, check grading dates and follow the Thailand Tour.</p>
+      <p class="section-lede" style="font-size:13px;">Event details checked · 29 October 2026 · Brisbane time</p>
 
       <div class="events">
-        <article class="event next" id="gala-ball-awards-night">
+        <article class="event next" id="gala-ball-awards-night" data-event-start="2026-12-05" data-event-end="2026-12-05" data-hide-after-event>
           <figure class="event-media poster"><img src="gala-awards-night-2026.jpg" alt="Urban Muaythai Gala Awards Night poster with event details and 2026 award categories" width="1080" height="1350" loading="lazy"></figure>
           <div class="event-body">
             <span class="next-up">2026 Gala · Nominate &amp; celebrate</span>
@@ -401,7 +403,7 @@
           </div>
         </article>
 
-        <article class="event" id="thailand-tour">
+        <article class="event" id="thailand-tour" data-event-start="2026-10-23" data-event-end="2026-11-06" data-hide-after-event>
           <figure class="event-media video-media thailand-video">
             <video class="scroll-play-video" controls muted playsinline preload="metadata" data-scroll-play aria-label="Urban Muaythai Thailand Tour video">
               <source src="thailand-tour.mp4" type="video/mp4">
@@ -409,16 +411,17 @@
             </video>
           </figure>
           <div class="event-body">
-            <span class="next-up">Next on the calendar · 23 October</span>
+            <span class="next-up"><span data-event-label>Underway</span> · 23 October – 6 November</span>
             <div class="event-top"><span class="event-when">23 October – 6 November</span><span class="event-tag tag-flagship">Tour</span></div>
             <h3>Thailand Tour</h3>
-            <p>Urban Muaythai heads to Thailand for two weeks of training in the home of Muay Thai. The tour is an opportunity to experience the sport at its source and share the journey with the Urban team.</p>
+            <p>The 2026 Thailand Tour runs from 23 October to 6 November: two weeks of training in the home of Muay Thai and time together with the Urban team.</p>
             <span class="video-play-note">Video plays automatically while in view</span>
             <a class="recap-link" href="thailand-tour.html">Explore the Thailand Tour</a>
           </div>
         </article>
 
       </div>
+      <p class="section-lede" id="highlights-empty" hidden>More event highlights will be shared when confirmed. Explore the calendar and recaps below.</p>
       <p class="section-lede" style="margin-top:28px;">The Olympics is wrapped! <a href="#recaps" class="tab-jump" data-tab="tab-recaps" data-focus="olympics-recap">Relive the morning and see all 17 photos →</a></p>
     </div>
   </section>
@@ -430,58 +433,59 @@
         <span class="section-num">2026</span>
         <h2>The year<br>at a glance.</h2>
       </div>
-      <p class="section-lede">Everything on the Urban Muaythai calendar for the rest of 2026 — workshops, socials, the Thailand tour and our biggest night of the year.</p>
+      <p class="section-lede">The 2026 Urban calendar — current events, upcoming dates and earlier events. Event status follows Brisbane time.</p>
 
       <div class="timeline">
 
         <div class="timeline-month" data-month="8">
           <div class="timeline-month-label">September</div>
           <div class="timeline-list">
-            <div class="timeline-event flagship has-image"><img class="timeline-event-image olympics-mark" src="urban-muay-thai-olympics-logo.png" alt="Urban Muay Thai Olympics logo" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Final week · 28 Sep–1 Oct</span><span class="timeline-event-title">Urban Muay Thai Olympics Training Block</span><span class="event-tag tag-flagship">Program</span><span class="timeline-event-note">Week 4 is focused on refining skills and improving the event that matters most to you before competition day on 10 October. <a href="urban-muay-thai-olympics.html">View the full Olympics guide.</a></span></div>
-            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="kids-blue-grading.png" alt="Young Urban Muaythai students lined up for Kids Blue Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Tue 1 Sep</span><span class="timeline-event-title">Kids Blue Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Now wrapped — see the Recaps tab.</span></div>
-            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="teens-yellow-grading-recap-september-2026.jpg" alt="Teens Yellow Grading group with their coach at Urban Muaythai" width="4284" height="5712" loading="lazy"><span class="timeline-event-date">Wed 2 Sep</span><span class="timeline-event-title">Teens Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Now wrapped — see the Recaps tab.</span></div>
-            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="kids-yellow-grading.png" alt="Young Urban Muaythai students lined up for Kids Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Thu 3 Sep</span><span class="timeline-event-title">Kids Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Now wrapped — see the Recaps tab.</span></div>
-            <div class="timeline-event has-image"><img class="timeline-event-image" src="learn-to-spar-workshop.png" alt="Learn to Spar Workshop" width="1776" height="887" loading="lazy"><span class="timeline-event-date">Fri 4 Sep</span><span class="timeline-event-title">Learn to Spar Workshop</span><span class="event-tag tag-train">Workshop</span><span class="timeline-event-note">Now wrapped — see the Recaps tab.</span></div>
-            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="adult-yellow-grading-recap-september-2026.jpg" alt="Adult Yellow Grading group together in the Urban Muaythai ring" width="4032" height="3024" loading="lazy"><span class="timeline-event-date">Sat 12 Sep</span><span class="timeline-event-title">Adult Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Now wrapped — see the Recaps tab.</span></div>
-            <div class="timeline-event has-image"><img class="timeline-event-image" src="clinch-workshop.png" alt="Clinch Workshop" width="1776" height="887" loading="lazy"><span class="timeline-event-date">Fri 18 Sep</span><span class="timeline-event-title">Clinch Workshop</span><span class="event-tag tag-train">Workshop</span><span class="timeline-event-note">Now wrapped — see the Recaps tab.</span></div>
+            <div class="timeline-event flagship has-image" data-event-start="2026-09-28" data-event-end="2026-10-01"><span class="event-tag" data-event-label></span><img class="timeline-event-image olympics-mark" src="urban-muay-thai-olympics-logo.png" alt="Urban Muay Thai Olympics logo" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Final week · 28 Sep–1 Oct</span><span class="timeline-event-title">Urban Muay Thai Olympics Training Block</span><span class="event-tag tag-flagship">Program</span><span class="timeline-event-note">The final training week ran from 28 September to 1 October ahead of competition day on 10 October. <a href="urban-muay-thai-olympics.html">View the full Olympics guide.</a></span></div>
+            <div class="timeline-event flagship has-image" data-event-start="2026-09-01" data-event-end="2026-09-01"><span class="event-tag" data-event-label></span><img class="timeline-event-image" src="kids-blue-grading.png" alt="Young Urban Muaythai students lined up for Kids Blue Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Tue 1 Sep</span><span class="timeline-event-title">Kids Blue Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Now wrapped — see the Recaps tab.</span></div>
+            <div class="timeline-event flagship has-image" data-event-start="2026-09-02" data-event-end="2026-09-02"><span class="event-tag" data-event-label></span><img class="timeline-event-image" src="teens-yellow-grading-recap-september-2026.jpg" alt="Teens Yellow Grading group with their coach at Urban Muaythai" width="4284" height="5712" loading="lazy"><span class="timeline-event-date">Wed 2 Sep</span><span class="timeline-event-title">Teens Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Now wrapped — see the Recaps tab.</span></div>
+            <div class="timeline-event flagship has-image" data-event-start="2026-09-03" data-event-end="2026-09-03"><span class="event-tag" data-event-label></span><img class="timeline-event-image" src="kids-yellow-grading.png" alt="Young Urban Muaythai students lined up for Kids Yellow Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Thu 3 Sep</span><span class="timeline-event-title">Kids Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Now wrapped — see the Recaps tab.</span></div>
+            <div class="timeline-event has-image" data-event-start="2026-09-04" data-event-end="2026-09-04"><span class="event-tag" data-event-label></span><img class="timeline-event-image" src="learn-to-spar-workshop.png" alt="Learn to Spar Workshop" width="1776" height="887" loading="lazy"><span class="timeline-event-date">Fri 4 Sep</span><span class="timeline-event-title">Learn to Spar Workshop</span><span class="event-tag tag-train">Workshop</span><span class="timeline-event-note">Now wrapped — see the Recaps tab.</span></div>
+            <div class="timeline-event flagship has-image" data-event-start="2026-09-12" data-event-end="2026-09-12"><span class="event-tag" data-event-label></span><img class="timeline-event-image" src="adult-yellow-grading-recap-september-2026.jpg" alt="Adult Yellow Grading group together in the Urban Muaythai ring" width="4032" height="3024" loading="lazy"><span class="timeline-event-date">Sat 12 Sep</span><span class="timeline-event-title">Adult Yellow Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Now wrapped — see the Recaps tab.</span></div>
+            <div class="timeline-event has-image" data-event-start="2026-09-18" data-event-end="2026-09-18"><span class="event-tag" data-event-label></span><img class="timeline-event-image" src="clinch-workshop.png" alt="Clinch Workshop" width="1776" height="887" loading="lazy"><span class="timeline-event-date">Fri 18 Sep</span><span class="timeline-event-title">Clinch Workshop</span><span class="event-tag tag-train">Workshop</span><span class="timeline-event-note">Now wrapped — see the Recaps tab.</span></div>
           </div>
         </div>
 
         <div class="timeline-month" data-month="9">
           <div class="timeline-month-label">October</div>
           <div class="timeline-list">
-            <div class="timeline-event flagship"><span class="timeline-event-date">Sat 3 Oct · 2026</span><span class="timeline-event-title">Green Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Now wrapped — watch the new video in the Gradings or Recaps tab.</span></div>
-            <div class="timeline-event"><span class="timeline-event-date">Mon 5 Oct · 8:00 am</span><span class="timeline-event-title">Public Holiday Class — 8:00 am only</span><span class="event-tag tag-train">Class Update</span><span class="timeline-event-note">The regular timetable will not run. Join the single public-holiday class at 8:00 am.</span></div>
-            <div class="timeline-event flagship has-image"><img class="timeline-event-image fight-poster" src="assets/olympics-recap-2026/photo-05.jpg" alt="Pheonix celebrating with the overall Olympics champion trophy" width="1200" height="1600" loading="lazy"><span class="timeline-event-date">Wrapped · Sat 10 Oct</span><span class="timeline-event-title">Urban Muaythai Olympics — Competition Day</span><span class="event-tag tag-flagship">Recap</span><span class="timeline-event-note">11 events, medals and a BBQ at North Burleigh. Our overall GOAT Pheonix took home medals in six events! <a href="urban-muaythai-olympics-recap.html">Read the recap and see all 17 photos.</a></span></div>
-            <div class="timeline-event flagship"><span class="timeline-event-date">23 Oct – 6 Nov</span><span class="timeline-event-title">Thailand Tour</span><span class="event-tag tag-flagship">Tour</span><span class="timeline-event-note">Two weeks training in the home of Muay Thai. <a href="thailand-tour.html">Explore the tour and see photos from 2025.</a></span></div>
+            <div class="timeline-event flagship" data-event-start="2026-10-03" data-event-end="2026-10-03"><span class="event-tag" data-event-label></span><span class="timeline-event-date">Sat 3 Oct · 2026</span><span class="timeline-event-title">Green Grading</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Now wrapped — watch the video in the Gradings or Recaps tab.</span></div>
+            <div class="timeline-event" data-event-start="2026-10-05" data-event-end="2026-10-05"><span class="event-tag" data-event-label></span><span class="timeline-event-date">Mon 5 Oct · 8:00 am</span><span class="timeline-event-title">Public Holiday Class — 8:00 am only</span><span class="event-tag tag-train">Class Update</span><span class="timeline-event-note">The 5 October public-holiday timetable listed one class at 8:00 am.</span></div>
+            <div class="timeline-event flagship has-image" data-event-start="2026-10-10" data-event-end="2026-10-10"><span class="event-tag" data-event-label></span><img class="timeline-event-image fight-poster" src="assets/olympics-recap-2026/photo-05.jpg" alt="Pheonix celebrating with the overall Olympics champion trophy" width="1200" height="1600" loading="lazy"><span class="timeline-event-date">Wrapped · Sat 10 Oct</span><span class="timeline-event-title">Urban Muaythai Olympics — Competition Day</span><span class="event-tag tag-flagship">Recap</span><span class="timeline-event-note">11 events, medals and a BBQ at North Burleigh. Our overall GOAT Pheonix took home medals in six events! <a href="urban-muaythai-olympics-recap.html">Read the recap and see all 17 photos.</a></span></div>
+            <div class="timeline-event flagship" data-event-start="2026-10-23" data-event-end="2026-11-06"><span class="event-tag" data-event-label></span><span class="timeline-event-date">23 Oct – 6 Nov</span><span class="timeline-event-title">Thailand Tour</span><span class="event-tag tag-flagship">Tour</span><span class="timeline-event-note">Two weeks training in the home of Muay Thai. <a href="thailand-tour.html">Explore the tour and see photos from 2025.</a></span></div>
           </div>
         </div>
 
         <div class="timeline-month" data-month="11">
           <div class="timeline-month-label">December</div>
           <div class="timeline-list">
-            <div class="timeline-event"><span class="timeline-event-date">1 – 12 Dec</span><span class="timeline-event-title">12 Days of Christmas Sale</span><span class="event-tag tag-promo">Promo</span></div>
-            <div class="timeline-event flagship has-image"><img class="timeline-event-image fight-poster" src="gala-awards-night-2026.jpg" alt="Urban Muaythai Gala Awards Night poster" width="1080" height="1350" loading="lazy"><span class="timeline-event-date">Sat 5 Dec · 6:00 pm</span><span class="timeline-event-title">Purple &amp; Black Gradings + Gala Awards Night</span><span class="event-tag tag-flagship">Flagship</span><span class="timeline-event-note">Burleigh Bears Function Room upstairs · dinner, drinks package, entertainment and awards · cocktail wear · tickets $100 at reception. <a href="gala-awards-night.html">Explore the awards →</a></span></div>
+            <div class="timeline-event" data-event-start="2026-12-01" data-event-end="2026-12-12"><span class="event-tag" data-event-label></span><span class="timeline-event-date">1 – 12 Dec</span><span class="timeline-event-title">12 Days of Christmas Sale</span><span class="event-tag tag-promo">Promo</span></div>
+            <div class="timeline-event flagship" data-event-start="2026-12-05" data-event-end="2026-12-05"><span class="event-tag" data-event-label></span><span class="timeline-event-date">Sat 5 Dec · time in invitation</span><span class="timeline-event-title">Purple &amp; Black Gradings</span><span class="event-tag tag-flagship">Grading</span><span class="timeline-event-note">Invited members should check their grading email for session details and RSVP.</span></div>
+            <div class="timeline-event flagship has-image" data-event-start="2026-12-05" data-event-end="2026-12-05"><span class="event-tag" data-event-label></span><img class="timeline-event-image fight-poster" src="gala-awards-night-2026.jpg" alt="Urban Muaythai Gala Awards Night poster" width="1080" height="1350" loading="lazy"><span class="timeline-event-date">Sat 5 Dec · 6:00 pm</span><span class="timeline-event-title">Gala Awards Night</span><span class="event-tag tag-flagship">Flagship</span><span class="timeline-event-note">Burleigh Bears Function Room upstairs · dinner, drinks package, entertainment and awards · cocktail wear · tickets $100 at reception. <a href="gala-awards-night.html">Explore the awards →</a></span></div>
           </div>
         </div>
 
         <div class="timeline-month" data-month="7">
           <div class="timeline-month-label">August</div>
           <div class="timeline-list">
-            <div class="timeline-event"><span class="timeline-event-date">Sat 15 Aug</span><span class="timeline-event-title">Pad Flow Workshop</span><span class="event-tag tag-train">Workshop</span></div>
-            <div class="timeline-event"><span class="timeline-event-date">Fri 21 Aug</span><span class="timeline-event-title">Spar, Slices &amp; Suds</span><span class="event-tag tag-social">Social</span></div>
-            <div class="timeline-event flagship"><span class="timeline-event-date">Sat 22 Aug</span><span class="timeline-event-title">Adult Blue Grading</span><span class="event-tag tag-flagship">Grading</span></div>
-            <div class="timeline-event fight"><span class="timeline-event-date">Sat 29 Aug</span><span class="timeline-event-title">Destiny Fight Show</span><span class="event-tag tag-fight">Fight Show</span><span class="timeline-event-note">Ettridge vs Crittenden for the Destiny Pro Light Heavyweight Title · Chelsea vs Houston.</span></div>
-            <div class="timeline-event flagship has-image"><img class="timeline-event-image" src="teens-blue-grading.png" alt="Teen Urban Muaythai students lined up for Blue Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Mon 31 Aug</span><span class="timeline-event-title">Teens Blue Grading</span><span class="event-tag tag-flagship">Grading</span></div>
+            <div class="timeline-event" data-event-start="2026-08-15" data-event-end="2026-08-15"><span class="event-tag" data-event-label></span><span class="timeline-event-date">Sat 15 Aug</span><span class="timeline-event-title">Pad Flow Workshop</span><span class="event-tag tag-train">Workshop</span></div>
+            <div class="timeline-event" data-event-start="2026-08-21" data-event-end="2026-08-21"><span class="event-tag" data-event-label></span><span class="timeline-event-date">Fri 21 Aug</span><span class="timeline-event-title">Spar, Slices &amp; Suds</span><span class="event-tag tag-social">Social</span></div>
+            <div class="timeline-event flagship" data-event-start="2026-08-22" data-event-end="2026-08-22"><span class="event-tag" data-event-label></span><span class="timeline-event-date">Sat 22 Aug</span><span class="timeline-event-title">Adult Blue Grading</span><span class="event-tag tag-flagship">Grading</span></div>
+            <div class="timeline-event fight" data-event-start="2026-08-29" data-event-end="2026-08-29"><span class="event-tag" data-event-label></span><span class="timeline-event-date">Sat 29 Aug</span><span class="timeline-event-title">Destiny Fight Show</span><span class="event-tag tag-fight">Fight Show</span><span class="timeline-event-note">Ettridge vs Crittenden for the Destiny Pro Light Heavyweight Title · Chelsea vs Houston.</span></div>
+            <div class="timeline-event flagship has-image" data-event-start="2026-08-31" data-event-end="2026-08-31"><span class="event-tag" data-event-label></span><img class="timeline-event-image" src="teens-blue-grading.png" alt="Teen Urban Muaythai students lined up for Blue Grading training" width="1536" height="1024" loading="lazy"><span class="timeline-event-date">Mon 31 Aug</span><span class="timeline-event-title">Teens Blue Grading</span><span class="event-tag tag-flagship">Grading</span></div>
           </div>
         </div>
 
       </div>
 
-      <div class="ongoing-card">
-        <div class="ongoing-label">10 October – 5 December · 8-Week Challenge</div>
+      <div class="ongoing-card" data-event-start="2026-10-10" data-event-end="2026-12-05">
+        <div class="ongoing-label"><span data-event-label>Underway</span> · 10 October – 5 December · 8-Week Challenge</div>
         <h3>Urban Warrior Transformation Challenge</h3>
-        <p>Our 8-week transformation challenge runs from 10 October to 5 December. More details coming soon.</p>
+        <p>The scheduled challenge dates are 10 October–5 December. Speak with reception for challenge information.</p>
       </div>
     </div>
   </section>
@@ -918,26 +922,37 @@
     var timeline = document.querySelector('#panel-calendar .timeline');
     if(!timeline){ return; }
     var months = Array.prototype.slice.call(timeline.querySelectorAll('.timeline-month[data-month]'));
-    var now = new Date();
-    var currentMonth = now.getMonth();
-    var hasCurrentMonth = now.getFullYear() === 2026 && months.some(function(month){
-      return Number(month.getAttribute('data-month')) === currentMonth;
-    });
+    var brisbaneDate = new Intl.DateTimeFormat('en-CA', {timeZone:'Australia/Brisbane', year:'numeric', month:'2-digit', day:'2-digit'}).format(new Date());
+    var currentMonth = Number(brisbaneDate.slice(5,7)) - 1;
+    var hasCurrentMonth = brisbaneDate.slice(0,4) === '2026';
+    function monthRank(month){
+      var events = Array.prototype.slice.call(month.querySelectorAll('[data-event-end]'));
+      var active = events.some(function(event){ return event.getAttribute('data-event-start') <= brisbaneDate && event.getAttribute('data-event-end') >= brisbaneDate; });
+      var upcoming = events.some(function(event){ return event.getAttribute('data-event-start') > brisbaneDate; });
+      return active ? 0 : upcoming ? 1 : 2;
+    }
     months.sort(function(a,b){
-      var aMonth = Number(a.getAttribute('data-month'));
-      var bMonth = Number(b.getAttribute('data-month'));
-      if(!hasCurrentMonth){ return aMonth - bMonth; }
-      var aRank = aMonth >= currentMonth ? aMonth - currentMonth : 12 - currentMonth + aMonth;
-      var bRank = bMonth >= currentMonth ? bMonth - currentMonth : 12 - currentMonth + bMonth;
-      return aRank - bRank;
+      var rankDifference = monthRank(a) - monthRank(b);
+      if(rankDifference){ return rankDifference; }
+      var difference = Number(a.getAttribute('data-month')) - Number(b.getAttribute('data-month'));
+      return monthRank(a) === 2 ? -difference : difference;
     });
     var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
     months.forEach(function(month){
       var monthNumber = Number(month.getAttribute('data-month'));
+      var list = month.querySelector('.timeline-list');
+      if(list){
+        Array.prototype.slice.call(list.children).sort(function(a,b){
+          var aPast = a.getAttribute('data-event-end') < brisbaneDate;
+          var bPast = b.getAttribute('data-event-end') < brisbaneDate;
+          if(aPast !== bPast){ return aPast ? 1 : -1; }
+          return a.getAttribute('data-event-start').localeCompare(b.getAttribute('data-event-start'));
+        }).forEach(function(event){ list.appendChild(event); });
+      }
       var label = month.querySelector('.timeline-month-label');
       if(label){
         if(hasCurrentMonth && monthNumber === currentMonth){ label.textContent = monthNames[monthNumber] + ' · Current month'; }
-        else if(hasCurrentMonth && monthNumber < currentMonth){ label.textContent = 'Earlier in 2026 · ' + monthNames[monthNumber]; }
+        else if(monthRank(month) === 2){ label.textContent = 'Earlier in 2026 · ' + monthNames[monthNumber]; }
         else { label.textContent = monthNames[monthNumber]; }
       }
       timeline.appendChild(month);
@@ -1012,5 +1027,6 @@
     videos.forEach(function(video){ observer.observe(video); });
   })();
 </script>
+<script src="assets/event-status.js"></script>
 </body>
 </html>

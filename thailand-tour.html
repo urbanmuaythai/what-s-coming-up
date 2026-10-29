@@ -28,7 +28,7 @@
   @media(max-width:860px){.hero{min-height:650px;background-position:58% center;}.section-head,.overview{grid-template-columns:1fr;}.gallery figure:nth-child(n){grid-column:span 6;}.gallery figure:nth-child(1),.gallery figure:nth-child(8){grid-column:span 12;}.gallery img,.gallery figure:nth-child(1) img,.gallery figure:nth-child(8) img{height:340px;}}
   @media(max-width:620px){.wrap{width:min(100% - 32px,1160px);}.nav-inner{min-height:54px;}.jump{top:54px;}.back{font-size:9px;text-align:right;}.hero{min-height:620px;background-position:62% center;}.hero-inner{padding:64px 0 50px;}.hero::before{background:linear-gradient(0deg,rgba(10,12,23,.98) 4%,rgba(10,12,23,.72) 66%,rgba(10,12,23,.3));}section{padding:58px 0;}.section-head{gap:16px;}.overview-copy,.tour-facts{padding:24px;}.video-card{grid-template-columns:1fr;padding:18px;}.video-shell{width:min(100%,360px);margin:0 auto;}.gallery figure:nth-child(n){grid-column:span 12;}.gallery img,.gallery figure:nth-child(1) img,.gallery figure:nth-child(8) img{height:auto;aspect-ratio:4/3;}}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}.gallery img{transition:none;}}
-</style>
+[hidden]{display:none !important;}</style>
 </head>
 <body>
 <a class="skip-link" href="#tour">Skip to tour details</a>
@@ -51,9 +51,9 @@
 <main id="tour">
   <section>
     <div class="wrap">
-      <div class="section-head"><div><span class="kicker">Upcoming · 2026</span><h2>The next<br>adventure.</h2></div><p class="section-intro">The Urban Muaythai Thailand Tour returns from 23 October to 6 November. It is a chance to experience Muay Thai at its source, train alongside the Urban team and share two weeks in the country that shaped the sport.</p></div>
+      <div class="section-head"><div><span class="kicker" data-event-start="2026-10-23" data-event-end="2026-11-06"><span data-event-label>Underway</span> · 2026</span><h2>The Thailand<br>adventure.</h2></div><p class="section-intro">The 2026 Urban Muaythai Thailand Tour runs from 23 October to 6 November. It is a chance to experience Muay Thai at its source, train alongside the Urban team and share two weeks in the country that shaped the sport.</p></div>
       <div class="overview">
-        <article class="overview-copy"><h3>More than a training trip.</h3><p>The Thailand Tour brings the Urban community together beyond the home gym. Training sits at the heart of the trip, with time together away from the mats forming just as much of the experience.</p><p>Further tour information will be shared by the gym as details are confirmed.</p></article>
+        <article class="overview-copy"><h3>More than a training trip.</h3><p>The Thailand Tour brings the Urban community together beyond the home gym. Training sits at the heart of the trip, with time together away from the mats forming just as much of the experience.</p><p>For tour enquiries, contact Urban Muaythai reception.</p></article>
         <aside class="tour-facts" aria-label="Thailand Tour facts"><div class="fact"><span>Tour dates</span><strong>23 October–6 November 2026</strong></div><div class="fact"><span>Duration</span><strong>Two weeks</strong></div><div class="fact"><span>The experience</span><strong>Training in the home of Muay Thai</strong></div></aside>
       </div>
     </div>
@@ -91,7 +91,7 @@
     </div>
   </section>
 
-  <section class="closing"><div class="wrap"><span class="kicker">Urban Muaythai Thailand Tour</span><h2>Train. Travel.<br>Experience it together.</h2><p>The countdown to the 2026 Thailand Tour is on. More information will be shared by the gym as it becomes available.</p><span class="date">23 October–6 November 2026</span></div></section>
+  <section class="closing"><div class="wrap"><span class="kicker">Urban Muaythai Thailand Tour</span><h2>Train. Travel.<br>Experience it together.</h2><p><span data-tour-phase="upcoming" hidden>The 2026 Thailand Tour starts on 23 October.</span><span data-tour-phase="underway">The 2026 Thailand Tour is underway, running until 6 November.</span><span data-tour-phase="past" hidden>The 2026 Thailand Tour dates were 23 October–6 November. Explore the videos and the 2025 gallery above.</span></p><span class="date">23 October–6 November 2026</span></div></section>
 </main>
 
 <footer><div class="wrap">Urban Muaythai · Miami · Gold Coast<br><a class="back" href="index.html#thailand-tour">Back to what's coming up →</a></div></footer>
@@ -104,5 +104,6 @@
     videos.forEach(function(video){observer.observe(video);});
   })();
 </script>
+<script src="assets/event-status.js"></script>
 </body>
 </html>
