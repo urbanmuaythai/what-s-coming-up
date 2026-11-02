@@ -36,9 +36,11 @@
 .current-gallery a{display:block}
 .current-gallery img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
 .current-gallery figcaption{padding:10px 12px}
-.instagram-shell{aspect-ratio:auto;min-height:560px}
-.instagram-shell iframe{display:block;width:100%;height:560px;border:0;background:#fff}
+#video-three-fighter-wins{grid-column:1/-1;grid-template-columns:minmax(0,400px) minmax(0,1fr)}
+.instagram-shell{aspect-ratio:auto;min-height:620px}
+.instagram-shell iframe{display:block;width:100%;height:620px;border:0;background:#fff}
 @media(max-width:900px){.current-gallery{columns:2}}
+@media(max-width:620px){#video-three-fighter-wins{grid-template-columns:1fr;padding:0}#video-three-fighter-wins .video-copy{padding:18px}}
 @media(max-width:480px){.current-gallery{columns:1}}
 </style>
 </head>
